@@ -77,7 +77,9 @@ test('Navigation, marquee, portfolio and FAQ match the current structure', () =>
   assert.match(html, />Работа<\/a>/);
   assert.match(html, />Услуги<\/a>/);
   assert.match(html, />Контакты<\/a>/);
-  assert.equal((html.match(/<div class="marquee"/g) || []).length, 6);
+  assert.equal((html.match(/<div class="marquee"/g) || []).length, 5);
+  assert.match(html, /marqueeItems\[3\]\.remove\(\)/);
+  assert.match(html, /document\.querySelector\('#services'\)\.after\(marqueeItems\[4\]\)/);
   assert.doesNotMatch(visible, /Собери свой комплект|calculator-total|Сайт растёт вместе с задачей|class="extra-list"/);
   assert.equal((html.match(/<summary>/g) || []).length, 6);
   assert.match(html, /font-family: "Space Grotesk"/);
