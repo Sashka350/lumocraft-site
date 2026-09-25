@@ -124,7 +124,8 @@
     .device-top i { display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--coral); }
     .device-top i:nth-child(2) { background: #d4ad61; }
     .device-top i:nth-child(3) { background: var(--lime); }
-    .device-screen { min-height: 315px; padding: 25px 22px; border-radius: 10px; background: linear-gradient(145deg, #d9e3d1 0%, #f2e7ce 48%, #ed7659 100%); color: #172018; }
+    .device-screen { min-height: 315px; overflow: hidden; border-radius: 10px; background: #0d0e10; }
+    .logo-video { display: block; width: 100%; height: 315px; object-fit: cover; }
     .screen-mini { display: flex; justify-content: space-between; font: 700 8px "DM Mono", monospace; letter-spacing: .04em; text-transform: uppercase; }
     .screen-title { margin-top: 55px; font-size: clamp(35px, 5vw, 56px); font-weight: 800; line-height: .83; letter-spacing: -.09em; }
     .screen-title span { color: #e65740; }
@@ -303,7 +304,8 @@
       .hero-art { min-height: 325px; }
       .orbit { width: 280px; }
       .device { width: 82%; }
-      .device-screen { min-height: 245px; padding: 17px; }
+      .device-screen { min-height: 245px; }
+      .logo-video { height: 245px; }
       .screen-title { margin-top: 38px; font-size: 39px; }
       .screen-box { margin-top: 34px; }
       .stamp { right: 0; bottom: 0; width: 84px; height: 84px; font-size: 8px; }
@@ -344,7 +346,7 @@
         </div>
         <div class="hero-art" aria-label="Визуальная демонстрация сайта">
           <div class="orbit"></div>
-          <div class="device"><div class="device-top"><i></i><i></i><i></i></div><div class="device-screen"><div class="screen-mini"><span>lumocraft</span><span>01 / 01</span></div><div class="screen-title">make<br><span>meaning.</span></div><div class="screen-bar"></div><div class="screen-box"></div></div></div>
+          <div class="device"><div class="device-top"><i></i><i></i><i></i></div><div class="device-screen"><video class="logo-video" autoplay muted loop playsinline poster="Lumocraft%20logo.png" aria-label="Анимированный логотип lumocraft"><source src="Lumocraft%20logo.mp4" type="video/mp4"><img src="Lumocraft%20logo.png" alt="lumocraft"></video></div></div>
           <div class="stamp"><strong>01</strong>проект<br>уже в портфолио</div>
         </div>
       </div>

@@ -68,6 +68,8 @@ test('Brand assets and conversion helpers are wired into the page', () => {
   assert.match(html, /success-screen/);
   assert.match(html, /#about/);
   assert.match(html, /Частые вопросы/);
+  assert.match(html, /Lumocraft%20logo\.mp4/);
+  assert.match(html, /Lumocraft%20logo\.png/);
 });
 
 test('Infrastructure files use the production domain', () => {
