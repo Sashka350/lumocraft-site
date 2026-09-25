@@ -150,7 +150,7 @@
     .proof-number { font-size: clamp(70px, 10vw, 140px); font-weight: 800; line-height: .8; letter-spacing: -.1em; }
     .case { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
     .case-preview { position: relative; min-height: 515px; overflow: hidden; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(220,228,212,.86), rgba(220,228,212,.42)), url("https://sashka350.github.io/pavel-pronin-site/images/hero-bg.jpg") center / cover; color: #171d18; }
-    .case-preview::before { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(220,228,212,.18), rgba(220,228,212,.84) 73%), url("https://sashka350.github.io/pavel-pronin-site/images/portrait-2.jpg") 92% 88% / 42% auto no-repeat; content: ""; opacity: .82; transition: transform 700ms var(--ease), opacity 700ms var(--ease); }
+    .case-preview::before { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(220,228,212,.18), rgba(220,228,212,.84) 73%); content: ""; opacity: .82; transition: transform 700ms var(--ease), opacity 700ms var(--ease); }
     .case-preview:hover::before { opacity: 1; transform: scale(1.04); }
     .case-preview::after { position: absolute; right: -15%; bottom: -32%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: var(--coral); content: ""; mix-blend-mode: multiply; opacity: .84; }
     .case-label { position: relative; z-index: 2; display: flex; justify-content: space-between; font: 500 10px "DM Mono", monospace; text-transform: uppercase; }
@@ -183,8 +183,9 @@
     .setup-note { display: flex; gap: 18px; align-items: center; margin-top: 12px; padding: 18px 2px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
     .setup-note .mono { flex: 0 0 auto; color: var(--coral); }
     .about { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; align-items: center; }
-    .about-portrait { min-height: 430px; border-radius: var(--radius); background: linear-gradient(145deg, rgba(200,232,107,.2), rgba(16,17,16,.1)), url("https://sashka350.github.io/pavel-pronin-site/images/portrait-1.jpg") center / cover; filter: grayscale(1); transition: filter 500ms var(--ease), transform 500ms var(--ease); }
-    .about-portrait:hover { filter: grayscale(.25); transform: rotate(-2deg) scale(1.02); }
+    .about-portrait { position: relative; min-height: 430px; overflow: hidden; border-radius: var(--radius); background: radial-gradient(circle at 65% 25%, rgba(255,118,93,.85) 0 8%, transparent 8.5%), radial-gradient(circle at 35% 70%, rgba(200,232,107,.8) 0 12%, transparent 12.5%), linear-gradient(145deg, #252b25, #111311 68%); transition: transform 500ms var(--ease); }
+    .about-portrait::after { position: absolute; inset: 16%; border: 1px solid rgba(244,242,237,.35); border-radius: 50%; transform: rotate(-24deg); content: ""; }
+    .about-portrait:hover { transform: rotate(-2deg) scale(1.02); }
     .about-copy h2 { margin-top: 22px; }
     .about-copy p { max-width: 560px; color: var(--muted); font-size: 17px; }
     .faq { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; }
@@ -366,7 +367,7 @@
       </div>
     </section>
 
-    <section id="about"><div class="wrap about"><div class="about-portrait" role="img" aria-label="Портрет из первого проекта"></div><div class="about-copy"><div class="eyebrow">Кто за этим стоит</div><h2>Привет, я <em>Александр.</em></h2><p>Я создаю сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.</p><p>Мне важно не просто собрать красивый экран. Я разбираюсь в задаче, убираю лишнее и превращаю идею в сайт, который хочется показать клиенту.</p><a class="button ghost" href="#contact">Давайте познакомимся <span class="arrow">↗</span></a></div></div></section>
+    <section id="about"><div class="wrap about"><div class="about-portrait" role="img" aria-label="Абстрактная графика lumocraft"></div><div class="about-copy"><div class="eyebrow">Кто за этим стоит</div><h2>Привет, я <em>Александр.</em></h2><p>Я создаю сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.</p><p>Мне важно не просто собрать красивый экран. Я разбираюсь в задаче, убираю лишнее и превращаю идею в сайт, который хочется показать клиенту.</p><a class="button ghost" href="#contact">Давайте познакомимся <span class="arrow">↗</span></a></div></div></section>
 
     <section id="services">
       <div class="wrap"><div class="section-head"><div class="eyebrow">Форматы работы</div><div><h2>Соберём ровно столько, сколько нужно <em>сейчас.</em></h2><p class="section-copy">Цены — отправная точка, а не жёсткое меню. Каждый проект можно расширить дополнительными модулями.</p></div></div>

@@ -37,7 +37,7 @@ test('Motion is opt-out for reduced-motion users', () => {
 
 test('Case imagery and contact button contrast are present', () => {
   assert.match(html, /sashka350\.github\.io\/pavel-pronin-site\/images\/hero-bg\.jpg/);
-  assert.match(html, /sashka350\.github\.io\/pavel-pronin-site\/images\/portrait-2\.jpg/);
+  assert.doesNotMatch(html, /portrait-[1235]|portrait-bw/);
   assert.match(html, /\.contact \.button\.ghost[^}]+color: #11140d !important/);
 });
 
