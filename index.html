@@ -7,12 +7,13 @@
   <meta name="author" content="Александр · lumocraft">
   <meta name="theme-color" content="#101110">
   <link rel="canonical" href="https://lumocraft.ru/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="website">
   <meta property="og:title" content="lumocraft — сайты, которым доверяют">
   <meta property="og:description" content="Александр создаёт выразительные и понятные сайты для предпринимателей и малого бизнеса.">
   <meta property="og:url" content="https://lumocraft.ru/">
-  <meta property="og:image" content="https://lumocraft.ru/og-image.jpg">
+  <meta property="og:image" content="https://lumocraft.ru/og-image.svg">
   <meta property="og:site_name" content="lumocraft">
   <meta name="twitter:card" content="summary">
   <script type="application/ld+json">
@@ -93,8 +94,8 @@
     .arrow { display: inline-block; margin-left: 10px; font-size: 18px; line-height: 0; }
     header { padding: 25px 0; border-bottom: 1px solid var(--line); }
     nav { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-    .brand { color: var(--ink); font-size: 18px; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
-    .brand span { color: var(--coral); }
+    .brand { display: inline-flex; align-items: center; color: var(--ink); font-size: 18px; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
+    .brand-mark { width: 116px; height: auto; }
     .nav-right { display: flex; align-items: center; gap: 28px; }
     .nav-link { color: var(--muted-strong); font-size: 13px; text-decoration: none; transition: color 180ms ease; }
     .nav-link:hover { color: var(--lime); }
@@ -181,6 +182,32 @@
     .extra b { margin-left: 6px; color: var(--lime); font: 500 10px "DM Mono", monospace; }
     .setup-note { display: flex; gap: 18px; align-items: center; margin-top: 12px; padding: 18px 2px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
     .setup-note .mono { flex: 0 0 auto; color: var(--coral); }
+    .about { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; align-items: center; }
+    .about-portrait { min-height: 430px; border-radius: var(--radius); background: linear-gradient(145deg, rgba(200,232,107,.2), rgba(16,17,16,.1)), url("https://sashka350.github.io/pavel-pronin-site/images/portrait-1.jpg") center / cover; filter: grayscale(1); transition: filter 500ms var(--ease), transform 500ms var(--ease); }
+    .about-portrait:hover { filter: grayscale(.25); transform: rotate(-2deg) scale(1.02); }
+    .about-copy h2 { margin-top: 22px; }
+    .about-copy p { max-width: 560px; color: var(--muted); font-size: 17px; }
+    .faq { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-list details { padding: 21px 0; border-bottom: 1px solid var(--line); }
+    .faq-list summary { display: flex; align-items: center; justify-content: space-between; color: var(--ink); font-size: 17px; font-weight: 700; list-style: none; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { color: var(--coral); content: "+"; font: 400 24px "DM Mono", monospace; }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-list p { max-width: 650px; margin: 14px 34px 0 0; color: var(--muted); font-size: 14px; }
+    .calculator { margin-top: 40px; padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel-light); }
+    .calculator-head { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+    .calculator h3 { margin-bottom: 7px; font-size: 23px; letter-spacing: -.06em; }
+    .calculator p { max-width: 430px; margin-bottom: 0; color: var(--muted); font-size: 13px; }
+    .calculator-total { color: var(--lime); font-size: 28px; font-weight: 800; letter-spacing: -.06em; white-space: nowrap; }
+    .calculator-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .calculator-options label { padding: 11px 13px; border: 1px solid var(--line); border-radius: 99px; color: var(--muted-strong); font: 12px Manrope, sans-serif; letter-spacing: 0; text-transform: none; cursor: pointer; transition: border-color 180ms ease, color 180ms ease, transform 180ms ease; }
+    .calculator-options label:hover { border-color: var(--lime); transform: translateY(-2px); }
+    .calculator-options input { margin-right: 5px; accent-color: var(--lime); }
+    .success-screen { display: none; padding: 35px 0 5px; }
+    .success-screen.show { display: block; animation: panel-in 350ms var(--ease) both; }
+    .success-screen strong { display: block; margin-bottom: 8px; font-size: 22px; letter-spacing: -.05em; }
+    .success-screen p { margin-bottom: 0; color: #455329; font-size: 13px; }
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; counter-reset: step; }
     .step { min-height: 230px; padding: 27px; border-top: 2px solid var(--lime); background: var(--panel); }
     .step::before { counter-increment: step; content: "0" counter(step); color: var(--coral); font: 500 11px "DM Mono", monospace; }
@@ -244,6 +271,7 @@
       .nav-link { display: none; }
       .hero { min-height: 0; padding: 75px 0 85px; }
       .hero-grid, .case, .research { grid-template-columns: 1fr; gap: 45px; }
+      .about, .faq { grid-template-columns: 1fr; gap: 35px; }
       .hero-art { min-height: 400px; }
       .orbit { width: 330px; }
       .section-head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 35px; }
@@ -258,6 +286,8 @@
       .contact { padding: 42px 25px; }
       .brief-grid { grid-template-columns: 1fr; }
       .brief-full { grid-column: auto; }
+      .about-portrait { min-height: 330px; }
+      .calculator-head { flex-direction: column; }
     }
     @media (max-width: 500px) {
       .wrap { width: min(100% - 28px, 620px); }
@@ -290,7 +320,7 @@
   <header>
     <div class="wrap">
       <nav aria-label="Основная навигация">
-        <a class="brand" href="#top">lumo<span>craft</span></a>
+        <a class="brand" href="#top" aria-label="lumocraft"><img class="brand-mark" src="logo.svg" alt="lumocraft"></a>
         <div class="nav-right">
           <a class="nav-link" href="#work">Работы</a>
           <a class="nav-link" href="#services">Услуги</a>
@@ -336,6 +366,8 @@
       </div>
     </section>
 
+    <section id="about"><div class="wrap about"><div class="about-portrait" role="img" aria-label="Портрет из первого проекта"></div><div class="about-copy"><div class="eyebrow">Кто за этим стоит</div><h2>Привет, я <em>Александр.</em></h2><p>Я создаю сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.</p><p>Мне важно не просто собрать красивый экран. Я разбираюсь в задаче, убираю лишнее и превращаю идею в сайт, который хочется показать клиенту.</p><a class="button ghost" href="#contact">Давайте познакомимся <span class="arrow">↗</span></a></div></div></section>
+
     <section id="services">
       <div class="wrap"><div class="section-head"><div class="eyebrow">Форматы работы</div><div><h2>Соберём ровно столько, сколько нужно <em>сейчас.</em></h2><p class="section-copy">Цены — отправная точка, а не жёсткое меню. Каждый проект можно расширить дополнительными модулями.</p></div></div>
         <div class="pricing">
@@ -345,10 +377,13 @@
         </div>
         <div class="extras"><div><h3>Сайт растёт вместе с задачей</h3><p>Добавь нужные модули сейчас или вернись к ним позже. Стоимость обсудим до начала работ.</p></div><div class="extra-list"><span class="extra">Анимации <b>+от 5k</b></span><span class="extra">Английская версия <b>+от 8k</b></span><span class="extra">Каталог / витрина <b>+от 10k</b></span><span class="extra">Копирайтинг <b>+от 5k</b></span><span class="extra">Аналитика <b>+от 2k</b></span><span class="extra">SEO-база <b>+от 3k</b></span><span class="extra">Поддержка <b>от 10k / год</b></span></div></div>
         <div class="setup-note"><span class="mono">Важно до запуска</span><span>Домен и хостинг оплачиваются отдельно. Я помогу выбрать подходящий вариант, подключить `lumocraft.ru` и проверить публикацию сайта.</span></div>
+        <div class="calculator"><div class="calculator-head"><div><h3>Собери свой комплект</h3><p>Выбери дополнительные задачи, чтобы получить ориентир. Финальную стоимость обсудим после брифа.</p></div><div class="calculator-total" id="calculator-total">от 10 000 ₽</div></div><div class="calculator-options"><label><input type="checkbox" value="5000"> Анимации +5k</label><label><input type="checkbox" value="8000"> Английская версия +8k</label><label><input type="checkbox" value="10000"> Каталог +10k</label><label><input type="checkbox" value="5000"> Тексты +5k</label><label><input type="checkbox" value="2000"> Аналитика +2k</label><label><input type="checkbox" value="3000"> SEO-база +3k</label></div></div>
       </div>
     </section>
 
     <section><div class="wrap"><div class="section-head"><div class="eyebrow">Как это происходит</div><div><h2>Без тёмного леса из согласований.</h2><p class="section-copy">Ты понимаешь, что происходит с проектом на каждом шаге. Я беру на себя структуру, дизайн, код и запуск.</p></div></div><div class="steps"><article class="step"><h3>Смысл</h3><p>Созваниваемся или переписываемся, разбираем бизнес, аудиторию и главное действие сайта.</p></article><article class="step"><h3>Форма</h3><p>Собираю визуальное направление, прототип и первую рабочую версию, которую можно открыть с телефона.</p></article><article class="step"><h3>Запуск</h3><p>Вносим правки, подключаем домен и формы, проверяем всё перед публикацией. Я остаюсь на связи.</p></article></div></div></section>
+
+    <section><div class="wrap faq"><div><div class="eyebrow">Частые вопросы</div><h2>Без сюрпризов<br>в процессе.</h2></div><div class="faq-list"><details><summary>Домен и хостинг входят в цену?</summary><p>Нет, они оплачиваются отдельно и оформляются на вас. Я помогу подобрать вариант, подключить домен и проверить, что сайт доступен.</p></details><details><summary>Можно ли начать с небольшого бюджета?</summary><p>Да. Для специалиста часто достаточно аккуратного одностраничника. Мы не будем добавлять каталог или сложные функции, если они не решают вашу задачу.</p></details><details><summary>Что будет после запуска?</summary><p>Я остаюсь на связи: помогу с небольшими правками, обновлениями и техническими вопросами. Поддержка может быть включена отдельно в зависимости от формата.</p></details><details><summary>Что нужно подготовить до начала?</summary><p>Достаточно коротко рассказать о бизнесе, клиентах и цели сайта. Логотип, тексты и фотографии можно подготовить вместе или добавить позже.</p></details></div></div></section>
 
     <section id="contact"><div class="wrap"><div class="contact"><div class="eyebrow">Первый шаг</div><h2>Расскажи, что нужно сделать.</h2><p class="contact-copy">Не нужно сразу знать правильный пакет. Сначала разберёмся в задаче, а потом выберем решение без лишних расходов.</p><div class="form-switch" role="tablist" aria-label="Тип заявки"><button class="active" type="button" role="tab" aria-selected="true" data-form-target="quick-form">Подобрать пакет</button><button type="button" role="tab" aria-selected="false" data-form-target="brief-form">Подробный бриф</button></div><div class="form-panel active" id="quick-form"><p class="form-note">Короткая форма для первого разговора. Я сам предложу подходящий формат и не буду продавать лишнее.</p><form class="lead-form" data-form-name="Подбор пакета"><div class="form-grid"><label>Имя<input name="Имя" type="text" placeholder="Александр" required></label><label>Почта<input name="Почта" type="email" placeholder="you@example.com" required></label></div><div class="brief-grid" style="margin-top: 18px"><label>Кто вы?<select name="Тип клиента" required><option value="">Выберите вариант</option><option>Самозанятый специалист</option><option>Индивидуальный предприниматель</option><option>Малый бизнес</option><option>Пока не знаю</option></select></label><label>Что нужно?<select name="Задача" required><option value="">Выберите задачу</option><option>Сайт с нуля</option><option>Обновить старый сайт</option><option>Портфолио</option><option>Сайт-витрина</option><option>Пока не знаю</option></select></label></div><label style="display:block; margin-top: 18px">Расскажи о себе и задаче<textarea name="Описание" placeholder="Чем вы занимаетесь, кто ваши клиенты и чего хочется от сайта?" required></textarea></label><label class="consent"><input type="checkbox" required><span>Я согласен на обработку данных для ответа на заявку. <a href="#privacy">Политика конфиденциальности</a></span></label><button class="button" type="submit">Подобрать формат <span class="arrow">↗</span></button><div class="form-message">Спасибо. Открою почтовый клиент, чтобы отправить заявку Александру.</div></form></div><div class="form-panel" id="brief-form"><p class="form-note">Чем больше деталей, тем точнее получится первая концепция. Поля можно заполнять в любом объёме.</p><form class="lead-form" data-form-name="Подробный бриф"><div class="brief-grid"><label>Имя<input name="Имя" type="text" placeholder="Александр" required></label><label>Почта<input name="Почта" type="email" placeholder="you@example.com" required></label><label>Проект / бренд<input name="Проект" type="text" placeholder="Название проекта"></label><label>Срок<select name="Срок"><option>Не определился</option><option>В течение недели</option><option>2–3 недели</option><option>В течение месяца</option></select></label><label class="brief-full">Чем занимается проект?<textarea name="О проекте" placeholder="Продукт, услуги, аудитория, город или география..." required></textarea></label><label class="brief-full">Что должен сделать сайт?<textarea name="Цель сайта" placeholder="Например: привести заявки, показать экспертность, продать услугу..."></textarea></label><label class="brief-full">Какой визуальный характер нравится?<div class="check-list"><label><input type="checkbox" name="Стиль" value="Спокойный"> Спокойный</label><label><input type="checkbox" name="Стиль" value="Премиальный"> Премиальный</label><label><input type="checkbox" name="Стиль" value="Смелый"> Смелый</label><label><input type="checkbox" name="Стиль" value="Технологичный"> Технологичный</label><label><input type="checkbox" name="Стиль" value="Минималистичный"> Минималистичный</label><label><input type="checkbox" name="Стиль" value="Тёплый"> Тёплый</label></div></label><label>Цвета<select name="Цвета"><option>Пока не знаю</option><option>Светлая палитра</option><option>Тёмная палитра</option><option>Есть свои цвета</option><option>Хочу, чтобы предложили</option></select></label><label>Объём<select name="Объём"><option>Одностраничник</option><option>Сайт-витрина</option><option>Многостраничный сайт</option><option>Пока не знаю</option></select></label><label class="brief-full">Референсы и пожелания<textarea name="Референсы" placeholder="Ссылки, примеры сайтов, функции, которые хочется повторить или точно исключить..."></textarea></label></div><label class="consent"><input type="checkbox" required><span>Я согласен на обработку данных для ответа на заявку. <a href="#privacy">Политика конфиденциальности</a></span></label><button class="button" type="submit">Отправить подробности <span class="arrow">↗</span></button><div class="form-message">Спасибо. Открою почтовый клиент, чтобы отправить бриф Александру.</div></form></div><div class="contact-actions"><a class="button ghost" href="mailto:contact@lumocraft.ru">contact@lumocraft.ru</a><a class="button ghost" href="https://t.me/lumocraft" target="_blank" rel="noreferrer">Telegram ↗</a></div></div></div></section>
   </main>
@@ -369,9 +404,20 @@
         }
         const subject = encodeURIComponent(`${form.dataset.formName} · lumocraft`);
         const body = encodeURIComponent(lines.join('\n'));
-        window.location.href = `mailto:contact@lumocraft.ru?subject=${subject}&body=${body}`;
         trackGoal('lead_form_submit');
         form.querySelector('.form-message').classList.add('show');
+        const success = document.createElement('div');
+        success.className = 'success-screen show';
+        success.innerHTML = '<strong>Заявка почти отправлена.</strong><p>Открою почтовый клиент, чтобы письмо ушло Александру. Если окно не появилось, напиши напрямую на contact@lumocraft.ru.</p>';
+        form.replaceWith(success);
+        window.setTimeout(() => { window.location.href = `mailto:contact@lumocraft.ru?subject=${subject}&body=${body}`; }, 120);
+      });
+    });
+    const calculatorTotal = document.querySelector('#calculator-total');
+    document.querySelectorAll('.calculator-options input').forEach((input) => {
+      input.addEventListener('change', () => {
+        const extras = [...document.querySelectorAll('.calculator-options input:checked')].reduce((sum, item) => sum + Number(item.value), 0);
+        calculatorTotal.textContent = `от ${(10000 + extras).toLocaleString('ru-RU')} ₽`;
       });
     });
     const metrikaId = Number(document.documentElement.dataset.metrikaId || 0);
@@ -448,8 +494,10 @@
         '.hero .eyebrow': 'Websites by Alexander · Russia', '.hero h1': 'A website people <em>choose.</em>', '.hero-lead': 'I am Alexander. I design and build websites for people and companies that want to look confident in the digital world.', '.hero .button': 'Discuss a project <span class="arrow">↗</span>', '.hero .button.ghost': 'See the work', '.hero-note': '<span class="status"></span> Taking new projects for October 2026',
         '.proof-card.featured h3': 'That is enough time to judge a page’s visual appeal.', '.proof-card.featured p': 'The first screen has to work before someone has time to read the copy.', '.proof-card:not(.featured) h3': 'Trust first. Then a conversation.', '.proof-card:not(.featured) p': 'I combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.',
         '#work .eyebrow': 'Selected work', '#work h2': 'The first project already speaks for me.', '#work .case-copy p': 'A concept site built as a demonstration of the lumocraft approach: a distinctive visual language, careful typography and attention to every interface state.', '#work .button': 'I want a site like this <span class="arrow">↗</span>',
+        '#about .eyebrow': 'Who is behind it', '#about h2': 'Hi, I am <em>Alexander.</em>', '#about .about-copy p:first-of-type': 'I create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', '#about .about-copy p:nth-of-type(2)': 'I do not just assemble a beautiful screen. I understand the task, remove the unnecessary and turn an idea into a site you want to show your clients.', '#about .button': 'Let’s meet <span class="arrow">↗</span>',
         '#services .eyebrow': 'Ways to work together', '#services h2': 'Build exactly as much as you need <em>right now.</em>', '#services .section-copy': 'Prices are a starting point, not a rigid menu. Every project can grow with additional modules.', '.extras h3': 'Your site grows with the task', '.extras p': 'Add the modules you need now or return to them later. The final price is agreed before work starts.',
-        '#contact .eyebrow': 'First step', '#contact h2': 'Tell me what needs to be made.', '.contact-copy': 'Describe the task in a few words. I will suggest a format, improvements and a realistic timeline.', '#contact .button[type="submit"]': 'Send request <span class="arrow">↗</span>'
+        '.calculator h3': 'Build your own package', '.calculator p': 'Select additional tasks to get an estimate. The final price is agreed after the brief.',
+        '#contact .eyebrow': 'First step', '#contact h2': 'Tell me what needs to be made.', '.contact-copy': 'Describe the task in a few words. I will suggest a format, improvements and a realistic timeline.', '.form-switch button:first-child': 'Choose a package', '.form-switch button:last-child': 'Detailed brief', '#contact .button[type="submit"]': 'Send request <span class="arrow">↗</span>'
       }
     };
     const originalText = new Map();

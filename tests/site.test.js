@@ -60,6 +60,16 @@ test('Privacy page covers forms, cookies, withdrawal and operator details', () =
   assert.match(privacy, /Оператор/);
 });
 
+test('Brand assets and conversion helpers are wired into the page', () => {
+  assert.match(html, /href="favicon\.svg"/);
+  assert.match(html, /src="logo\.svg"/);
+  assert.match(html, /og-image\.svg/);
+  assert.match(html, /id="calculator-total"/);
+  assert.match(html, /success-screen/);
+  assert.match(html, /#about/);
+  assert.match(html, /Частые вопросы/);
+});
+
 test('Infrastructure files use the production domain', () => {
   const robots = fs.readFileSync(path.join(root, 'robots.txt'), 'utf8');
   const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
