@@ -7,7 +7,8 @@
   <meta name="author" content="Александр · lumocraft">
   <meta name="theme-color" content="#101110">
   <link rel="canonical" href="https://lumocraft.ru/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="Lumocraft%20logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="Lumocraft%20logo.png">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="website">
   <meta property="og:title" content="lumocraft — сайты, которым доверяют">
@@ -94,8 +95,8 @@
     .arrow { display: inline-block; margin-left: 10px; font-size: 18px; line-height: 0; }
     header { padding: 25px 0; border-bottom: 1px solid var(--line); }
     nav { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-    .brand { display: inline-flex; align-items: center; color: var(--ink); font-size: 18px; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
-    .brand-mark { width: 116px; height: auto; }
+    .brand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-size: 18px; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
+    .brand-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 5px rgba(255,118,93,.12); }
     .nav-right { display: flex; align-items: center; gap: 28px; }
     .nav-link { color: var(--muted-strong); font-size: 13px; text-decoration: none; transition: color 180ms ease; }
     .nav-link:hover { color: var(--lime); }
@@ -323,7 +324,7 @@
   <header>
     <div class="wrap">
       <nav aria-label="Основная навигация">
-        <a class="brand" href="#top" aria-label="lumocraft"><img class="brand-mark" src="logo.svg" alt="lumocraft"></a>
+        <a class="brand" href="#top" aria-label="lumocraft"><span class="brand-dot" aria-hidden="true"></span><span>lumocraft</span></a>
         <div class="nav-right">
           <a class="nav-link" href="#work">Работы</a>
           <a class="nav-link" href="#services">Услуги</a>

@@ -61,8 +61,8 @@ test('Privacy page covers forms, cookies, withdrawal and operator details', () =
 });
 
 test('Brand assets and conversion helpers are wired into the page', () => {
-  assert.match(html, /href="favicon\.svg"/);
-  assert.match(html, /src="logo\.svg"/);
+  assert.match(html, /href="Lumocraft%20logo\.png"/);
+  assert.doesNotMatch(html, /src="logo\.svg"/);
   assert.match(html, /og-image\.svg/);
   assert.match(html, /id="calculator-total"/);
   assert.match(html, /success-screen/);
