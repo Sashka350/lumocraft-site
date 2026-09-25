@@ -64,12 +64,29 @@ test('Brand assets and conversion helpers are wired into the page', () => {
   assert.match(html, /href="Lumocraft%20logo\.png"/);
   assert.doesNotMatch(html, /src="logo\.svg"/);
   assert.match(html, /og-image\.svg/);
-  assert.match(html, /id="calculator-total"/);
+  assert.doesNotMatch(html, /id="calculator-total"/);
   assert.match(html, /success-screen/);
   assert.match(html, /#about/);
   assert.match(html, /Частые вопросы/);
   assert.match(html, /Lumocraft%20logo\.mp4/);
   assert.match(html, /Lumocraft%20logo\.png/);
+});
+
+test('Navigation, marquee, portfolio and FAQ match the current structure', () => {
+  assert.match(html, />Работа<\/a>/);
+  assert.match(html, />Услуги<\/a>/);
+  assert.match(html, />Контакты<\/a>/);
+  assert.equal((html.match(/<div class="marquee"/g) || []).length, 4);
+  assert.doesNotMatch(html, /Собери свой комплект|calculator-total/);
+  assert.equal((html.match(/<summary>/g) || []).length, 6);
+  assert.match(html, /font-family: "Space Grotesk"/);
+  assert.doesNotMatch(html.match(/<div class="marquee"[\s\S]*?<\/div>/)?.[0] || '', /Александр|ALEXANDER/);
+});
+
+test('Inline browser script has valid JavaScript syntax', () => {
+  const script = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
+  assert.ok(script);
+  assert.doesNotThrow(() => new Function(script));
 });
 
 test('Infrastructure files use the production domain', () => {
