@@ -73,13 +73,16 @@ test('Brand assets and conversion helpers are wired into the page', () => {
 });
 
 test('Navigation, marquee, portfolio and FAQ match the current structure', () => {
+  const visible = html.match(/<body>[\s\S]*?<script>/)?.[0] || '';
   assert.match(html, />Работа<\/a>/);
   assert.match(html, />Услуги<\/a>/);
   assert.match(html, />Контакты<\/a>/);
-  assert.equal((html.match(/<div class="marquee"/g) || []).length, 4);
-  assert.doesNotMatch(html, /Собери свой комплект|calculator-total/);
+  assert.equal((html.match(/<div class="marquee"/g) || []).length, 6);
+  assert.doesNotMatch(visible, /Собери свой комплект|calculator-total|Сайт растёт вместе с задачей|class="extra-list"/);
   assert.equal((html.match(/<summary>/g) || []).length, 6);
   assert.match(html, /font-family: "Space Grotesk"/);
+  assert.match(html, /class="brand-dot"/);
+  assert.doesNotMatch(html, /class="brand-logo"/);
   assert.doesNotMatch(html.match(/<div class="marquee"[\s\S]*?<\/div>/)?.[0] || '', /Александр|ALEXANDER/);
 });
 

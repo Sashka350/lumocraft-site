@@ -95,8 +95,8 @@
     .arrow { display: inline-block; margin-left: 10px; font-size: 18px; line-height: 0; }
     header { padding: 25px 0; border-bottom: 1px solid var(--line); }
     nav { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
-    .brand { display: inline-flex; align-items: center; color: var(--ink); text-decoration: none; }
-    .brand-logo { display: block; width: 58px; height: 58px; border-radius: 12px; object-fit: cover; }
+    .brand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-family: Manrope, sans-serif; font-size: 18px; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
+    .brand-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 5px rgba(255,118,93,.12); }
     .nav-right { display: flex; align-items: center; gap: 9px; }
     .nav-link { padding: 10px 15px; border: 1px solid transparent; border-radius: 999px; color: var(--muted-strong); font-size: 14px; font-weight: 700; text-decoration: none; transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease; }
     .nav-link:hover { border-color: var(--line); background: var(--panel); color: var(--lime); transform: translateY(-2px); }
@@ -176,13 +176,9 @@
     .price-card li { display: flex; gap: 9px; padding: 9px 0; border-top: 1px solid var(--line); }
     .price-card li::before { color: var(--lime); content: "+"; font-family: "DM Mono", monospace; }
     .price-card .button { width: 100%; margin-top: auto; }
-    .extras { display: grid; grid-template-columns: .7fr 1.3fr; gap: 40px; margin-top: 20px; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: transparent; }
-    .extras h3 { margin-bottom: 8px; font-size: 23px; letter-spacing: -.06em; }
-    .extras p { max-width: 330px; margin-bottom: 0; color: var(--muted); font-size: 13px; }
-    .extra-list { display: flex; flex-wrap: wrap; align-content: center; gap: 8px; }
-    .extra { padding: 11px 13px; border: 1px solid var(--line); border-radius: 99px; color: var(--muted-strong); font-size: 12px; }
-    .extra b { margin-left: 6px; color: var(--lime); font: 500 10px "DM Mono", monospace; }
-    .setup-note { display: flex; gap: 18px; align-items: center; margin-top: 12px; padding: 18px 2px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .setup-stack { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .setup-stack > p { margin-bottom: 0; color: var(--muted-strong); font-size: 14px; }
+    .setup-note { display: flex; gap: 18px; align-items: center; margin-top: 12px; padding: 18px 2px; color: var(--muted); font-size: 12px; }
     .setup-note .mono { flex: 0 0 auto; color: var(--coral); }
     .about { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; align-items: center; }
     .about-portrait { position: relative; min-height: 430px; overflow: hidden; border-radius: var(--radius); background: radial-gradient(circle at 65% 25%, rgba(255,118,93,.85) 0 8%, transparent 8.5%), radial-gradient(circle at 35% 70%, rgba(200,232,107,.8) 0 12%, transparent 12.5%), linear-gradient(145deg, #252b25, #111311 68%); transition: transform 500ms var(--ease); }
@@ -323,7 +319,7 @@
   <header>
     <div class="wrap">
       <nav aria-label="Основная навигация">
-        <a class="brand" href="#top" aria-label="lumocraft"><img class="brand-logo" src="Lumocraft%20logo.png" alt="lumocraft"></a>
+        <a class="brand" href="#top" aria-label="lumocraft"><span class="brand-dot" aria-hidden="true"></span><span>lumocraft</span></a>
         <div class="nav-right">
           <a class="nav-link" href="#work">Работа</a>
           <a class="nav-link" href="#services">Услуги</a>
@@ -340,9 +336,9 @@
         <div>
           <div class="eyebrow">Web / brand / motion</div>
           <h1>Сайт, который <em>выбирают.</em></h1>
-          <p class="hero-lead">Проектирую и собираю сайты для людей и компаний, которым важно выглядеть уверенно в цифровом мире.</p>
+          <p class="hero-lead">Проектируем и собираем сайты для людей и компаний, которым важно выглядеть уверенно в цифровом мире.</p>
           <div class="actions"><a class="button" href="#contact">Обсудить проект <span class="arrow">↗</span></a><a class="button ghost" href="#work">Смотреть работу</a></div>
-          <div class="hero-note"><span class="status"></span> Беру новые проекты на октябрь 2026</div>
+          <div class="hero-note"><span class="status"></span> Берём новые проекты на октябрь 2026</div>
         </div>
         <div class="hero-art" aria-label="Визуальная демонстрация сайта">
           <div class="orbit"></div>
@@ -356,8 +352,8 @@
 
     <section>
       <div class="wrap">
-        <div class="section-head"><div class="eyebrow">Зачем это бизнесу</div><div><h2>Красивый сайт — это не декор. Это <em>сигнал.</em></h2><p class="section-copy">За несколько секунд человек решает, можно ли вам доверять. Я превращаю первое впечатление в понятный путь к заявке: без визуального шума, шаблонных блоков и случайных решений.</p></div></div>
-        <div class="proof"><article class="proof-card featured"><div class="proof-number">50<small>ms</small></div><h3>Примерно столько достаточно, чтобы оценить визуальную привлекательность страницы.</h3><p>Первый экран должен работать ещё до того, как человек успел прочитать текст.</p></article><article class="proof-card"><div class="mono">01 / first impression</div><h3>Сначала доверие. Потом разговор.</h3><p>Я соединяю выразительный арт-дирекшн с понятной структурой, чтобы сайт нравился не только дизайнеру, но и вашему клиенту.</p></article></div>
+        <div class="section-head"><div class="eyebrow">Зачем это бизнесу</div><div><h2>Красивый сайт — это не декор. Это <em>сигнал.</em></h2><p class="section-copy">За несколько секунд человек решает, можно ли вам доверять. Мы превращаем первое впечатление в понятный путь к заявке: без визуального шума, шаблонных блоков и случайных решений.</p></div></div>
+        <div class="proof"><article class="proof-card featured"><div class="proof-number">50<small>ms</small></div><h3>Примерно столько достаточно, чтобы оценить визуальную привлекательность страницы.</h3><p>Первый экран должен работать ещё до того, как человек успел прочитать текст.</p></article><article class="proof-card"><div class="mono">01 / first impression</div><h3>Сначала доверие. Потом разговор.</h3><p>Мы соединяем выразительный арт-дирекшн с понятной структурой, чтобы сайт нравился не только дизайнеру, но и вашему клиенту.</p></article></div>
         <div class="research" style="margin-top: 16px"><h3>Красота должна работать.</h3><p>В исследовании Stanford Persuasive Technology Lab визуальный облик сайта встречался в 46,1% комментариев участников о его достоверности. Другие исследования показывают, что первое эстетическое впечатление формируется примерно за 50 мс. Это не обещание продаж, а причина относиться к дизайну как к части бизнес-задачи. <a href="https://doi.org/10.1145/997078.997097" target="_blank" rel="noreferrer">Источники ↗</a></p></div>
       </div>
     </section>
@@ -371,7 +367,7 @@
       </div></div>
     </section>
 
-    <section id="about"><div class="wrap about"><div class="about-portrait" role="img" aria-label="Абстрактная графика lumocraft"></div><div class="about-copy"><div class="eyebrow">Как мы думаем</div><h2>Сначала смысл.<br><em>Потом форма.</em></h2><p>Создаю сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.</p><p>Разбираюсь в задаче, убираю лишнее и превращаю идею в сайт, который хочется показать клиенту.</p><a class="button ghost" href="#contact">Обсудить проект <span class="arrow">↗</span></a></div></div></section>
+    <section id="about"><div class="wrap about"><div class="about-portrait" role="img" aria-label="Абстрактная графика lumocraft"></div><div class="about-copy"><div class="eyebrow">Как мы думаем</div><h2>Сначала смысл.<br><em>Потом форма.</em></h2><p>Мы создаём сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.</p><p>Разбираемся в задаче, убираем лишнее и превращаем идею в сайт, который хочется показать клиенту.</p><a class="button ghost" href="#contact">Обсудить проект <span class="arrow">↗</span></a></div></div></section>
 
     <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span><b>✳</b><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span></div></div>
 
@@ -382,18 +378,19 @@
           <article class="price-card hot"><div class="price-top"><span class="price-name">Signal</span><span class="price-badge">Популярный</span></div><div class="price">25 000 <small>₽</small></div><ul><li>Сайт-витрина до 5 экранов</li><li>Сценарий и тексты блоков</li><li>Микроанимации и интерактив</li><li>Запуск за 7 дней</li><li>3 дня на правки</li></ul><a class="button" href="#contact">Выбрать Signal</a></article>
           <article class="price-card"><div class="price-top"><span class="price-name">Full presence</span><span class="mono">03</span></div><div class="price">от 50 000 <small>₽</small></div><ul><li>Полноценный многостраничник</li><li>Индивидуальная дизайн-система</li><li>Каталог, формы или блог</li><li>2–3 недели на сборку</li><li>Неделя на правки</li></ul><a class="button ghost" href="#contact">Обсудить Full</a></article>
         </div>
-        <div class="extras"><div><h3>Сайт растёт вместе с задачей</h3><p>Добавь нужные модули сейчас или вернись к ним позже. Стоимость обсудим до начала работ.</p></div><div class="extra-list"><span class="extra">Анимации <b>+от 5k</b></span><span class="extra">Английская версия <b>+от 8k</b></span><span class="extra">Каталог / витрина <b>+от 10k</b></span><span class="extra">Копирайтинг <b>+от 5k</b></span><span class="extra">Аналитика <b>+от 2k</b></span><span class="extra">SEO-база <b>+от 3k</b></span><span class="extra">Поддержка <b>от 10k / год</b></span></div></div>
-        <div class="setup-note"><span class="mono">Важно до запуска</span><span>Домен и хостинг оплачиваются отдельно. Я помогу выбрать подходящий вариант, подключить `lumocraft.ru` и проверить публикацию сайта.</span></div>
+        <div class="setup-stack"><p>Добавим нужные модули сейчас или вернёмся к ним позже. Стоимость обсудим до начала работ.</p><div class="setup-note"><span class="mono">Важно до запуска</span><span>Домен и хостинг оплачиваются отдельно. Мы поможем выбрать подходящий вариант, подключить `lumocraft.ru` и проверить публикацию сайта.</span></div></div>
       </div>
     </section>
 
-    <section><div class="wrap"><div class="section-head"><div class="eyebrow">Как это происходит</div><div><h2>Без тёмного леса из согласований.</h2><p class="section-copy">Ты понимаешь, что происходит с проектом на каждом шаге. Я беру на себя структуру, дизайн, код и запуск.</p></div></div><div class="steps"><article class="step"><h3>Смысл</h3><p>Созваниваемся или переписываемся, разбираем бизнес, аудиторию и главное действие сайта.</p></article><article class="step"><h3>Форма</h3><p>Собираю визуальное направление, прототип и первую рабочую версию, которую можно открыть с телефона.</p></article><article class="step"><h3>Запуск</h3><p>Вносим правки, подключаем домен и формы, проверяем всё перед публикацией. Я остаюсь на связи.</p></article></div></div></section>
+    <section><div class="wrap"><div class="section-head"><div class="eyebrow">Как это происходит</div><div><h2>Без тёмного леса из согласований.</h2><p class="section-copy">Вы понимаете, что происходит с проектом на каждом шаге. Мы берём на себя структуру, дизайн, код и запуск.</p></div></div><div class="steps"><article class="step"><h3>Смысл</h3><p>Созваниваемся или переписываемся, разбираем бизнес, аудиторию и главное действие сайта.</p></article><article class="step"><h3>Форма</h3><p>Собираем визуальное направление, прототип и первую рабочую версию, которую можно открыть с телефона.</p></article><article class="step"><h3>Запуск</h3><p>Вносим правки, подключаем домен и формы, проверяем всё перед публикацией. Мы остаёмся на связи.</p></article></div></div></section>
 
-    <section><div class="wrap faq"><div><div class="eyebrow">Частые вопросы</div><h2>Без сюрпризов<br>в процессе.</h2></div><div class="faq-list"><details><summary>Домен и хостинг входят в цену?</summary><p>Нет, они оплачиваются отдельно и оформляются на вас. Я помогу подобрать вариант, подключить домен и проверить, что сайт доступен.</p></details><details><summary>Можно ли начать с небольшого бюджета?</summary><p>Да. Для специалиста часто достаточно аккуратного одностраничника. Мы не будем добавлять каталог или сложные функции, если они не решают вашу задачу.</p></details><details><summary>Что будет после запуска?</summary><p>Я остаюсь на связи: помогу с небольшими правками, обновлениями и техническими вопросами. Поддержка может быть включена отдельно в зависимости от формата.</p></details><details><summary>Что нужно подготовить до начала?</summary><p>Достаточно коротко рассказать о бизнесе, клиентах и цели сайта. Логотип, тексты и фотографии можно подготовить вместе или добавить позже.</p></details><details><summary>Сколько правок входит в работу?</summary><p>Количество и формат правок зависят от пакета. Мы заранее фиксируем этапы, чтобы изменения не превращались в бесконечный процесс.</p></details><details><summary>Можно ли добавить функции позже?</summary><p>Да. Сайт можно расширить анимациями, каталогом, английской версией, аналитикой и другими модулями после запуска.</p></details></div></div></section>
+    <section><div class="wrap faq"><div><div class="eyebrow">Частые вопросы</div><h2>Без сюрпризов<br>в процессе.</h2></div><div class="faq-list"><details><summary>Домен и хостинг входят в цену?</summary><p>Нет, они оплачиваются отдельно и оформляются на вас. Мы поможем подобрать вариант, подключить домен и проверить, что сайт доступен.</p></details><details><summary>Можно ли начать с небольшого бюджета?</summary><p>Да. Для специалиста часто достаточно аккуратного одностраничника. Мы не будем добавлять каталог или сложные функции, если они не решают вашу задачу.</p></details><details><summary>Что будет после запуска?</summary><p>Мы остаёмся на связи: поможем с небольшими правками, обновлениями и техническими вопросами. Поддержка может быть включена отдельно в зависимости от формата.</p></details><details><summary>Что нужно подготовить до начала?</summary><p>Достаточно коротко рассказать о бизнесе, клиентах и цели сайта. Логотип, тексты и фотографии можно подготовить вместе или добавить позже.</p></details><details><summary>Сколько правок входит в работу?</summary><p>Количество и формат правок зависят от пакета. Мы заранее фиксируем этапы, чтобы изменения не превращались в бесконечный процесс.</p></details><details><summary>Можно ли добавить функции позже?</summary><p>Да. Сайт можно расширить анимациями, каталогом, английской версией, аналитикой и другими модулями после запуска.</p></details></div></div></section>
 
     <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span><b>✳</b><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span></div></div>
 
     <section id="contact"><div class="wrap"><div class="contact"><div class="eyebrow">Первый шаг</div><h2>Расскажи, что нужно сделать.</h2><p class="contact-copy">Не нужно сразу знать правильный пакет. Сначала разберёмся в задаче, а потом выберем решение без лишних расходов.</p><div class="form-switch" role="tablist" aria-label="Тип заявки"><button class="active" type="button" role="tab" aria-selected="true" data-form-target="quick-form">Подобрать пакет</button><button type="button" role="tab" aria-selected="false" data-form-target="brief-form">Подробный бриф</button></div><div class="form-panel active" id="quick-form"><p class="form-note">Короткая форма для первого разговора. Я сам предложу подходящий формат и не буду продавать лишнее.</p><form class="lead-form" data-form-name="Подбор пакета"><div class="form-grid"><label>Имя<input name="Имя" type="text" placeholder="Александр" required></label><label>Почта<input name="Почта" type="email" placeholder="you@example.com" required></label></div><div class="brief-grid" style="margin-top: 18px"><label>Кто вы?<select name="Тип клиента" required><option value="">Выберите вариант</option><option>Самозанятый специалист</option><option>Индивидуальный предприниматель</option><option>Малый бизнес</option><option>Пока не знаю</option></select></label><label>Что нужно?<select name="Задача" required><option value="">Выберите задачу</option><option>Сайт с нуля</option><option>Обновить старый сайт</option><option>Портфолио</option><option>Сайт-витрина</option><option>Пока не знаю</option></select></label></div><label style="display:block; margin-top: 18px">Расскажи о себе и задаче<textarea name="Описание" placeholder="Чем вы занимаетесь, кто ваши клиенты и чего хочется от сайта?" required></textarea></label><label class="consent"><input type="checkbox" required><span>Я согласен на обработку данных для ответа на заявку. <a href="#privacy">Политика конфиденциальности</a></span></label><button class="button" type="submit">Подобрать формат <span class="arrow">↗</span></button><div class="form-message">Спасибо. Открою почтовый клиент, чтобы отправить заявку Александру.</div></form></div><div class="form-panel" id="brief-form"><p class="form-note">Чем больше деталей, тем точнее получится первая концепция. Поля можно заполнять в любом объёме.</p><form class="lead-form" data-form-name="Подробный бриф"><div class="brief-grid"><label>Имя<input name="Имя" type="text" placeholder="Александр" required></label><label>Почта<input name="Почта" type="email" placeholder="you@example.com" required></label><label>Проект / бренд<input name="Проект" type="text" placeholder="Название проекта"></label><label>Срок<select name="Срок"><option>Не определился</option><option>В течение недели</option><option>2–3 недели</option><option>В течение месяца</option></select></label><label class="brief-full">Чем занимается проект?<textarea name="О проекте" placeholder="Продукт, услуги, аудитория, город или география..." required></textarea></label><label class="brief-full">Что должен сделать сайт?<textarea name="Цель сайта" placeholder="Например: привести заявки, показать экспертность, продать услугу..."></textarea></label><label class="brief-full">Какой визуальный характер нравится?<div class="check-list"><label><input type="checkbox" name="Стиль" value="Спокойный"> Спокойный</label><label><input type="checkbox" name="Стиль" value="Премиальный"> Премиальный</label><label><input type="checkbox" name="Стиль" value="Смелый"> Смелый</label><label><input type="checkbox" name="Стиль" value="Технологичный"> Технологичный</label><label><input type="checkbox" name="Стиль" value="Минималистичный"> Минималистичный</label><label><input type="checkbox" name="Стиль" value="Тёплый"> Тёплый</label></div></label><label>Цвета<select name="Цвета"><option>Пока не знаю</option><option>Светлая палитра</option><option>Тёмная палитра</option><option>Есть свои цвета</option><option>Хочу, чтобы предложили</option></select></label><label>Объём<select name="Объём"><option>Одностраничник</option><option>Сайт-витрина</option><option>Многостраничный сайт</option><option>Пока не знаю</option></select></label><label class="brief-full">Референсы и пожелания<textarea name="Референсы" placeholder="Ссылки, примеры сайтов, функции, которые хочется повторить или точно исключить..."></textarea></label></div><label class="consent"><input type="checkbox" required><span>Я согласен на обработку данных для ответа на заявку. <a href="#privacy">Политика конфиденциальности</a></span></label><button class="button" type="submit">Отправить подробности <span class="arrow">↗</span></button><div class="form-message">Спасибо. Открою почтовый клиент, чтобы отправить бриф Александру.</div></form></div><div class="contact-actions"><a class="button ghost" href="mailto:contact@lumocraft.ru">contact@lumocraft.ru</a><a class="button ghost" href="https://t.me/lumocraft" target="_blank" rel="noreferrer">Telegram ↗</a></div></div></div></section>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span><b>✳</b><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span></div></div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span><b>✳</b><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span></div></div>
   </main>
 
   <footer id="privacy"><div class="wrap footer-grid"><div><a class="footer-brand" href="#top">lumocraft</a><p>Web / brand / motion<br>Сайты, которым доверяют.</p></div><div><span class="mono">Навигация</span><a href="#work">Работа</a><a href="#services">Услуги</a><a href="#contact">Контакты</a></div><div><span class="mono">Связь</span><a href="mailto:contact@lumocraft.ru">contact@lumocraft.ru</a><a href="https://t.me/lumocraft" target="_blank" rel="noreferrer">Telegram ↗</a></div><div><span class="mono">Документы</span><a href="privacy.html">Политика конфиденциальности</a><button class="cookie-manage footer-cookie-manage" type="button">Настройки cookies</button></div><div class="footer-bottom"><span>© 2026 lumocraft</span><span>Домен и хостинг оплачиваются отдельно.</span></div></div></footer>
@@ -488,13 +485,34 @@
       }, { threshold: .12 });
       revealItems.forEach((item) => revealObserver.observe(item));
     }
+    const teamVoice = {
+      'Я превращаю': 'Мы превращаем',
+      'Я соединяю': 'Мы соединяем',
+      'Создаю сайты': 'Создаём сайты',
+      'Разбираюсь в задаче': 'Разбираемся в задаче',
+      'Я помогу': 'Мы поможем',
+      'Я беру на себя': 'Мы берём на себя',
+      'Собираю визуальное направление': 'Собираем визуальное направление',
+      'Я остаюсь на связи': 'Мы остаёмся на связи',
+      'Я сам предложу': 'Мы предложим',
+      'не буду продавать лишнее': 'не будем продавать лишнее',
+      'Открою почтовый клиент': 'Откроем почтовый клиент'
+    };
+    const applyTeamVoice = () => {
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        Object.entries(teamVoice).forEach(([from, to]) => { node.nodeValue = node.nodeValue.replace(from, to); });
+      }
+    };
+    applyTeamVoice();
     const translations = {
       en: {
         'header .nav-link:nth-of-type(1)': 'Work', 'header .nav-link:nth-of-type(2)': 'Services', 'header .nav-link:nth-of-type(3)': 'Contact',
         '.hero .eyebrow': 'Web / brand / motion', '.hero h1': 'A website people <em>choose.</em>', '.hero-lead': 'I design and build websites for people and companies that want to look confident in the digital world.', '.hero .button': 'Discuss a project <span class="arrow">↗</span>', '.hero .button.ghost': 'See the work', '.hero-note': '<span class="status"></span> Taking new projects for October 2026',
-        '.proof-card.featured h3': 'That is enough time to judge a page’s visual appeal.', '.proof-card.featured p': 'The first screen has to work before someone has time to read the copy.', '.proof-card:not(.featured) h3': 'Trust first. Then a conversation.', '.proof-card:not(.featured) p': 'I combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.',
+        '.proof-card.featured h3': 'That is enough time to judge a page’s visual appeal.', '.proof-card.featured p': 'The first screen has to work before someone has time to read the copy.', '.proof-card:not(.featured) h3': 'Trust first. Then a conversation.', '.proof-card:not(.featured) p': 'We combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.',
         '#work .eyebrow': 'Portfolio', '#work h2': 'Projects that <em>stay.</em>', '#work .case-copy h2': 'A site already worth showing.', '#work .case-copy p': 'A concept project with a distinctive visual language, careful typography and attention to every interface state.', '#work .button': 'Discuss your project <span class="arrow">↗</span>',
-        '#about .eyebrow': 'How we think', '#about h2': 'Meaning first.<br><em>Form second.</em>', '#about .about-copy p:first-of-type': 'I create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', '#about .about-copy p:nth-of-type(2)': 'I understand the task, remove the unnecessary and turn an idea into a site you want to show clients.', '#about .button': 'Discuss a project <span class="arrow">↗</span>',
+        '#about .eyebrow': 'How we think', '#about h2': 'Meaning first.<br><em>Form second.</em>', '#about .about-copy p:first-of-type': 'We create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', '#about .about-copy p:nth-of-type(2)': 'We understand the task, remove the unnecessary and turn an idea into a site you want to show clients.', '#about .button': 'Discuss a project <span class="arrow">↗</span>',
         '#services .eyebrow': 'Ways to work together', '#services h2': 'Build exactly as much as you need <em>right now.</em>', '#services .section-copy': 'Prices are a starting point, not a rigid menu. Every project can grow with additional modules.', '.extras h3': 'Your site grows with the task', '.extras p': 'Add the modules you need now or return to them later. The final price is agreed before work starts.',
         '#contact .eyebrow': 'First step', '#contact h2': 'Tell me what needs to be made.', '.contact-copy': 'Describe the task in a few words. I will suggest a format, improvements and a realistic timeline.', '.form-switch button:first-child': 'Choose a package', '.form-switch button:last-child': 'Detailed brief', '#contact .button[type="submit"]': 'Send request <span class="arrow">↗</span>'
       }
@@ -502,6 +520,9 @@
     const originalText = new Map();
     const originalNodes = new Map();
     const originalAttributes = [];
+    const teamVoiceEnglish = {
+      'Мы превращаем первое впечатление в понятный путь к заявке: без визуального шума, шаблонных блоков и случайных решений.': 'We turn the first impression into a clear path to an enquiry: without noise, templates or random decisions.', 'Мы соединяем выразительный арт-дирекшн с понятной структурой, чтобы сайт нравился не только дизайнеру, но и вашему клиенту.': 'We combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.', 'Мы создаём сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.': 'We create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', 'Разбираемся в задаче, убираем лишнее и превращаем идею в сайт, который хочется показать клиенту.': 'We understand the task, remove the unnecessary and turn an idea into a site you want to show clients.', 'Мы поможем подобрать вариант, подключить домен и проверить, что сайт доступен.': 'We will help choose an option, connect the domain and check that the site is live.', 'Мы берём на себя структуру, дизайн, код и запуск.': 'We handle the structure, design, code and launch.', 'Собираем визуальное направление, прототип и первую рабочую версию, которую можно открыть с телефона.': 'We shape the visual direction, prototype and first working version you can open on a phone.', 'Мы остаёмся на связи: поможем с небольшими правками, обновлениями и техническими вопросами.': 'We stay available for small updates and technical questions.', 'Мы предложим подходящий формат и не будем продавать лишнее.': 'We will suggest the right format without selling you more than you need.', 'не будем продавать лишнее': 'we will not sell more than you need', 'Мы превращаем': 'We turn', 'Мы соединяем': 'We combine', 'Создаём сайты': 'We create websites', 'Разбираемся в задаче': 'We understand the task', 'Мы поможем': 'We will help', 'Мы берём на себя': 'We handle', 'Собираем визуальное направление': 'We shape the visual direction', 'Мы остаёмся на связи': 'We stay available', 'Мы предложим': 'We will suggest', 'Откроем почтовый клиент': 'Your mail app will open'
+    };
     const textTranslations = {
       'Работа': 'Work', 'Услуги': 'Services', 'Контакты': 'Contact', 'Выбор языка': 'Language',
       'Web / brand / motion': 'Web / brand / motion', 'Сайт, который': 'A website people', 'выбирают.': 'choose.',
@@ -529,10 +550,15 @@
       while (walker.nextNode()) nodes.push(walker.currentNode);
       nodes.forEach((node) => {
         const key = node.nodeValue.trim();
-        if (!textTranslations[key]) return;
+        if (!textTranslations[key] && language !== 'en') return;
         if (!originalNodes.has(node)) originalNodes.set(node, node.nodeValue);
-        const value = language === 'en' ? textTranslations[key] : originalNodes.get(node);
-        node.nodeValue = node.nodeValue.replace(key, value);
+        if (language === 'en') {
+          let value = textTranslations[key];
+          if (value) node.nodeValue = node.nodeValue.replace(key, value);
+          Object.entries(teamVoiceEnglish).forEach(([from, to]) => { node.nodeValue = node.nodeValue.replace(from, to); });
+        } else {
+          node.nodeValue = originalNodes.get(node);
+        }
       });
       document.querySelectorAll('[placeholder], [aria-label]').forEach((element) => {
         ['placeholder', 'aria-label'].forEach((attribute) => {
