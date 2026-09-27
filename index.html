@@ -200,11 +200,9 @@
     .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 32px; color: var(--muted); font-size: 12px; }
     .status { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(200,232,107,.1); }
     .hero-art { position: relative; min-height: 470px; display: grid; place-items: center; }
-    .hero-glow { position: absolute; top: 50%; left: 50%; width: min(36vw, 400px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(200,232,107,.16), rgba(255,118,93,.06) 55%, transparent 70%); filter: blur(34px); transform: translate(-50%, -50%); animation: glow-breathe 9s ease-in-out infinite alternate; }
-    .hero-video-wrap { position: relative; z-index: 1; width: min(430px, 90%); aspect-ratio: 1; overflow: hidden; border: 1px solid rgba(244,242,237,.16); border-radius: 32px; background: #0d0e10; box-shadow: 0 40px 90px rgba(0,0,0,.45); animation: video-float 9s ease-in-out infinite alternate; }
+    .hero-glow { position: absolute; top: 50%; left: 50%; width: min(36vw, 400px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(200,232,107,.16), rgba(255,118,93,.06) 55%, transparent 70%); filter: blur(34px); transform: translate(-50%, -50%); }
+    .hero-video-wrap { position: relative; z-index: 1; width: min(430px, 90%); aspect-ratio: 1; overflow: hidden; border: 1px solid rgba(244,242,237,.16); border-radius: 32px; background: #0d0e10; box-shadow: 0 40px 90px rgba(0,0,0,.45); }
     .logo-video { display: block; width: 100%; height: 100%; object-fit: cover; }
-    @keyframes glow-breathe { from { opacity: .55; transform: translate(-50%, -50%) scale(1); } to { opacity: 1; transform: translate(-50%, -50%) scale(1.12); } }
-    @keyframes video-float { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -12px, 0); } }
     .marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 14px 0; color: var(--muted); white-space: nowrap; }
     .marquee-track { display: inline-flex; min-width: max-content; gap: 34px; font: 500 11px "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; animation: marquee 28s linear infinite; }
     .marquee b { color: var(--coral); font-weight: 500; }
