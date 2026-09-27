@@ -19,8 +19,8 @@ test('SEO metadata points to the production domain', () => {
   assert.match(html, /property="og:url" content="https:\/\/lumocraft\.ru\/"/);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /contact@lumocraft\.ru/);
-  assert.match(html, /property="og:image:width" content="1200"/);
-  assert.match(html, /property="og:image:height" content="630"/);
+  assert.match(html, /property="og:image:width" content="851"/);
+  assert.match(html, /property="og:image:height" content="315"/);
   assert.match(html, /name="robots" content="max-image-preview:large"/);
   assert.match(html, /"@type": "ProfessionalService"/);
   assert.match(html, /"@type": "FAQPage"/);
@@ -150,4 +150,15 @@ test('Lead endpoint keeps bot credentials outside the public site directory', ()
   assert.match(endpoint, /dirname\(__DIR__, 2\).*lumocraft-config\.php/);
   assert.match(endpoint, /api\.telegram\.org\/bot/);
   assert.doesNotMatch(endpoint, /\d{8,}:[A-Za-z0-9_-]{20,}/);
+});
+
+test('Shared image assets are valid and reasonably sized', () => {
+  for (const file of ['og-image.png', 'og-image-en.png', 'Lumocraft logo.png', 'lumocraft-mark.png']) {
+    const buf = fs.readFileSync(path.join(root, file));
+    assert.equal(buf.slice(0, 8).toString('hex'), '89504e470d0a1a0a', `${file} must be a clean PNG`);
+  }
+  const poster = fs.readFileSync(path.join(root, 'Lumocraft logo.png'));
+  assert.ok(poster.length < 400 * 1024, 'poster should be optimised under 400 KB');
+  const mark = fs.readFileSync(path.join(root, 'lumocraft-mark.png'));
+  assert.ok(mark.length < 100 * 1024, 'favicon mark should be under 100 KB');
 });
