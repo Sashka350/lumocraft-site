@@ -310,8 +310,8 @@
     input:focus, textarea:focus { border-color: #11140d; }
     textarea { min-height: 72px; resize: vertical; }
     .consent { display: flex; align-items: flex-start; gap: 9px; margin: 20px 0; color: #455329; font: 11px/1.4 Manrope, sans-serif; text-transform: none; }
-    .consent input { appearance: none; display: inline-grid; place-content: center; width: 15px; height: 15px; margin: 1px 0 0; border: 1px solid #58682f; border-radius: 3px; background: #b8d964; cursor: pointer; }
-    .consent input::after { width: 8px; height: 4px; border-bottom: 2px solid #fff; border-left: 2px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
+    .consent input { appearance: none; display: inline-grid; place-content: center; width: 8px; height: 8px; margin: 2px 0 0; border: 1px solid #58682f; border-radius: 0; background: #b8d964; cursor: pointer; }
+    .consent input::after { width: 4px; height: 2px; border-bottom: 1px solid #fff; border-left: 1px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
     .consent input:checked { border-color: #11140d; background: #11140d; }
     .consent input:checked::after { transform: rotate(-45deg) scale(1); }
     textarea { scrollbar-color: #8da83a transparent; scrollbar-width: thin; }
@@ -334,8 +334,8 @@
     @keyframes shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
     .contact-method.is-error { animation: shake 320ms ease; }
     .contact select option { background: var(--lime); color: #11140d; }
-    .check-list input { appearance: none; display: inline-grid; place-content: center; width: 14px; height: 14px; border: 1px solid #58682f; border-radius: 3px; background: #b8d964; cursor: pointer; }
-    .check-list input::after { width: 7px; height: 4px; border-bottom: 2px solid #fff; border-left: 2px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
+    .check-list input { appearance: none; display: inline-grid; place-content: center; width: 8px; height: 8px; border: 1px solid #58682f; border-radius: 0; background: #b8d964; cursor: pointer; }
+    .check-list input::after { width: 4px; height: 2px; border-bottom: 1px solid #fff; border-left: 1px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
     .check-list input:checked { border-color: #11140d; background: #11140d; }
     .check-list input:checked::after { transform: rotate(-45deg) scale(1); }
     footer { padding: 65px 0 45px; color: var(--muted); font-size: 12px; }
