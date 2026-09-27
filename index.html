@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="lumocraft — сайты Александра для предпринимателей и малого бизнеса. Дизайн, разработка и запуск сайтов, которым доверяют.">
+  <meta name="description" content="lumocraft — сайты для предпринимателей и малого бизнеса. Дизайн, разработка и запуск сайтов, которым доверяют.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta name="author" content="Александр · lumocraft">
   <meta name="theme-color" content="#101110">
   <link rel="canonical" href="https://lumocraft.ru/">
-  <link rel="icon" href="Lumocraft%20logo.png" type="image/png">
-  <link rel="apple-touch-icon" href="Lumocraft%20logo.png">
+  <link rel="icon" href="lumocraft-mark.png" type="image/png">
+  <link rel="apple-touch-icon" href="lumocraft-mark.png">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:type" content="website">
   <meta property="og:title" content="lumocraft — сайты, которым доверяют">
-  <meta property="og:description" content="Александр создаёт выразительные и понятные сайты для предпринимателей и малого бизнеса.">
+  <meta property="og:description" content="Мы создаём выразительные и понятные сайты для предпринимателей и малого бизнеса.">
   <meta property="og:url" content="https://lumocraft.ru/">
-  <meta property="og:image" content="https://lumocraft.ru/og-image.svg">
+  <meta property="og:image" content="https://lumocraft.ru/og-image.png">
   <meta property="og:site_name" content="lumocraft">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -24,14 +27,12 @@
       "name": "Александр",
       "brand": {"@type": "Brand", "name": "lumocraft"},
       "jobTitle": "Создатель сайтов",
-      "email": "mailto:contact@lumocraft.ru",
+      "email": "contact@lumocraft.ru",
       "description": "Создание дизайна и сайтов для предпринимателей и малого бизнеса."
     }
   </script>
   <title>lumocraft — сайты, которым доверяют</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
     :root {
       --ink: #f4f2ed;
       --muted: #96958f;
@@ -151,14 +152,15 @@
     .proof-card p { max-width: 430px; color: var(--muted); }
     .proof-number { font-size: clamp(70px, 10vw, 140px); font-weight: 800; line-height: .8; letter-spacing: -.1em; }
     .case { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
-    .case-preview { position: relative; min-height: 515px; overflow: hidden; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(220,228,212,.86), rgba(220,228,212,.42)), url("https://sashka350.github.io/pavel-pronin-site/images/hero-bg.jpg") center / cover; color: #171d18; }
-    .case-preview::before { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(220,228,212,.18), rgba(220,228,212,.84) 73%); content: ""; opacity: .82; transition: transform 700ms var(--ease), opacity 700ms var(--ease); }
+    .case-preview { position: relative; min-height: 515px; overflow: hidden; padding: 22px; border: 1px solid rgba(244,242,237,.2); border-radius: var(--radius); background: linear-gradient(145deg, rgba(220,228,212,.62), rgba(220,228,212,.18)), url("case-hero.jpg") center / cover; color: #171d18; }
+    .case-preview::before { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(220,228,212,.05), rgba(220,228,212,.5) 73%); content: ""; opacity: .82; transition: transform 700ms var(--ease), opacity 700ms var(--ease); }
     .case-preview:hover::before { opacity: 1; transform: scale(1.04); }
-    .case-preview::after { position: absolute; right: -15%; bottom: -32%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: var(--coral); content: ""; mix-blend-mode: multiply; opacity: .84; }
+    .case-preview::after { position: absolute; right: -11%; bottom: -27%; width: 54%; aspect-ratio: 1; border-radius: 50%; background: var(--coral); content: ""; mix-blend-mode: multiply; opacity: .68; }
     .case-label { position: relative; z-index: 2; display: flex; justify-content: space-between; font: 500 10px "DM Mono", monospace; text-transform: uppercase; }
     .case-title { position: absolute; z-index: 1; top: 29%; left: 10%; max-width: 330px; font-size: clamp(53px, 7vw, 100px); font-weight: 800; line-height: .8; letter-spacing: -.1em; }
     .case-title span { color: var(--coral); }
-    .case-link { position: absolute; z-index: 2; right: 25px; bottom: 24px; display: inline-flex; align-items: center; gap: 8px; color: #171d18; font: 500 11px "DM Mono", monospace; text-decoration: none; text-transform: uppercase; }
+    .case-link { position: absolute; z-index: 2; right: 22px; bottom: 21px; display: inline-flex; align-items: center; gap: 8px; padding: 11px 13px; border: 1px solid rgba(23,29,24,.3); border-radius: 999px; background: rgba(220,228,212,.58); color: #171d18; font: 500 11px "DM Mono", monospace; text-decoration: none; text-transform: uppercase; transition: background 180ms ease, transform 180ms ease; }
+    .case-link:hover { background: var(--lime); transform: translateY(-2px); }
     .case-copy h2 { margin-top: 22px; }
     .case-copy p { max-width: 510px; margin-bottom: 28px; color: var(--muted); font-size: 17px; }
     .case-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
@@ -167,19 +169,14 @@
     .price-card { display: flex; flex-direction: column; min-height: 450px; padding: 27px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); transition: border-color 300ms var(--ease), transform 300ms var(--ease), box-shadow 300ms var(--ease); }
     .price-card:hover { border-color: rgba(255,118,93,.65); box-shadow: 0 22px 55px rgba(0,0,0,.2); transform: translateY(-7px); }
     .price-card.hot { border-color: var(--coral); background: #201d1b; }
-    .price-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
     .price-name { font-size: 21px; font-weight: 800; letter-spacing: -.06em; }
-    .price-badge { padding: 6px 8px; border-radius: 99px; background: var(--coral); color: #1d100c; font: 500 9px "DM Mono", monospace; text-transform: uppercase; }
     .price { margin: 48px 0 23px; font-size: 40px; font-weight: 800; letter-spacing: -.08em; }
     .price small { color: var(--muted); font-size: 12px; font-weight: 500; letter-spacing: 0; }
     .price-card ul { padding: 0; margin: 0; list-style: none; color: var(--muted-strong); font-size: 13px; }
     .price-card li { display: flex; gap: 9px; padding: 9px 0; border-top: 1px solid var(--line); }
     .price-card li::before { color: var(--lime); content: "+"; font-family: "DM Mono", monospace; }
     .price-card .button { width: 100%; margin-top: auto; }
-    .setup-stack { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
-    .setup-stack > p { margin-bottom: 0; color: var(--muted-strong); font-size: 14px; }
-    .setup-note { display: flex; gap: 18px; align-items: center; margin-top: 12px; padding: 18px 2px; color: var(--muted); font-size: 12px; }
-    .setup-note .mono { flex: 0 0 auto; color: var(--coral); }
+    .pricing-note { max-width: 620px; margin: 30px auto 0; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted-strong); font-size: 14px; text-align: center; }
     .about { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; align-items: center; }
     .about-portrait { position: relative; min-height: 430px; overflow: hidden; border-radius: var(--radius); background: radial-gradient(circle at 65% 25%, rgba(255,118,93,.85) 0 8%, transparent 8.5%), radial-gradient(circle at 35% 70%, rgba(200,232,107,.8) 0 12%, transparent 12.5%), linear-gradient(145deg, #252b25, #111311 68%); transition: transform 500ms var(--ease); }
     .about-portrait::after { position: absolute; inset: 16%; border: 1px solid rgba(244,242,237,.35); border-radius: 50%; transform: rotate(-24deg); content: ""; }
@@ -213,11 +210,8 @@
     .contact .eyebrow::before { background: var(--coral); }
     .contact h2 { position: relative; z-index: 1; max-width: 800px; }
     .contact-copy { position: relative; z-index: 1; max-width: 550px; color: #455329; }
-    .contact-actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
     .contact .button { border-color: #11140d; background: #11140d; color: var(--lime); }
     .contact .button:hover { background: #303c1c; }
-    .contact .button.ghost { border-color: rgba(17,20,13,.3); background: rgba(17,20,13,.07); color: #11140d !important; }
-    .contact .button.ghost:hover { border-color: #11140d; background: rgba(17,20,13,.14); color: #11140d !important; }
     .form-switch { display: flex; flex-wrap: wrap; gap: 8px; margin: 34px 0 4px; }
     .form-switch button { padding: 10px 13px; border: 1px solid rgba(17,20,13,.28); border-radius: 99px; background: transparent; color: #455329; font-size: 12px; cursor: pointer; transition: background 180ms var(--ease), color 180ms var(--ease), transform 180ms var(--ease); }
     .form-switch button:hover { transform: translateY(-2px); }
@@ -231,9 +225,8 @@
     .brief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; }
     .brief-full { grid-column: 1 / -1; }
     select { width: 100%; margin-top: 7px; padding: 14px 0; border: 0; border-bottom: 1px solid rgba(17,20,13,.35); outline: 0; background: transparent; color: #11140d; }
-    .check-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; }
-    .check-list label { display: inline-flex; align-items: center; gap: 6px; padding: 9px 11px; border: 1px solid rgba(17,20,13,.28); border-radius: 99px; color: #455329; font: 11px Manrope, sans-serif; letter-spacing: 0; text-transform: none; cursor: pointer; }
-    .check-list input { width: auto; margin: 0; accent-color: #11140d; }
+    .check-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 9px; }
+    .check-list label { display: inline-flex; align-items: center; gap: 8px; width: auto; padding: 8px 11px; border: 1px solid rgba(17,20,13,.28); border-radius: 8px; color: #455329; font: 600 12px Manrope, sans-serif; letter-spacing: 0; text-transform: none; cursor: pointer; }
     details { width: 100%; }
     details summary { cursor: pointer; color: var(--muted-strong); }
     details p { max-width: 580px; margin: 12px 0 0; color: var(--muted); font-size: 11px; }
@@ -241,7 +234,7 @@
     @keyframes stamp-drift { from { transform: rotate(12deg) translate3d(0, 0, 0); } to { transform: rotate(5deg) translate3d(0, -8px, 0); } }
     @keyframes panel-in { from { opacity: 0; transform: translate3d(0, 12px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
     @keyframes device-float { from { transform: rotate(5deg) translate3d(0, 0, 0); } to { transform: rotate(3deg) translate3d(0, -12px, 0); } }
-    @keyframes marquee { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-25%, 0, 0); } }
+    @keyframes marquee { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
     .reveal { opacity: 0; transform: translate3d(0, 24px, 0); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
     .reveal.is-visible { opacity: 1; transform: translate3d(0, 0, 0); }
     form { position: relative; z-index: 1; max-width: 680px; margin-top: 42px; }
@@ -252,10 +245,32 @@
     input:focus, textarea:focus { border-color: #11140d; }
     textarea { min-height: 72px; resize: vertical; }
     .consent { display: flex; align-items: flex-start; gap: 9px; margin: 20px 0; color: #455329; font: 11px/1.4 Manrope, sans-serif; text-transform: none; }
-    .consent input { width: 15px; height: 15px; margin: 1px 0 0; accent-color: #11140d; }
+    .consent input { appearance: none; display: inline-grid; place-content: center; width: 15px; height: 15px; margin: 1px 0 0; border: 1px solid #58682f; border-radius: 3px; background: #b8d964; cursor: pointer; }
+    .consent input::after { width: 8px; height: 4px; border-bottom: 2px solid #fff; border-left: 2px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
+    .consent input:checked { border-color: #11140d; background: #11140d; }
+    .consent input:checked::after { transform: rotate(-45deg) scale(1); }
+    textarea { scrollbar-color: #8da83a transparent; scrollbar-width: thin; }
+    textarea::-webkit-scrollbar { width: 9px; }
+    textarea::-webkit-scrollbar-track { background: transparent; }
+    textarea::-webkit-scrollbar-thumb { border: 2px solid transparent; border-radius: 99px; background: #8da83a; background-clip: content-box; }
     .consent a { color: #11140d; }
     .form-message { display: none; margin-top: 16px; color: #455329; font-size: 13px; }
     .form-message.show { display: block; }
+    .contact-method { margin: 18px 0 20px; }
+    .contact-method > span { display: block; margin-bottom: 8px; color: #455329; font: 500 10px "DM Mono", monospace; letter-spacing: .05em; text-transform: uppercase; }
+    .contact-method-switch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; border-radius: 12px; background: rgba(17,20,13,.1); }
+    .contact-method-switch button { min-height: 38px; padding: 8px 10px; border: 0; border-radius: 9px; background: transparent; color: #58604b; font: 600 12px Manrope, sans-serif; cursor: pointer; transition: background 180ms ease, color 180ms ease, box-shadow 180ms ease; }
+    .contact-method-switch button.active { background: #b8d964; color: #11140d; box-shadow: 0 2px 8px rgba(17,20,13,.12); }
+    .contact-method-input { margin-top: 10px; padding: 14px 13px; border: 1px solid rgba(17,20,13,.28); border-radius: 10px; background: rgba(255,255,255,.35); }
+    .contact-method-input:focus { border-color: #11140d; }
+    .contact-method-hint { display: block; min-height: 17px; margin-top: 6px; color: rgba(69,83,41,.72); font: 11px/1.4 Manrope, sans-serif; text-transform: none; }
+    .contact-method.is-error .contact-method-input { border-color: #c94d45; }
+    .contact-method.is-error .contact-method-hint { color: #b33f39; }
+    .contact select option { background: var(--lime); color: #11140d; }
+    .check-list input { appearance: none; display: inline-grid; place-content: center; width: 14px; height: 14px; border: 1px solid #58682f; border-radius: 3px; background: #b8d964; cursor: pointer; }
+    .check-list input::after { width: 7px; height: 4px; border-bottom: 2px solid #fff; border-left: 2px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
+    .check-list input:checked { border-color: #11140d; background: #11140d; }
+    .check-list input:checked::after { transform: rotate(-45deg) scale(1); }
     footer { padding: 65px 0 45px; color: var(--muted); font-size: 12px; }
     .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 35px; }
     .footer-grid > div { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; }
@@ -264,7 +279,18 @@
     .footer-brand { color: var(--ink) !important; font-size: 20px; font-weight: 800; letter-spacing: -.06em; }
     .footer-grid p { margin: 5px 0 0; color: var(--muted); }
     .footer-bottom { grid-column: 1 / -1; display: flex !important; flex-direction: row !important; justify-content: space-between; padding-top: 25px; border-top: 1px solid var(--line); }
+    .direct { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+    .direct h2 { margin-bottom: 16px; }
+    .direct-copy p { max-width: 460px; margin-bottom: 0; color: var(--muted); font-size: 17px; }
+    .direct-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .direct-email { padding-left: 4px; color: var(--muted-strong); font-size: 15px; font-weight: 700; letter-spacing: -.02em; }
+    .mobile-nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; display: none; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); background: rgba(16,17,16,.96); backdrop-filter: blur(12px); }
+    .mobile-nav a { padding: 14px 0 16px; color: var(--muted-strong); font-size: 12px; font-weight: 700; text-align: center; text-decoration: none; }
+    .mobile-nav a:hover, .mobile-nav a:active { color: var(--lime); }
     @media (max-width: 820px) {
+      body { padding-bottom: 54px; }
+      .mobile-nav { display: grid; }
+      .cookie-banner { bottom: 66px; }
       .wrap { width: min(100% - 36px, 620px); }
       .nav-link { display: none; }
       .hero { min-height: 0; padding: 75px 0 85px; }
@@ -280,8 +306,8 @@
       .price-card { min-height: 0; }
       .price { margin: 26px 0 16px; }
       .price-card .button { margin-top: 28px; }
-      .extras { grid-template-columns: 1fr; gap: 25px; padding: 25px; }
       .contact { padding: 42px 25px; }
+      .direct { grid-template-columns: 1fr; gap: 24px; }
       .brief-grid { grid-template-columns: 1fr; }
       .brief-full { grid-column: auto; }
       .about-portrait { min-height: 330px; }
@@ -294,7 +320,7 @@
       h1 { font-size: clamp(49px, 15vw, 76px); }
       h2 { font-size: 45px; }
       .hero-lead { font-size: 16px; }
-      .actions, .contact-actions { align-items: stretch; flex-direction: column; }
+      .actions { align-items: stretch; flex-direction: column; }
       .button { width: 100%; }
       .hero-art { min-height: 325px; }
       .orbit { width: 280px; }
@@ -337,7 +363,7 @@
           <div class="eyebrow">Web / brand / motion</div>
           <h1>Сайт, который <em>выбирают.</em></h1>
           <p class="hero-lead">Проектируем и собираем сайты для людей и компаний, которым важно выглядеть уверенно в цифровом мире.</p>
-          <div class="actions"><a class="button" href="#contact">Обсудить проект <span class="arrow">↗</span></a><a class="button ghost" href="#work">Смотреть работу</a></div>
+          <div class="actions"><a class="button" href="#contact">Обсудить проект <span class="arrow">↗</span></a><a class="button ghost" href="#work">Ознакомиться с работами</a></div>
           <div class="hero-note"><span class="status"></span> Берём новые проекты на октябрь 2026</div>
         </div>
         <div class="hero-art" aria-label="Визуальная демонстрация сайта">
@@ -362,7 +388,7 @@
 
     <section id="work">
       <div class="wrap"><div class="section-head"><div class="eyebrow">Портфолио</div><div><h2>Проекты, которые <em>остаются.</em></h2><p class="section-copy">Здесь будут появляться сайты, сделанные для реальных задач. Сейчас в подборке — первый проект; структура готова к новым кейсам.</p></div></div><div class="case">
-        <div class="case-preview"><div class="case-label"><span>Selected work / 001</span><span>Concept</span></div><div class="case-title">stay<br><span>curious.</span></div><a class="case-link" href="#contact">Открыть проект ↗</a></div>
+        <div class="case-preview"><div class="case-label"><span>Selected work / 001</span><span>Concept</span></div><div class="case-title">stay<br><span>curious.</span></div><a class="case-link" href="https://sashka350.github.io/pavel-pronin-site1/" target="_blank" rel="noreferrer">Открыть проект ↗</a></div>
         <div class="case-copy"><div class="eyebrow">Project 001 · Concept</div><h2>Сайт, который уже можно показать.</h2><p>Концептуальный проект с характерным визуальным языком, аккуратной типографикой и вниманием к каждому состоянию интерфейса.</p><div class="case-tags"><span class="tag">Art direction</span><span class="tag">UI / UX</span><span class="tag">Development</span></div><a class="button ghost" href="#contact">Обсудить свой проект <span class="arrow">↗</span></a></div>
       </div></div>
     </section>
@@ -372,13 +398,13 @@
     <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span><b>✳</b><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span></div></div>
 
     <section id="services">
-      <div class="wrap"><div class="section-head"><div class="eyebrow">Форматы работы</div><div><h2>Соберём ровно столько, сколько нужно <em>сейчас.</em></h2><p class="section-copy">Цены — отправная точка, а не жёсткое меню. Каждый проект можно расширить дополнительными модулями.</p></div></div>
+      <div class="wrap"><div class="section-head"><div class="eyebrow">Форматы работы</div><div><h2>Соберём ровно столько, сколько нужно <em>сейчас.</em></h2><p class="section-copy">Цены — отправная точка, а не жёсткое меню. Точную стоимость и состав фиксируем до начала работы.</p></div></div>
         <div class="pricing">
-          <article class="price-card"><div class="price-top"><span class="price-name">Start</span><span class="mono">01</span></div><div class="price">10 000 <small>₽</small></div><ul><li>Одностраничный сайт</li><li>Уникальная структура и дизайн</li><li>Адаптация под телефон</li><li>Запуск за 2–3 дня</li><li>Поддержка после запуска</li></ul><a class="button ghost" href="#contact">Выбрать Start</a></article>
-          <article class="price-card hot"><div class="price-top"><span class="price-name">Signal</span><span class="price-badge">Популярный</span></div><div class="price">25 000 <small>₽</small></div><ul><li>Сайт-витрина до 5 экранов</li><li>Сценарий и тексты блоков</li><li>Микроанимации и интерактив</li><li>Запуск за 7 дней</li><li>3 дня на правки</li></ul><a class="button" href="#contact">Выбрать Signal</a></article>
-          <article class="price-card"><div class="price-top"><span class="price-name">Full presence</span><span class="mono">03</span></div><div class="price">от 50 000 <small>₽</small></div><ul><li>Полноценный многостраничник</li><li>Индивидуальная дизайн-система</li><li>Каталог, формы или блог</li><li>2–3 недели на сборку</li><li>Неделя на правки</li></ul><a class="button ghost" href="#contact">Обсудить Full</a></article>
+          <article class="price-card"><div class="price-name">Лендинг</div><div class="price">10 000 <small>₽</small></div><ul><li>Одностраничный сайт</li><li>Уникальная структура и дизайн</li><li>Адаптация под телефон</li><li>Запуск за 2–3 дня</li><li>Поддержка после запуска</li></ul><a class="button ghost" href="#contact">Выбрать Лендинг</a></article>
+          <article class="price-card hot"><div class="price-name">Сайт-витрина</div><div class="price">25 000 <small>₽</small></div><ul><li>До 5 разделов</li><li>Сценарий и тексты блоков</li><li>Микроанимации и интерактив</li><li>Запуск за 7 дней</li><li>3 дня на правки</li></ul><a class="button" href="#contact">Выбрать Витрину</a></article>
+          <article class="price-card"><div class="price-name">Многостраничный сайт</div><div class="price">от 50 000 <small>₽</small></div><ul><li>Полноценный многостраничник</li><li>Индивидуальная дизайн-система</li><li>Каталог, формы или блог</li><li>2–3 недели на сборку</li><li>Неделя на правки</li></ul><a class="button ghost" href="#contact">Обсудить проект</a></article>
         </div>
-        <div class="setup-stack"><p>Добавим нужные модули сейчас или вернёмся к ним позже. Стоимость обсудим до начала работ.</p><div class="setup-note"><span class="mono">Важно до запуска</span><span>Домен и хостинг оплачиваются отдельно. Мы поможем выбрать подходящий вариант, подключить `lumocraft.ru` и проверить публикацию сайта.</span></div></div>
+        <p class="pricing-note">Не уверены в формате? Напишите — подберём решение под задачу и бюджет, без лишнего.</p>
       </div>
     </section>
 
@@ -389,36 +415,116 @@
     <section><div class="wrap faq"><div><div class="eyebrow">Частые вопросы</div><h2>Без сюрпризов<br>в процессе.</h2></div><div class="faq-list"><details><summary>Домен и хостинг входят в цену?</summary><p>Нет, они оплачиваются отдельно и оформляются на вас. Мы поможем подобрать вариант, подключить домен и проверить, что сайт доступен.</p></details><details><summary>Можно ли начать с небольшого бюджета?</summary><p>Да. Для специалиста часто достаточно аккуратного одностраничника. Мы не будем добавлять каталог или сложные функции, если они не решают вашу задачу.</p></details><details><summary>Что будет после запуска?</summary><p>Мы остаёмся на связи: поможем с небольшими правками, обновлениями и техническими вопросами. Поддержка может быть включена отдельно в зависимости от формата.</p></details><details><summary>Что нужно подготовить до начала?</summary><p>Достаточно коротко рассказать о бизнесе, клиентах и цели сайта. Логотип, тексты и фотографии можно подготовить вместе или добавить позже.</p></details><details><summary>Сколько правок входит в работу?</summary><p>Количество и формат правок зависят от пакета. Мы заранее фиксируем этапы, чтобы изменения не превращались в бесконечный процесс.</p></details><details><summary>Можно ли добавить функции позже?</summary><p>Да. Сайт можно расширить анимациями, каталогом, английской версией, аналитикой и другими модулями после запуска.</p></details></div></div></section>
 
 
-    <section id="contact"><div class="wrap"><div class="contact"><div class="eyebrow">Первый шаг</div><h2>Расскажи, что нужно сделать.</h2><p class="contact-copy">Не нужно сразу знать правильный пакет. Сначала разберёмся в задаче, а потом выберем решение без лишних расходов.</p><div class="form-switch" role="tablist" aria-label="Тип заявки"><button class="active" type="button" role="tab" aria-selected="true" data-form-target="quick-form">Подобрать пакет</button><button type="button" role="tab" aria-selected="false" data-form-target="brief-form">Подробный бриф</button></div><div class="form-panel active" id="quick-form"><p class="form-note">Короткая форма для первого разговора. Я сам предложу подходящий формат и не буду продавать лишнее.</p><form class="lead-form" data-form-name="Подбор пакета"><div class="form-grid"><label>Имя<input name="Имя" type="text" placeholder="Александр" required></label><label>Почта<input name="Почта" type="email" placeholder="you@example.com" required></label></div><div class="brief-grid" style="margin-top: 18px"><label>Кто вы?<select name="Тип клиента" required><option value="">Выберите вариант</option><option>Самозанятый специалист</option><option>Индивидуальный предприниматель</option><option>Малый бизнес</option><option>Пока не знаю</option></select></label><label>Что нужно?<select name="Задача" required><option value="">Выберите задачу</option><option>Сайт с нуля</option><option>Обновить старый сайт</option><option>Портфолио</option><option>Сайт-витрина</option><option>Пока не знаю</option></select></label></div><label style="display:block; margin-top: 18px">Расскажи о себе и задаче<textarea name="Описание" placeholder="Чем вы занимаетесь, кто ваши клиенты и чего хочется от сайта?" required></textarea></label><label class="consent"><input type="checkbox" required><span>Я согласен на обработку данных для ответа на заявку. <a href="#privacy">Политика конфиденциальности</a></span></label><button class="button" type="submit">Подобрать формат <span class="arrow">↗</span></button><div class="form-message">Спасибо. Открою почтовый клиент, чтобы отправить заявку Александру.</div></form></div><div class="form-panel" id="brief-form"><p class="form-note">Чем больше деталей, тем точнее получится первая концепция. Поля можно заполнять в любом объёме.</p><form class="lead-form" data-form-name="Подробный бриф"><div class="brief-grid"><label>Имя<input name="Имя" type="text" placeholder="Александр" required></label><label>Почта<input name="Почта" type="email" placeholder="you@example.com" required></label><label>Проект / бренд<input name="Проект" type="text" placeholder="Название проекта"></label><label>Срок<select name="Срок"><option>Не определился</option><option>В течение недели</option><option>2–3 недели</option><option>В течение месяца</option></select></label><label class="brief-full">Чем занимается проект?<textarea name="О проекте" placeholder="Продукт, услуги, аудитория, город или география..." required></textarea></label><label class="brief-full">Что должен сделать сайт?<textarea name="Цель сайта" placeholder="Например: привести заявки, показать экспертность, продать услугу..."></textarea></label><label class="brief-full">Какой визуальный характер нравится?<div class="check-list"><label><input type="checkbox" name="Стиль" value="Спокойный"> Спокойный</label><label><input type="checkbox" name="Стиль" value="Премиальный"> Премиальный</label><label><input type="checkbox" name="Стиль" value="Смелый"> Смелый</label><label><input type="checkbox" name="Стиль" value="Технологичный"> Технологичный</label><label><input type="checkbox" name="Стиль" value="Минималистичный"> Минималистичный</label><label><input type="checkbox" name="Стиль" value="Тёплый"> Тёплый</label></div></label><label>Цвета<select name="Цвета"><option>Пока не знаю</option><option>Светлая палитра</option><option>Тёмная палитра</option><option>Есть свои цвета</option><option>Хочу, чтобы предложили</option></select></label><label>Объём<select name="Объём"><option>Одностраничник</option><option>Сайт-витрина</option><option>Многостраничный сайт</option><option>Пока не знаю</option></select></label><label class="brief-full">Референсы и пожелания<textarea name="Референсы" placeholder="Ссылки, примеры сайтов, функции, которые хочется повторить или точно исключить..."></textarea></label></div><label class="consent"><input type="checkbox" required><span>Я согласен на обработку данных для ответа на заявку. <a href="#privacy">Политика конфиденциальности</a></span></label><button class="button" type="submit">Отправить подробности <span class="arrow">↗</span></button><div class="form-message">Спасибо. Открою почтовый клиент, чтобы отправить бриф Александру.</div></form></div><div class="contact-actions"><a class="button ghost" href="mailto:contact@lumocraft.ru">contact@lumocraft.ru</a><a class="button ghost" href="https://t.me/lumocraft" target="_blank" rel="noreferrer">Telegram ↗</a></div></div></div></section>
+    <section id="contact"><div class="wrap"><div class="contact"><div class="eyebrow">Первый шаг</div><h2>Расскажи, что нужно сделать.</h2><p class="contact-copy">Не нужно сразу знать правильный пакет. Сначала разберёмся в задаче, а потом выберем решение без лишних расходов.</p><div class="form-switch" role="tablist" aria-label="Тип заявки"><button class="active" type="button" role="tab" aria-selected="true" data-form-target="quick-form">Подобрать пакет</button><button type="button" role="tab" aria-selected="false" data-form-target="brief-form">Подробный бриф</button></div><div class="form-panel active" id="quick-form"><p class="form-note">Короткая форма для первого разговора. Мы предложим подходящий формат и не будем продавать лишнее.</p><form class="lead-form" data-form-name="Подбор пакета"><div class="form-grid"><label>Имя<input name="Имя" type="text" placeholder="Александр" required></label><label>Почта<input name="Почта" type="email" placeholder="you@example.com" required></label></div><div class="brief-grid" style="margin-top: 18px"><label>Кто вы?<select name="Тип клиента" required><option value="">Выберите вариант</option><option>Самозанятый специалист</option><option>Индивидуальный предприниматель</option><option>Малый бизнес</option><option>Пока не знаю</option></select></label><label>Что нужно?<select name="Задача" required><option value="">Выберите задачу</option><option>Сайт с нуля</option><option>Обновить старый сайт</option><option>Портфолио</option><option>Сайт-витрина</option><option>Пока не знаю</option></select></label></div><label style="display:block; margin-top: 18px">Расскажи о себе и задаче<textarea name="Описание" placeholder="Чем вы занимаетесь, кто ваши клиенты и чего хочется от сайта?" required></textarea></label><label class="consent"><input type="checkbox" required><span>Я согласен на обработку данных для ответа на заявку. <a href="#privacy">Политика конфиденциальности</a></span></label><button class="button" type="submit">Подобрать формат <span class="arrow">↗</span></button><div class="form-message">Форма готова к отправке.</div></form></div><div class="form-panel" id="brief-form"><p class="form-note">Чем больше деталей, тем точнее получится первая концепция. Поля можно заполнять в любом объёме.</p><form class="lead-form" data-form-name="Подробный бриф"><div class="brief-grid"><label>Имя<input name="Имя" type="text" placeholder="Александр" required></label><label>Почта<input name="Почта" type="email" placeholder="you@example.com" required></label><label>Проект / бренд<input name="Проект" type="text" placeholder="Название проекта"></label><label>Срок<select name="Срок"><option>Не определился</option><option>В течение недели</option><option>2–3 недели</option><option>В течение месяца</option></select></label><label class="brief-full">Чем занимается проект?<textarea name="О проекте" placeholder="Продукт, услуги, аудитория, город или география..." required></textarea></label><label class="brief-full">Что должен сделать сайт?<textarea name="Цель сайта" placeholder="Например: привести заявки, показать экспертность, продать услугу..."></textarea></label><label class="brief-full">Какой визуальный характер нравится?<div class="check-list"><label><input type="checkbox" name="Стиль" value="Спокойный"> Спокойный</label><label><input type="checkbox" name="Стиль" value="Премиальный"> Премиальный</label><label><input type="checkbox" name="Стиль" value="Смелый"> Смелый</label><label><input type="checkbox" name="Стиль" value="Технологичный"> Технологичный</label><label><input type="checkbox" name="Стиль" value="Минималистичный"> Минималистичный</label><label><input type="checkbox" name="Стиль" value="Тёплый"> Тёплый</label></div></label><label>Цвета<select name="Цвета"><option>Пока не знаю</option><option>Светлая палитра</option><option>Тёмная палитра</option><option>Есть свои цвета</option><option>Хочу, чтобы предложили</option></select></label><label>Объём<select name="Объём"><option>Одностраничник</option><option>Сайт-витрина</option><option>Многостраничный сайт</option><option>Пока не знаю</option></select></label><label class="brief-full">Референсы и пожелания<textarea name="Референсы" placeholder="Ссылки, примеры сайтов, функции, которые хочется повторить или точно исключить..."></textarea></label></div><label class="consent"><input type="checkbox" required><span>Я согласен на обработку данных для ответа на заявку. <a href="#privacy">Политика конфиденциальности</a></span></label><button class="button" type="submit">Отправить подробности <span class="arrow">↗</span></button><div class="form-message">Форма готова к отправке.</div></form></div></div></div></section>
     <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span><b>✳</b><span>DESIGN WITH A PURPOSE</span><b>✳</b><span>DIGITAL CRAFT</span><b>✳</b><span>WEB / BRAND / MOTION</span><b>✳</b><span>BUILT TO BE SEEN</span><b>✳</b><span>STRATEGY / STRUCTURE / STYLE</span></div></div>
+
+    <section id="direct"><div class="wrap"><div class="direct"><div class="direct-copy"><div class="eyebrow">Напрямую</div><h2>Или просто напишите нам.</h2><p>Форма — это удобно, но можно и без неё. Telegram или почта: выбирайте, как удобнее.</p></div><div class="direct-actions"><a class="button" href="https://t.me/sassha_at" target="_blank" rel="noreferrer">Написать в Telegram <span class="arrow">↗</span></a><span class="direct-email">contact@lumocraft.ru</span></div></div></div></section>
   </main>
 
-  <footer id="privacy"><div class="wrap footer-grid"><div><a class="footer-brand" href="#top">lumocraft</a><p>Web / brand / motion<br>Сайты, которым доверяют.</p></div><div><span class="mono">Навигация</span><a href="#work">Работа</a><a href="#services">Услуги</a><a href="#contact">Контакты</a></div><div><span class="mono">Связь</span><a href="mailto:contact@lumocraft.ru">contact@lumocraft.ru</a><a href="https://t.me/lumocraft" target="_blank" rel="noreferrer">Telegram ↗</a></div><div><span class="mono">Документы</span><a href="privacy.html">Политика конфиденциальности</a><button class="cookie-manage footer-cookie-manage" type="button">Настройки cookies</button></div><div class="footer-bottom"><span>© 2026 lumocraft</span><span>Домен и хостинг оплачиваются отдельно.</span></div></div></footer>
+    <footer id="privacy"><div class="wrap footer-grid"><div><a class="footer-brand" href="#top">lumocraft</a><p>Web / brand / motion<br>Сайты, которым доверяют.</p></div><div><span class="mono">Навигация</span><a href="#work">Работа</a><a href="#services">Услуги</a><a href="#contact">Контакты</a></div><div><span class="mono">Связь</span><span>contact@lumocraft.ru</span><a href="https://t.me/sassha_at" target="_blank" rel="noreferrer">Telegram ↗</a></div><div><span class="mono">Документы</span><a href="privacy.html">Политика конфиденциальности</a><button class="cookie-manage footer-cookie-manage" type="button">Настройки cookies</button></div><div class="footer-bottom"><span>© 2026 lumocraft</span></div></div></footer>
+  <nav class="mobile-nav" aria-label="Мобильная навигация"><a href="#work">Работа</a><a href="#services">Услуги</a><a href="#contact">Контакты</a></nav>
   <script>
     document.querySelectorAll('.lead-form').forEach((form) => {
-      form.addEventListener('submit', (event) => {
+      const trap = document.createElement('input');
+      trap.name = 'website';
+      trap.tabIndex = -1;
+      trap.autocomplete = 'off';
+      trap.hidden = true;
+      form.append(trap);
+      const emailInput = form.querySelector('input[name="Почта"]');
+      if (emailInput?.parentElement) emailInput.parentElement.remove();
+      const contactMethod = document.createElement('div');
+      contactMethod.className = 'contact-method';
+      contactMethod.innerHTML = '<span>Как с вами связаться?</span><div class="contact-method-switch" role="group"><button type="button" class="active" data-method="Телефон">Телефон</button><button type="button" data-method="Почта">Email</button><button type="button" data-method="Telegram">Telegram</button></div><input class="contact-method-input" name="Телефон" type="tel" inputmode="tel" placeholder="+7 999 123-45-67"><small class="contact-method-hint">Введите номер телефона</small>';
+      form.querySelector('.consent').before(contactMethod);
+      const contactInput = contactMethod.querySelector('.contact-method-input');
+      const contactHint = contactMethod.querySelector('.contact-method-hint');
+      const contactOptions = {
+        Телефон: { type: 'tel', inputmode: 'tel', placeholder: '+7 999 123-45-67', hint: 'Введите номер телефона', error: 'Введите номер в формате +7 999 123-45-67' },
+        Почта: { type: 'email', inputmode: 'email', placeholder: 'you@example.com', hint: 'Введите email', error: 'Похоже, это не email' },
+        Telegram: { type: 'text', inputmode: 'text', placeholder: '@username', hint: 'Введите ник в Telegram, например @username', error: 'Введите username в формате @username' }
+      };
+      contactInput.addEventListener('input', () => {
+        if (contactInput.name !== 'Телефон') return;
+        let digits = contactInput.value.replace(/\D/g, '').slice(0, 11);
+        if (digits.length === 10) digits = `7${digits}`;
+        if (digits.startsWith('8')) digits = `7${digits.slice(1)}`;
+        if (!digits.startsWith('7')) return;
+        const local = digits.slice(1);
+        let formatted = '+7';
+        if (local) formatted += ` ${local.slice(0, 3)}`;
+        if (local.length > 3) formatted += ` ${local.slice(3, 6)}`;
+        if (local.length > 6) formatted += `-${local.slice(6, 8)}`;
+        if (local.length > 8) formatted += `-${local.slice(8, 10)}`;
+        contactInput.value = formatted;
+      });
+      contactMethod.querySelectorAll('button').forEach((methodButton) => {
+        methodButton.addEventListener('click', () => {
+          const method = methodButton.dataset.method;
+          const option = contactOptions[method];
+          contactMethod.querySelectorAll('button').forEach((button) => button.classList.toggle('active', button === methodButton));
+          contactMethod.classList.remove('is-error');
+          contactInput.name = method;
+          contactInput.type = option.type;
+          contactInput.inputMode = option.inputmode;
+          contactInput.placeholder = option.placeholder;
+          contactHint.textContent = option.hint;
+          contactInput.value = '';
+          contactInput.blur();
+          setTimeout(() => contactInput.focus(), 60);
+        });
+      });
+      form.addEventListener('submit', async (event) => {
         event.preventDefault();
         const data = new FormData(form);
-        const lines = [];
-        for (const [key, value] of data.entries()) {
-          if (key === 'Стиль') {
-            const previous = lines.find((line) => line.startsWith('Стиль:'));
-            if (previous) lines[lines.indexOf(previous)] += `, ${value}`;
-            else lines.push(`Стиль: ${value}`);
-          } else if (key !== 'checkbox') lines.push(`${key}: ${value}`);
+        const method = contactInput.name;
+        const value = String(contactInput.value || '').trim();
+        const message = form.querySelector('.form-message');
+        const valid = method === 'Телефон'
+          ? /^\+7(?:[\s()-]?\d){10}$/.test(value)
+          : method === 'Почта'
+            ? /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/.test(value)
+            : /^@[A-Za-z0-9_]{5,32}$/.test(value);
+        if (!valid) {
+          contactMethod.classList.add('is-error');
+          contactHint.textContent = document.documentElement.lang === 'en'
+            ? method === 'Почта' ? 'This does not look like an email.' : method === 'Telegram' ? 'Use a username in the format @username.' : 'Use a phone number like +7 999 123-45-67.'
+            : contactOptions[method].error;
+          contactInput.focus();
+          return;
         }
-        const subject = encodeURIComponent(`${form.dataset.formName} · lumocraft`);
-        const body = encodeURIComponent(lines.join('\n'));
+        data.append('form_name', form.dataset.formName || 'Заявка');
+        const button = form.querySelector('button[type="submit"]');
+        button.disabled = true;
+        button.setAttribute('aria-busy', 'true');
+        let response;
+        try {
+          response = await fetch('submit.php', { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+        } catch (error) {
+          response = null;
+        }
+        const result = response ? await response.json().catch(() => null) : null;
+        if (!result?.ok) {
+          button.disabled = false;
+          button.removeAttribute('aria-busy');
+          message.textContent = result?.error || 'Не удалось отправить заявку. Напиши напрямую на contact@lumocraft.ru.';
+          message.classList.add('show');
+          return;
+        }
         trackGoal('lead_form_submit');
-        form.querySelector('.form-message').classList.add('show');
         const success = document.createElement('div');
         success.className = 'success-screen show';
         success.innerHTML = document.documentElement.lang === 'en'
-          ? '<strong>Your request is almost sent.</strong><p>Your mail app will open so the message can be sent. If it does not appear, write to contact@lumocraft.ru directly.</p>'
-          : '<strong>Заявка почти отправлена.</strong><p>Открою почтовый клиент, чтобы письмо ушло. Если окно не появилось, напиши напрямую на contact@lumocraft.ru.</p>';
+          ? '<strong>Your request has been sent.</strong><p>We received your request and will reply soon.</p>'
+          : '<strong>Заявка отправлена.</strong><p>Мы получили заявку и скоро ответим.</p>';
         form.replaceWith(success);
-        window.setTimeout(() => { window.location.href = `mailto:contact@lumocraft.ru?subject=${subject}&body=${body}`; }, 120);
       });
+    });
+    document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+      const text = document.createElement('span');
+      text.className = link.className;
+      text.textContent = link.textContent;
+      link.replaceWith(text);
     });
     const marqueeItems = document.querySelectorAll('.marquee');
     if (marqueeItems.length === 5) {
@@ -436,7 +542,7 @@
         m[i].l = 1 * new Date();
         k = e.createElement(t); a = e.getElementsByTagName(t)[0]; k.async = 1; k.src = r; a.parentNode.insertBefore(k, a);
       }(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym'));
-      window.ym(metrikaId, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+      window.ym(metrikaId, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
     };
     const initCookieConsent = () => {
       const banner = document.querySelector('#cookie-banner');
@@ -458,8 +564,8 @@
     document.querySelectorAll('a[href="#privacy"]').forEach((link) => { link.href = 'privacy.html'; });
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCookieConsent);
     else initCookieConsent();
-    document.querySelectorAll('a[href^="mailto:"], a[href*="t.me/"]').forEach((link) => {
-      link.addEventListener('click', () => trackGoal(link.href.includes('t.me/') ? 'telegram_click' : 'email_click'));
+    document.querySelectorAll('a[href*="t.me/"]').forEach((link) => {
+      link.addEventListener('click', () => trackGoal('telegram_click'));
     });
     document.querySelectorAll('[data-form-target]').forEach((button) => {
       button.addEventListener('click', () => {
@@ -477,7 +583,7 @@
     };
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
-    const revealItems = document.querySelectorAll('section, .proof-card, .price-card, .step, .extras, .research');
+    const revealItems = document.querySelectorAll('section, .proof-card, .price-card, .step, .research');
     if ('IntersectionObserver' in window) {
       const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
@@ -490,36 +596,16 @@
       }, { threshold: .12 });
       revealItems.forEach((item) => revealObserver.observe(item));
     }
-    const teamVoice = {
-      'Я превращаю': 'Мы превращаем',
-      'Я соединяю': 'Мы соединяем',
-      'Создаю сайты': 'Создаём сайты',
-      'Разбираюсь в задаче': 'Разбираемся в задаче',
-      'Я помогу': 'Мы поможем',
-      'Я беру на себя': 'Мы берём на себя',
-      'Собираю визуальное направление': 'Собираем визуальное направление',
-      'Я остаюсь на связи': 'Мы остаёмся на связи',
-      'Я сам предложу': 'Мы предложим',
-      'не буду продавать лишнее': 'не будем продавать лишнее',
-      'Открою почтовый клиент': 'Откроем почтовый клиент'
-    };
-    const applyTeamVoice = () => {
-      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-      while (walker.nextNode()) {
-        const node = walker.currentNode;
-        Object.entries(teamVoice).forEach(([from, to]) => { node.nodeValue = node.nodeValue.replace(from, to); });
-      }
-    };
-    applyTeamVoice();
     const translations = {
       en: {
         'header .nav-link:nth-of-type(1)': 'Work', 'header .nav-link:nth-of-type(2)': 'Services', 'header .nav-link:nth-of-type(3)': 'Contact',
-        '.hero .eyebrow': 'Web / brand / motion', '.hero h1': 'A website people <em>choose.</em>', '.hero-lead': 'I design and build websites for people and companies that want to look confident in the digital world.', '.hero .button': 'Discuss a project <span class="arrow">↗</span>', '.hero .button.ghost': 'See the work', '.hero-note': '<span class="status"></span> Taking new projects for October 2026',
+        '.hero .eyebrow': 'Web / brand / motion', '.hero h1': 'A website people <em>choose.</em>', '.hero-lead': 'We design and build websites for people and companies that want to look confident in the digital world.', '.hero .button': 'Discuss a project <span class="arrow">↗</span>', '.hero .button.ghost': 'See our work', '.hero-note': '<span class="status"></span> Taking new projects for October 2026',
         '.proof-card.featured h3': 'That is enough time to judge a page’s visual appeal.', '.proof-card.featured p': 'The first screen has to work before someone has time to read the copy.', '.proof-card:not(.featured) h3': 'Trust first. Then a conversation.', '.proof-card:not(.featured) p': 'We combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.',
         '#work .eyebrow': 'Portfolio', '#work h2': 'Projects that <em>stay.</em>', '#work .case-copy h2': 'A site already worth showing.', '#work .case-copy p': 'A concept project with a distinctive visual language, careful typography and attention to every interface state.', '#work .button': 'Discuss your project <span class="arrow">↗</span>',
         '#about .eyebrow': 'How we think', '#about h2': 'Meaning first.<br><em>Form second.</em>', '#about .about-copy p:first-of-type': 'We create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', '#about .about-copy p:nth-of-type(2)': 'We understand the task, remove the unnecessary and turn an idea into a site you want to show clients.', '#about .button': 'Discuss a project <span class="arrow">↗</span>',
-        '#services .eyebrow': 'Ways to work together', '#services h2': 'Build exactly as much as you need <em>right now.</em>', '#services .section-copy': 'Prices are a starting point, not a rigid menu. Every project can grow with additional modules.', '.extras h3': 'Your site grows with the task', '.extras p': 'Add the modules you need now or return to them later. The final price is agreed before work starts.',
-        '#contact .eyebrow': 'First step', '#contact h2': 'Tell me what needs to be made.', '.contact-copy': 'Describe the task in a few words. I will suggest a format, improvements and a realistic timeline.', '.form-switch button:first-child': 'Choose a package', '.form-switch button:last-child': 'Detailed brief', '#contact .button[type="submit"]': 'Send request <span class="arrow">↗</span>'
+        '#services .eyebrow': 'Ways to work together', '#services h2': 'Build exactly as much as you need <em>right now.</em>', '#services .section-copy': 'Prices are a starting point, not a rigid menu. We agree the exact price and scope before we start.',
+        '#direct .eyebrow': 'Direct', '#direct h2': 'Or just write to us.', '#direct .direct-copy p': 'The form works, but you can skip it. Telegram or email: whichever is more convenient.', '#direct .button': 'Write on Telegram <span class="arrow">↗</span>',
+        '#contact .eyebrow': 'First step', '#contact h2': 'Tell us what needs to be made.', '.contact-copy': 'Describe the task in a few words. We will suggest a format, improvements and a realistic timeline.', '.form-switch button:first-child': 'Choose a package', '.form-switch button:last-child': 'Detailed brief', '#contact .button[type="submit"]': 'Send request <span class="arrow">↗</span>'
       }
     };
     const originalText = new Map();
@@ -531,18 +617,71 @@
     const textTranslations = {
       'Работа': 'Work', 'Услуги': 'Services', 'Контакты': 'Contact', 'Выбор языка': 'Language',
       'Web / brand / motion': 'Web / brand / motion', 'Сайт, который': 'A website people', 'выбирают.': 'choose.',
-      'Проектирую и собираю сайты для людей и компаний, которым важно выглядеть уверенно в цифровом мире.': 'I design and build websites for people and companies that want to look confident in the digital world.',
+      'Проектирую и собираю сайты для людей и компаний, которым важно выглядеть уверенно в цифровом мире.': 'We design and build websites for people and companies that want to look confident in the digital world.',
       'Обсудить проект': 'Discuss a project', 'Смотреть работу': 'See the work', 'Беру новые проекты на октябрь 2026': 'Taking new projects for October 2026',
       'проект': 'selected', 'уже в портфолио': 'case study', 'Зачем это бизнесу': 'Why it matters', 'Красивый сайт — это не декор. Это': 'A beautiful website is not decoration. It is a', 'сигнал.': 'signal.',
-      'За несколько секунд человек решает, можно ли вам доверять. Я превращаю первое впечатление в понятный путь к заявке: без визуального шума, шаблонных блоков и случайных решений.': 'In a few seconds, people decide whether to trust you. I turn that first impression into a clear path to an enquiry: without noise, templates or random decisions.', 'В исследовании Stanford Persuasive Technology Lab визуальный облик сайта встречался в 46,1% комментариев участников о его достоверности. Другие исследования показывают, что первое эстетическое впечатление формируется примерно за 50 мс. Это не обещание продаж, а причина относиться к дизайну как к части бизнес-задачи.': 'A Stanford Persuasive Technology Lab study found that visual appearance appeared in 46.1% of participants’ comments about website credibility. Other research shows that a first aesthetic impression can form in about 50 ms. This is not a promise of sales, but a reason to treat design as part of the business task.',
-      'Примерно столько достаточно, чтобы оценить визуальную привлекательность страницы.': 'That is enough time to judge a page’s visual appeal.', 'Первый экран должен работать ещё до того, как человек успел прочитать текст.': 'The first screen has to work before someone has time to read the copy.', 'Сначала доверие. Потом разговор.': 'Trust first. Then a conversation.', 'Я соединяю выразительный арт-дирекшн с понятной структурой, чтобы сайт нравился не только дизайнеру, но и вашему клиенту.': 'I combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.',
+      'В исследовании Stanford Persuasive Technology Lab визуальный облик сайта встречался в 46,1% комментариев участников о его достоверности. Другие исследования показывают, что первое эстетическое впечатление формируется примерно за 50 мс. Это не обещание продаж, а причина относиться к дизайну как к части бизнес-задачи.': 'A Stanford Persuasive Technology Lab study found that visual appearance appeared in 46.1% of participants’ comments about website credibility. Other research shows that a first aesthetic impression can form in about 50 ms. This is not a promise of sales, but a reason to treat design as part of the business task.',
+      'Примерно столько достаточно, чтобы оценить визуальную привлекательность страницы.': 'That is enough time to judge a page’s visual appeal.', 'Первый экран должен работать ещё до того, как человек успел прочитать текст.': 'The first screen has to work before someone has time to read the copy.', 'Сначала доверие. Потом разговор.': 'Trust first. Then a conversation.', 'Я соединяю выразительный арт-дирекшн с понятной структурой, чтобы сайт нравился не только дизайнеру, но и вашему клиенту.': 'We combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.',
       'Красота должна работать.': 'Beauty should work.', 'Источники ↗': 'Sources ↗', 'Портфолио': 'Portfolio', 'Проекты, которые': 'Projects that', 'остаются.': 'stay.', 'Здесь будут появляться сайты, сделанные для реальных задач. Сейчас в подборке — первый проект; структура готова к новым кейсам.': 'This is where sites made for real tasks will appear. There is one project here now; the structure is ready for more.', 'Открыть проект ↗': 'Open project ↗', 'Concept': 'Concept', 'Сайт, который уже можно показать.': 'A site already worth showing.', 'Концептуальный проект с характерным визуальным языком, аккуратной типографикой и вниманием к каждому состоянию интерфейса.': 'A concept project with a distinctive visual language, careful typography and attention to every interface state.', 'Обсудить свой проект': 'Discuss your project',
-      'Как мы думаем': 'How we think', 'Сначала смысл.': 'Meaning first.', 'Потом форма.': 'Form second.', 'Создаю сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.': 'I create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', 'Разбираюсь в задаче, убираю лишнее и превращаю идею в сайт, который хочется показать клиенту.': 'I understand the task, remove the unnecessary and turn an idea into a site you want to show clients.',
-      'Форматы работы': 'Ways to work together', 'Соберём ровно столько, сколько нужно': 'Build exactly as much as you need', 'сейчас.': 'right now.', 'Цены — отправная точка, а не жёсткое меню. Каждый проект можно расширить дополнительными модулями.': 'Prices are a starting point, not a rigid menu. Every project can grow with additional modules.', 'Одностраничный сайт': 'One-page website', 'Уникальная структура и дизайн': 'Unique structure and design', 'Адаптация под телефон': 'Mobile adaptation', 'Запуск за 2–3 дня': 'Launch in 2–3 days', 'Поддержка после запуска': 'Post-launch support', 'Сайт-витрина до 5 экранов': 'Showcase website up to 5 sections', 'Сценарий и тексты блоков': 'Content structure and copy', 'Микроанимации и интерактив': 'Micro-animations and interaction', 'Запуск за 7 дней': 'Launch in 7 days', '3 дня на правки': '3 days for revisions', 'Популярный': 'Popular', 'Полноценный многостраничник': 'Full multi-page website', 'Индивидуальная дизайн-система': 'Custom design system', 'Каталог, формы или блог': 'Catalog, forms or blog', '2–3 недели на сборку': '2–3 weeks to build', 'Неделя на правки': 'One week for revisions', 'Сайт растёт вместе с задачей': 'Your site grows with the task', 'Добавь нужные модули сейчас или вернись к ним позже. Стоимость обсудим до начала работ.': 'Add the modules you need now or return to them later. The final price is agreed before work starts.', 'Анимации': 'Motion', 'Английская версия': 'English version', 'Каталог / витрина': 'Catalog / showcase', 'Копирайтинг': 'Copywriting', 'Аналитика': 'Analytics', 'SEO-база': 'SEO basics', 'Поддержка': 'Support', 'Важно до запуска': 'Before launch', 'Домен и хостинг оплачиваются отдельно. Я помогу подобрать вариант, подключить `lumocraft.ru` и проверить публикацию сайта.': 'Domain and hosting are paid separately. I will help choose an option, connect `lumocraft.ru` and check the launch.',
-      'Как это происходит': 'How it works', 'Без тёмного леса из согласований.': 'No maze of approvals.', 'Ты понимаешь, что происходит с проектом на каждом шаге. Я беру на себя структуру, дизайн, код и запуск.': 'You know what is happening at every step. I handle the structure, design, code and launch.', 'Смысл': 'Meaning', 'Форма': 'Form', 'Запуск': 'Launch', 'Созваниваемся или переписываемся, разбираем бизнес, аудиторию и главное действие сайта.': 'We talk through the business, audience and the main action the site should lead to.', 'Собираю визуальное направление, прототип и первую рабочую версию, которую можно открыть с телефона.': 'I shape the visual direction, prototype and first working version you can open on a phone.', 'Вносим правки, подключаем домен и формы, проверяем всё перед публикацией. Я остаюсь на связи.': 'We make revisions, connect the domain and forms, check everything and publish. I stay available.',
-      'Частые вопросы': 'Frequently asked questions', 'Без сюрпризов': 'No surprises', 'в процессе.': 'along the way.', 'Домен и хостинг входят в цену?': 'Are domain and hosting included?', 'Нет, они оплачиваются отдельно и оформляются на вас. Я помогу подобрать вариант, подключить домен и проверить, что сайт доступен.': 'No. They are paid separately and registered to you. I will help choose an option, connect the domain and check that the site is live.', 'Можно ли начать с небольшого бюджета?': 'Can we start with a small budget?', 'Да. Для специалиста часто достаточно аккуратного одностраничника. Мы не будем добавлять каталог или сложные функции, если они не решают вашу задачу.': 'Yes. A polished one-page site is often enough for a specialist. We will not add a catalog or complex features unless they solve your task.', 'Что будет после запуска?': 'What happens after launch?', 'Я остаюсь на связи: помогу с небольшими правками, обновлениями и техническими вопросами. Поддержка может быть включена отдельно в зависимости от формата.': 'I stay available for small updates and technical questions. Ongoing support can be added depending on the format.', 'Что нужно подготовить до начала?': 'What should I prepare?', 'Достаточно коротко рассказать о бизнесе, клиентах и цели сайта. Логотип, тексты и фотографии можно подготовить вместе или добавить позже.': 'Tell me briefly about the business, clients and the goal. Logo, copy and photography can be prepared together or added later.', 'Сколько правок входит в работу?': 'How many revisions are included?', 'Количество и формат правок зависят от пакета. Мы заранее фиксируем этапы, чтобы изменения не превращались в бесконечный процесс.': 'The number and format of revisions depend on the package. We define the stages in advance so changes do not become endless.', 'Можно ли добавить функции позже?': 'Can I add features later?', 'Да. Сайт можно расширить анимациями, каталогом, английской версией, аналитикой и другими модулями после запуска.': 'Yes. The site can grow with motion, a catalog, an English version, analytics and other modules after launch.',
-      'Первый шаг': 'First step', 'Расскажи, что нужно сделать.': 'Tell me what needs to be made.', 'Не нужно сразу знать правильный пакет. Сначала разберёмся в задаче, а потом выберем решение без лишних расходов.': 'You do not need to know the right package. We will understand the task first, then choose a solution without unnecessary costs.', 'Подобрать пакет': 'Choose a package', 'Подробный бриф': 'Detailed brief', 'Короткая форма для первого разговора. Я сам предложу подходящий формат и не буду продавать лишнее.': 'A short form for the first conversation. I will suggest the right format without selling you more than you need.', 'Имя': 'Name', 'Почта': 'Email', 'Кто вы?': 'Who are you?', 'Что нужно?': 'What do you need?', 'Расскажи о себе и задаче': 'Tell me about yourself and the task', 'Я согласен на обработку данных для ответа на заявку.': 'I agree to the processing of my data to receive a reply.', 'Подобрать формат': 'Suggest a format', 'Отправить заявку': 'Send request', 'Отправить подробности': 'Send details', 'Чем больше деталей, тем точнее получится первая концепция. Поля можно заполнять в любом объёме.': 'The more detail you share, the more precise the first concept will be. Fill in as much as you like.', 'Проект / бренд': 'Project / brand', 'Срок': 'Timeline', 'Чем занимается проект?': 'What does the project do?', 'Что должен сделать сайт?': 'What should the website achieve?', 'Какой визуальный характер нравится?': 'What visual character do you like?', 'Спокойный': 'Calm', 'Премиальный': 'Premium', 'Смелый': 'Bold', 'Технологичный': 'Technological', 'Минималистичный': 'Minimal', 'Тёплый': 'Warm', 'Цвета': 'Colours', 'Объём': 'Scope', 'Референсы и пожелания': 'References and wishes', 'Выберите вариант': 'Choose an option', 'Выберите задачу': 'Choose a task', 'Пока не знаю': 'Not sure yet', 'Самозанятый специалист': 'Self-employed specialist', 'Индивидуальный предприниматель': 'Sole proprietor', 'Малый бизнес': 'Small business', 'Сайт с нуля': 'A new website', 'Обновить старый сайт': 'Refresh an old website', 'Портфолио': 'Portfolio', 'Сайт-витрина': 'Showcase website', 'Домен и хостинг входят в цену?': 'Are domain and hosting included?', 'от 50 000': 'from 50,000', 'от 10 000': 'from 10,000', 'от 10k / год': 'from 10k / year', '+от 5k': '+from 5k', '+от 8k': '+from 8k', '+от 3k': '+from 3k', '+от 2k': '+from 2k', 'от 5k': 'from 5k', 'от 8k': 'from 8k', 'от 3k': 'from 3k', 'от 2k': 'from 2k', 'contact@lumocraft.ru': 'contact@lumocraft.ru', 'Навигация': 'Navigation', 'Связь': 'Contact', 'Документы': 'Documents', 'Политика конфиденциальности': 'Privacy policy', 'Настройки cookies': 'Cookie settings', 'Сайты, которым доверяют.': 'Websites people trust.', 'Домен и хостинг оплачиваются отдельно.': 'Domain and hosting are paid separately.', 'Небольшое уведомление о cookies': 'A quick cookie notice', 'Сайт использует необходимые cookies и Яндекс Метрику для понимания посещаемости и улучшения интерфейса. Метрика не получает имя, почту или текст заявки.': 'This site uses essential storage and Yandex Metrica to understand visits and improve the interface. Metrica does not receive your name, email or enquiry text.', 'Подробнее': 'Learn more', 'Разрешить аналитику': 'Allow analytics', 'Только необходимые': 'Essential only'
+      'Как мы думаем': 'How we think', 'Сначала смысл.': 'Meaning first.', 'Потом форма.': 'Form second.', 'Создаю сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.': 'We create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', 'Разбираюсь в задаче, убираю лишнее и превращаю идею в сайт, который хочется показать клиенту.': 'We understand the task, remove the unnecessary and turn an idea into a site you want to show clients.',
+      'Форматы работы': 'Ways to work together', 'Соберём ровно столько, сколько нужно': 'Build exactly as much as you need', 'сейчас.': 'right now.', 'Одностраничный сайт': 'One-page website', 'Уникальная структура и дизайн': 'Unique structure and design', 'Адаптация под телефон': 'Mobile adaptation', 'Запуск за 2–3 дня': 'Launch in 2–3 days', 'Поддержка после запуска': 'Post-launch support', 'Сценарий и тексты блоков': 'Content structure and copy', 'Микроанимации и интерактив': 'Micro-animations and interaction', 'Запуск за 7 дней': 'Launch in 7 days', '3 дня на правки': '3 days for revisions', 'Полноценный многостраничник': 'Full multi-page website', 'Индивидуальная дизайн-система': 'Custom design system', 'Каталог, формы или блог': 'Catalog, forms or blog', '2–3 недели на сборку': '2–3 weeks to build', 'Неделя на правки': 'One week for revisions',
+      'Как это происходит': 'How it works', 'Без тёмного леса из согласований.': 'No maze of approvals.', 'Ты понимаешь, что происходит с проектом на каждом шаге. Я беру на себя структуру, дизайн, код и запуск.': 'You know what is happening at every step. We handle the structure, design, code and launch.', 'Смысл': 'Meaning', 'Форма': 'Form', 'Запуск': 'Launch', 'Созваниваемся или переписываемся, разбираем бизнес, аудиторию и главное действие сайта.': 'We talk through the business, audience and the main action the site should lead to.', 'Собираю визуальное направление, прототип и первую рабочую версию, которую можно открыть с телефона.': 'We shape the visual direction, prototype and first working version you can open on a phone.', 'Вносим правки, подключаем домен и формы, проверяем всё перед публикацией. Я остаюсь на связи.': 'We make revisions, connect the domain and forms, check everything and stay available.',
+      'Частые вопросы': 'Frequently asked questions', 'Без сюрпризов': 'No surprises', 'в процессе.': 'along the way.', 'Домен и хостинг входят в цену?': 'Are domain and hosting included?', 'Нет, они оплачиваются отдельно и оформляются на вас. Мы поможем подобрать вариант, подключить домен и проверить, что сайт доступен.': 'No. They are paid separately and registered to you. We will help choose an option, connect the domain and check that the site is live.', 'Можно ли начать с небольшого бюджета?': 'Can we start with a small budget?', 'Да. Для специалиста часто достаточно аккуратного одностраничника. Мы не будем добавлять каталог или сложные функции, если они не решают вашу задачу.': 'Yes. A polished one-page site is often enough for a specialist. We will not add a catalog or complex features unless they solve your task.', 'Что будет после запуска?': 'What happens after launch?', 'Что нужно подготовить до начала?': 'What should I prepare?', 'Достаточно коротко рассказать о бизнесе, клиентах и цели сайта. Логотип, тексты и фотографии можно подготовить вместе или добавить позже.': 'Tell me briefly about the business, clients and the goal. Logo, copy and photography can be prepared together or added later.', 'Сколько правок входит в работу?': 'How many revisions are included?', 'Количество и формат правок зависят от пакета. Мы заранее фиксируем этапы, чтобы изменения не превращались в бесконечный процесс.': 'The number and format of revisions depend on the package. We define the stages in advance so changes do not become endless.', 'Можно ли добавить функции позже?': 'Can I add features later?', 'Да. Сайт можно расширить анимациями, каталогом, английской версией, аналитикой и другими модулями после запуска.': 'Yes. The site can grow with motion, a catalog, an English version, analytics and other modules after launch.',
+      'Первый шаг': 'First step', 'Расскажи, что нужно сделать.': 'Tell me what needs to be made.', 'Не нужно сразу знать правильный пакет. Сначала разберёмся в задаче, а потом выберем решение без лишних расходов.': 'You do not need to know the right package. We will understand the task first, then choose a solution without unnecessary costs.', 'Подобрать пакет': 'Choose a package', 'Подробный бриф': 'Detailed brief', 'Имя': 'Name', 'Почта': 'Email', 'Кто вы?': 'Who are you?', 'Что нужно?': 'What do you need?', 'Расскажи о себе и задаче': 'Tell me about yourself and the task', 'Я согласен на обработку данных для ответа на заявку.': 'I agree to the processing of my data to receive a reply.', 'Подобрать формат': 'Suggest a format', 'Отправить заявку': 'Send request', 'Отправить подробности': 'Send details', 'Чем больше деталей, тем точнее получится первая концепция. Поля можно заполнять в любом объёме.': 'The more detail you share, the more precise the first concept will be. Fill in as much as you like.', 'Проект / бренд': 'Project / brand', 'Срок': 'Timeline', 'Чем занимается проект?': 'What does the project do?', 'Что должен сделать сайт?': 'What should the website achieve?', 'Какой визуальный характер нравится?': 'What visual character do you like?', 'Спокойный': 'Calm', 'Премиальный': 'Premium', 'Смелый': 'Bold', 'Технологичный': 'Technological', 'Минималистичный': 'Minimal', 'Тёплый': 'Warm', 'Цвета': 'Colours', 'Объём': 'Scope', 'Референсы и пожелания': 'References and wishes', 'Выберите вариант': 'Choose an option', 'Выберите задачу': 'Choose a task', 'Пока не знаю': 'Not sure yet', 'Самозанятый специалист': 'Self-employed specialist', 'Индивидуальный предприниматель': 'Sole proprietor', 'Малый бизнес': 'Small business', 'Сайт с нуля': 'A new website', 'Обновить старый сайт': 'Refresh an old website', 'Портфолио': 'Portfolio', 'Сайт-витрина': 'Showcase website', 'Домен и хостинг входят в цену?': 'Are domain and hosting included?', 'от 50 000': 'from 50,000', 'от 10 000': 'from 10,000', 'от 10k / год': 'from 10k / year', '+от 5k': '+from 5k', '+от 8k': '+from 8k', '+от 3k': '+from 3k', '+от 2k': '+from 2k', 'от 5k': 'from 5k', 'от 8k': 'from 8k', 'от 3k': 'from 3k', 'от 2k': 'from 2k', 'contact@lumocraft.ru': 'contact@lumocraft.ru', 'Навигация': 'Navigation', 'Связь': 'Contact', 'Документы': 'Documents', 'Политика конфиденциальности': 'Privacy policy', 'Настройки cookies': 'Cookie settings', 'Сайты, которым доверяют.': 'Websites people trust.', 'Домен и хостинг оплачиваются отдельно.': 'Domain and hosting are paid separately.', 'Небольшое уведомление о cookies': 'A quick cookie notice', 'Сайт использует необходимые cookies и Яндекс Метрику для понимания посещаемости и улучшения интерфейса. Метрика не получает имя, почту или текст заявки.': 'This site uses essential storage and Yandex Metrica to understand visits and improve the interface. Metrica does not receive your name, email or enquiry text.', 'Подробнее': 'Learn more', 'Разрешить аналитику': 'Allow analytics', 'Только необходимые': 'Essential only'
     };
+    Object.assign(teamVoiceEnglish, {
+      'I design and build': 'We design and build',
+      'I combine': 'We combine',
+      'I create': 'We create',
+      'I understand': 'We understand',
+      'I handle': 'We handle',
+      'I shape': 'We shape',
+      'I stay available': 'We stay available',
+      'I will suggest': 'We will suggest'
+    });
+    Object.assign(textTranslations, {
+      'остаются.': 'last.',
+      'Первый экран должен работать ещё до того, как человек успел прочитать текст.': 'The first screen should work before anyone has time to read the copy.',
+      'Телефон': 'Phone',
+      'Как с вами связаться?': 'How should we contact you?',
+      'Введите номер телефона': 'Enter your phone number',
+      'Введите email': 'Enter your email',
+      'Введите ник в Telegram, например @username': 'Enter your Telegram username, for example @username',
+      'Название проекта': 'Project name',
+      'Не определился': 'Not sure yet',
+      'Продукт, услуги, аудитория, город или география...': 'Product, services, audience, city or geography...',
+      'Одностраничник': 'One-page website',
+      'Сайт-витрина': 'Showcase website',
+      'Многостраничный сайт': 'Multi-page website',
+      'Проект': 'Project / brand',
+      'О проекте': 'About the project',
+      'Цель сайта': 'Website goal',
+      'Референсы': 'References and wishes',
+      'Светлая палитра': 'Light palette',
+      'Тёмная палитра': 'Dark palette',
+      'В течение недели': 'Within a week',
+      '2–3 недели': '2–3 weeks',
+      'В течение месяца': 'Within a month',
+      'За несколько секунд человек решает, можно ли вам доверять. Мы превращаем первое впечатление в понятный путь к заявке: без визуального шума, шаблонных блоков и случайных решений.': 'Within seconds people decide whether to trust you. We turn the first impression into a clear path to an enquiry: without noise, templates or random decisions.',
+      'Вносим правки, подключаем домен и формы, проверяем всё перед публикацией. Мы остаёмся на связи.': 'We make revisions, connect the domain and forms, check everything and stay available.',
+      'Лендинг': 'Landing page',
+      'Выбрать Лендинг': 'Choose Landing',
+      'Выбрать Витрину': 'Choose Showcase',
+      'До 5 разделов': 'Up to 5 sections',
+      'Цены — отправная точка, а не жёсткое меню. Точную стоимость и состав фиксируем до начала работы.': 'Prices are a starting point, not a rigid menu. We agree the exact price and scope before we start.',
+      'Не уверены в формате? Напишите — подберём решение под задачу и бюджет, без лишнего.': 'Not sure about the format? Write to us — we will find the right solution for your task and budget.',
+      'Напрямую': 'Direct',
+      'Или просто напишите нам.': 'Or just write to us.',
+      'Форма — это удобно, но можно и без неё. Telegram или почта: выбирайте, как удобнее.': 'The form works, but you can skip it. Telegram or email: whichever is more convenient.',
+      'Написать в Telegram': 'Write on Telegram',
+      'Вы понимаете, что происходит с проектом на каждом шаге. Мы берём на себя структуру, дизайн, код и запуск.': 'You know what is happening at every step. We handle the structure, design, code and launch.',
+      'Нет, они оплачиваются отдельно и оформляются на вас.': 'No. They are paid separately and registered to you.',
+      'Мы остаёмся на связи: поможем с небольшими правками, обновлениями и техническими вопросами. Поддержка может быть включена отдельно в зависимости от формата.': 'We stay available for small updates, improvements and technical questions. Ongoing support can be added depending on the format.',
+      'Короткая форма для первого разговора. Мы предложим подходящий формат и не будем продавать лишнее.': 'A short form for the first conversation. We will suggest the right format without selling you more than you need.',
+      'Есть свои цвета': 'I have my own colours',
+      'Хочу, чтобы предложили': 'Let us suggest',
+      'Я согласен на обработку данных для ответа на заявку.': 'I agree to the processing of my data to receive a reply.'
+    });
     const translateTextNodes = (language) => {
       if (language === 'ru') {
         originalNodes.forEach((value, node) => { node.nodeValue = value; });
@@ -575,7 +714,13 @@
             'Чем вы занимаетесь, кто ваши клиенты и чего хочется от сайта?': 'What do you do, who are your clients and what should the site achieve?',
             'Например: нужен сайт для психолога или салона...': 'For example: I need a website for a therapist or a salon...',
             'Например: привести заявки, показать экспертность, продать услугу...': 'For example: generate enquiries, show expertise, sell a service...',
-            'Ссылки, примеры сайтов, функции, которые хочется повторить или точно исключить...': 'Links, examples, features to keep or avoid...'
+            'Ссылки, примеры сайтов, функции, которые хочется повторить или точно исключить...': 'Links, examples, features to keep or avoid...',
+            'Основная навигация': 'Main navigation',
+            'Выбор языка': 'Language',
+            'Визуальная демонстрация сайта': 'Visual site demo',
+            'Абстрактная графика lumocraft': 'Abstract lumocraft artwork',
+            'Тип заявки': 'Enquiry type',
+            'Мобильная навигация': 'Mobile navigation'
           }[value];
           if (!translated) return;
           let original = originalAttributes.find((item) => item.element === element && item.attribute === attribute);
@@ -587,21 +732,35 @@
         });
       });
     };
+    const pageMeta = {
+      ru: { title: 'lumocraft — сайты, которым доверяют', description: 'lumocraft — сайты для предпринимателей и малого бизнеса. Дизайн, разработка и запуск сайтов, которым доверяют.' },
+      en: { title: 'lumocraft — websites people trust', description: 'lumocraft — websites for entrepreneurs and small businesses. Design, development and launch of websites people trust.' }
+    };
+    const applyLanguage = (language) => {
+      document.querySelectorAll('.lang button').forEach((item) => item.classList.toggle('active', item.textContent.toLowerCase() === language));
+      document.documentElement.lang = language === 'en' ? 'en' : 'ru';
+      document.title = pageMeta[language] ? pageMeta[language].title : pageMeta.ru.title;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) metaDescription.setAttribute('content', (pageMeta[language] || pageMeta.ru).description);
+      Object.entries(translations.en).forEach(([selector, text]) => {
+        const element = document.querySelector(selector);
+        if (!element) return;
+        if (!originalText.has(element)) originalText.set(element, element.innerHTML);
+        element.innerHTML = language === 'en' ? text : originalText.get(element);
+      });
+      translateTextNodes(language);
+    };
     document.querySelectorAll('.lang button').forEach((button) => {
       button.addEventListener('click', () => {
         const language = button.textContent.toLowerCase();
-        document.querySelectorAll('.lang button').forEach((item) => item.classList.remove('active'));
-        button.classList.add('active');
-        document.documentElement.lang = language === 'en' ? 'en' : 'ru';
-        Object.entries(translations.en).forEach(([selector, text]) => {
-          const element = document.querySelector(selector);
-          if (!element) return;
-          if (!originalText.has(element)) originalText.set(element, element.innerHTML);
-          element.innerHTML = language === 'en' ? text : originalText.get(element);
-        });
-        translateTextNodes(language);
+        localStorage.setItem('lumocraft-lang', language);
+        applyLanguage(language);
       });
     });
+    if (localStorage.getItem('lumocraft-lang') === 'en') {
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => applyLanguage('en'));
+      else applyLanguage('en');
+    }
   </script>
   <aside class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-copy">
     <strong id="cookie-title">Небольшое уведомление о cookies</strong>

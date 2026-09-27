@@ -21,12 +21,16 @@ test('SEO metadata points to the production domain', () => {
   assert.match(html, /contact@lumocraft\.ru/);
 });
 
-test('Both lead forms have required consent and mail delivery logic', () => {
+test('Both lead forms have required consent and server delivery logic', () => {
   assert.equal((html.match(/class="lead-form"/g) || []).length, 2);
   assert.equal((html.match(/class="consent"/g) || []).length, 2);
-  assert.match(html, /mailto:contact@lumocraft\.ru\?subject=/);
+  assert.match(html, /fetch\('submit\.php'/);
   assert.match(html, /data-form-target="quick-form"/);
   assert.match(html, /data-form-target="brief-form"/);
+  assert.match(html, /className = 'contact-method'/);
+  assert.match(html, /data-method="Telegram"/);
+  assert.match(html, /contactOptions/);
+  assert.doesNotMatch(privacy, /mailto:contact@lumocraft\.ru/);
 });
 
 test('Motion is opt-out for reduced-motion users', () => {
@@ -35,10 +39,15 @@ test('Motion is opt-out for reduced-motion users', () => {
   assert.match(html, /IntersectionObserver/);
 });
 
-test('Case imagery and contact button contrast are present', () => {
-  assert.match(html, /sashka350\.github\.io\/pavel-pronin-site\/images\/hero-bg\.jpg/);
+test('Case imagery, direct contact block and mobile nav are present', () => {
+  assert.match(html, /url\("case-hero\.jpg"\)/);
+  assert.match(html, /href="https:\/\/sashka350\.github\.io\/pavel-pronin-site1\/" target="_blank"/);
   assert.doesNotMatch(html, /portrait-[1235]|portrait-bw/);
-  assert.match(html, /\.contact \.button\.ghost[^}]+color: #11140d !important/);
+  assert.match(html, /id="direct"/);
+  assert.match(html, /Написать в Telegram/);
+  assert.match(html, /direct-email/);
+  assert.match(html, /class="mobile-nav"/);
+  assert.doesNotMatch(html, /\.contact-actions|\.button\.ghost.*11140d !important/);
 });
 
 test('Analytics integration is opt-in and tracks meaningful actions', () => {
@@ -49,7 +58,6 @@ test('Analytics integration is opt-in and tracks meaningful actions', () => {
   assert.match(html, /Только необходимые/);
   assert.match(html, /lead_form_submit/);
   assert.match(html, /telegram_click/);
-  assert.match(html, /email_click/);
 });
 
 test('Privacy page covers forms, cookies, withdrawal and operator details', () => {
@@ -61,9 +69,9 @@ test('Privacy page covers forms, cookies, withdrawal and operator details', () =
 });
 
 test('Brand assets and conversion helpers are wired into the page', () => {
-  assert.match(html, /href="Lumocraft%20logo\.png"/);
+  assert.match(html, /href="lumocraft-mark\.png"/);
   assert.doesNotMatch(html, /src="logo\.svg"/);
-  assert.match(html, /og-image\.svg/);
+  assert.match(html, /og-image\.png/);
   assert.doesNotMatch(html, /id="calculator-total"/);
   assert.match(html, /success-screen/);
   assert.match(html, /#about/);
@@ -94,9 +102,27 @@ test('Inline browser script has valid JavaScript syntax', () => {
   assert.doesNotThrow(() => new Function(script));
 });
 
+test('Copy is rewritten: no first person, clear package names, working marquee', () => {
+  assert.doesNotMatch(html, /Я сам предложу|Я превращаю|Выбрать Start|Выбрать Signal|Обсудить Full|Сайт-витрина до 5 экранов|setup-note|\.extras\b/);
+  assert.match(html, />Лендинг</);
+  assert.match(html, />Сайт-витрина</);
+  assert.match(html, />Многостраничный сайт</);
+  assert.match(html, /Ознакомиться с работами/);
+  assert.match(html, /translate3d\(-50%, 0, 0\)/);
+  assert.doesNotMatch(html, /applyTeamVoice|const teamVoice =/);
+  assert.match(html, /See our work/);
+});
+
 test('Infrastructure files use the production domain', () => {
   const robots = fs.readFileSync(path.join(root, 'robots.txt'), 'utf8');
   const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
   assert.match(robots, /Sitemap: https:\/\/lumocraft\.ru\/sitemap\.xml/);
   assert.match(sitemap, /<loc>https:\/\/lumocraft\.ru\//);
+});
+
+test('Lead endpoint keeps bot credentials outside the public site directory', () => {
+  const endpoint = fs.readFileSync(path.join(root, 'submit.php'), 'utf8');
+  assert.match(endpoint, /dirname\(__DIR__, 2\).*lumocraft-config\.php/);
+  assert.match(endpoint, /api\.telegram\.org\/bot/);
+  assert.doesNotMatch(endpoint, /\d{8,}:[A-Za-z0-9_-]{20,}/);
 });
