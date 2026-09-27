@@ -19,6 +19,13 @@ test('SEO metadata points to the production domain', () => {
   assert.match(html, /property="og:url" content="https:\/\/lumocraft\.ru\/"/);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /contact@lumocraft\.ru/);
+  assert.match(html, /property="og:image:width" content="1200"/);
+  assert.match(html, /property="og:image:height" content="630"/);
+  assert.match(html, /name="robots" content="max-image-preview:large"/);
+  assert.match(html, /"@type": "ProfessionalService"/);
+  assert.match(html, /"@type": "FAQPage"/);
+  assert.match(html, /"priceCurrency": "RUB"/);
+  assert.match(html, /max-image-preview:large/);
 });
 
 test('Both lead forms have required consent and server delivery logic', () => {
@@ -85,15 +92,33 @@ test('Navigation, marquee, portfolio and FAQ match the current structure', () =>
   assert.match(html, />Работа<\/a>/);
   assert.match(html, />Услуги<\/a>/);
   assert.match(html, />Контакты<\/a>/);
-  assert.equal((html.match(/<div class="marquee"/g) || []).length, 5);
-  assert.match(html, /marqueeItems\[3\]\.remove\(\)/);
-  assert.match(html, /document\.querySelector\('#services'\)\.after\(marqueeItems\[4\]\)/);
+  assert.equal((html.match(/<div class="marquee"/g) || []).length, 2);
+  assert.match(html, /сайты, которым доверяют/);
+  assert.doesNotMatch(html, /DESIGN WITH A PURPOSE/);
+  assert.doesNotMatch(html, /marqueeItems|\.device|\.orbit|\.stamp/);
   assert.doesNotMatch(visible, /Собери свой комплект|calculator-total|Сайт растёт вместе с задачей|class="extra-list"/);
   assert.equal((html.match(/<summary>/g) || []).length, 6);
   assert.match(html, /font-family: "Space Grotesk"/);
   assert.match(html, /class="brand-dot"/);
   assert.doesNotMatch(html, /class="brand-logo"/);
   assert.doesNotMatch(html.match(/<div class="marquee"[\s\S]*?<\/div>/)?.[0] || '', /Александр|ALEXANDER/);
+});
+
+test('New UI: preloader, grain, scrollspy, back-to-top, copy email, lang prompt, autocomplete', () => {
+  assert.match(html, /id="preloader"/);
+  assert.match(html, /preloader-video/);
+  assert.match(html, /class="grain"/);
+  assert.match(html, /class="to-top"/);
+  assert.match(html, /is-active/);
+  assert.match(html, /data-copy-email/);
+  assert.match(html, /id="lang-prompt"/);
+  assert.match(html, /data-lang-go="en"/);
+  assert.match(html, /autocomplete="name"/);
+  assert.match(html, /autocomplete="tel"/);
+  assert.match(html, /@keyframes shake/);
+  assert.match(html, /perspective\(900px\)/);
+  assert.match(html, /hero-video-wrap/);
+  assert.doesNotMatch(html, /hero-art:hover \.device|screen-title|stamp strong/);
 });
 
 test('Inline browser script has valid JavaScript syntax', () => {
