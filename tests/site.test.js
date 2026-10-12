@@ -129,13 +129,24 @@ test('Inline browser script has valid JavaScript syntax', () => {
 
 test('Copy is rewritten: no first person, clear package names, working marquee', () => {
   assert.doesNotMatch(html, /Я сам предложу|Я превращаю|Выбрать Start|Выбрать Signal|Обсудить Full|Сайт-витрина до 5 экранов|setup-note|\.extras\b/);
-  assert.match(html, />Лендинг</);
+  assert.match(html, />Одностраничный сайт</);
   assert.match(html, />Сайт-витрина</);
   assert.match(html, />Многостраничный сайт</);
   assert.match(html, /Ознакомиться с работами/);
   assert.match(html, /translate3d\(-50%, 0, 0\)/);
   assert.doesNotMatch(html, /applyTeamVoice|const teamVoice =/);
   assert.match(html, /See our work/);
+});
+
+test('Pricing matches the approved 40/90/170 ladder and promises no deadlines', () => {
+  assert.match(html, /"priceRange": "40 000 ₽ — 170 000 ₽"/);
+  assert.match(html, /"price": "40000"/);
+  assert.match(html, /"price": "90000"/);
+  assert.match(html, /"price": "170000"/);
+  assert.doesNotMatch(html, /<div class="price">10 000|<div class="price">25 000|<div class="price">от 50 000|"price": "10000"|"price": "25000"|"price": "50000"/);
+  assert.doesNotMatch(html, />Лендинг</);
+  assert.doesNotMatch(html, /Запуск за 2–3 дня|Запуск за 7 дней|2–3 недели на сборку|Неделя на правки|3 дня на правки|Поддержка после запуска/);
+  assert.equal((html.match(/<li>2 раунда правок<\/li>/g) || []).length, 2);
 });
 
 test('Infrastructure files use the production domain', () => {
