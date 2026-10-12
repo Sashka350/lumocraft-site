@@ -150,8 +150,7 @@
     .preloader { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: var(--night); transition: opacity 450ms ease, visibility 450ms ease; }
     .preloader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
     .preloader-video { width: min(220px, 60vw); aspect-ratio: 1; object-fit: cover; border-radius: 24px; }
-    .grain { position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: .045; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); animation: grain-shift 9s steps(10) infinite; }
-    @keyframes grain-shift { 0%,100% { transform: translate(0,0); } 10% { transform: translate(-4%, -6%); } 20% { transform: translate(-12%, 4%); } 30% { transform: translate(5%, -10%); } 40% { transform: translate(-6%, 12%); } 50% { transform: translate(10%, 2%); } 60% { transform: translate(-8%, 8%); } 70% { transform: translate(12%, -4%); } 80% { transform: translate(-4%, 10%); } 90% { transform: translate(6%, -8%); } }
+    .grain { position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: .045; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
     .to-top { position: fixed; right: 22px; bottom: 22px; z-index: 35; display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 50%; background: rgba(23,25,23,.92); color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity 250ms ease, transform 250ms ease, visibility 250ms ease, background 180ms ease, color 180ms ease; }
     .to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
     .to-top:hover { border-color: var(--lime); background: var(--lime); color: #11140d; }
@@ -197,8 +196,7 @@
     h1 em { color: var(--lime); font-style: normal; }
     .hero-lead { max-width: 500px; margin-bottom: 32px; color: var(--muted-strong); font-size: 18px; line-height: 1.6; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 32px; color: var(--muted); font-size: 12px; }
-    .status { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(200,232,107,.1); }
+    
     .hero-art { position: relative; min-height: 470px; display: grid; place-items: center; }
     .hero-glow { position: absolute; top: 50%; left: 50%; width: min(36vw, 400px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(200,232,107,.16), rgba(255,118,93,.06) 55%, transparent 70%); filter: blur(34px); transform: translate(-50%, -50%); }
     .hero-video-wrap { position: relative; z-index: 1; width: min(430px, 90%); aspect-ratio: 1; overflow: hidden; border: 1px solid rgba(244,242,237,.16); border-radius: 32px; background: #0d0e10; box-shadow: 0 40px 90px rgba(0,0,0,.45); }
@@ -206,7 +204,8 @@
     .marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 14px 0; color: var(--muted); white-space: nowrap; }
     .marquee-track { display: inline-flex; min-width: max-content; gap: 34px; font: 500 11px "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; animation: marquee 28s linear infinite; }
     .marquee b { color: var(--coral); font-weight: 500; }
-    section { padding: 102px 0; content-visibility: auto; contain-intrinsic-size: auto 700px; }
+    section { padding: 102px 0; content-visibility: auto; contain-intrinsic-size: auto 700px; scroll-margin-top: 16px; scroll-margin-bottom: 16px; }
+    html.anchor-safe section { content-visibility: visible; }
     .section-head { display: grid; grid-template-columns: .75fr 1.25fr; gap: 35px; align-items: start; margin-bottom: 42px; }
     h2 { max-width: 730px; margin-bottom: 18px; font-size: clamp(40px, 5.5vw, 76px); line-height: .96; letter-spacing: -.08em; }
     h2 em { color: var(--coral); font-style: normal; }
@@ -310,8 +309,8 @@
     input:focus, textarea:focus { border-color: #11140d; }
     textarea { min-height: 72px; resize: vertical; }
     .consent { display: flex; align-items: flex-start; gap: 9px; margin: 20px 0; color: #455329; font: 11px/1.4 Manrope, sans-serif; text-transform: none; }
-    .consent input { appearance: none; display: inline-grid; place-content: center; width: 8px; height: 8px; margin: 2px 0 0; border: 1px solid #58682f; border-radius: 0; background: #b8d964; cursor: pointer; }
-    .consent input::after { width: 4px; height: 2px; border-bottom: 1px solid #fff; border-left: 1px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
+    .consent input { appearance: none; flex: 0 0 auto; display: inline-grid; place-content: center; width: 12px; height: 12px; min-width: 12px; min-height: 12px; margin: 2px 0 0; border: 1px solid #11140d; border-radius: 0; background: transparent; cursor: pointer; }
+    .consent input::after { width: 5px; height: 3px; border-bottom: 2px solid #fff; border-left: 2px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
     .consent input:checked { border-color: #11140d; background: #11140d; }
     .consent input:checked::after { transform: rotate(-45deg) scale(1); }
     textarea { scrollbar-color: #8da83a transparent; scrollbar-width: thin; }
@@ -334,8 +333,8 @@
     @keyframes shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-6px); } 40% { transform: translateX(6px); } 60% { transform: translateX(-4px); } 80% { transform: translateX(4px); } }
     .contact-method.is-error { animation: shake 320ms ease; }
     .contact select option { background: var(--lime); color: #11140d; }
-    .check-list input { appearance: none; display: inline-grid; place-content: center; width: 8px; height: 8px; border: 1px solid #58682f; border-radius: 0; background: #b8d964; cursor: pointer; }
-    .check-list input::after { width: 4px; height: 2px; border-bottom: 1px solid #fff; border-left: 1px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
+    .check-list input { appearance: none; flex: 0 0 auto; display: inline-grid; place-content: center; width: 12px; height: 12px; min-width: 12px; min-height: 12px; border: 1px solid #11140d; border-radius: 0; background: transparent; cursor: pointer; }
+    .check-list input::after { width: 5px; height: 3px; border-bottom: 2px solid #fff; border-left: 2px solid #fff; content: ""; transform: rotate(-45deg) scale(0); transition: transform 120ms ease; }
     .check-list input:checked { border-color: #11140d; background: #11140d; }
     .check-list input:checked::after { transform: rotate(-45deg) scale(1); }
     footer { padding: 65px 0 45px; color: var(--muted); font-size: 12px; }
@@ -434,7 +433,6 @@
           <h1>Сайт, который <em>выбирают.</em></h1>
           <p class="hero-lead">Проектируем и собираем сайты для людей и компаний, которым важно выглядеть уверенно в цифровом мире.</p>
           <div class="actions"><a class="button" href="#contact">Обсудить проект <span class="arrow">↗</span></a><a class="button ghost" href="#work">Ознакомиться с работами</a></div>
-          <div class="hero-note"><span class="status"></span> Берём новые проекты на октябрь 2026</div>
         </div>
         <div class="hero-art" aria-label="Анимированный логотип lumocraft">
           <div class="hero-glow" aria-hidden="true"></div>
@@ -457,8 +455,8 @@
 
     <section id="work">
       <div class="wrap"><div class="section-head"><div class="eyebrow">Портфолио</div><div><h2>Проекты, которые <em>остаются.</em></h2><p class="section-copy">Здесь будут появляться сайты, сделанные для реальных задач. Сейчас в подборке — первый проект; структура готова к новым кейсам.</p></div></div><div class="case">
-        <div class="case-preview"><div class="case-label"><span>Selected work / 001</span><span>Concept</span></div><div class="case-title">stay<br><span>curious.</span></div><a class="case-link" href="https://sashka350.github.io/pavel-pronin-site1/" target="_blank" rel="noreferrer">Открыть проект ↗</a></div>
-        <div class="case-copy"><div class="eyebrow">Project 001 · Concept</div><h2>Сайт, который уже можно показать.</h2><p>Концептуальный проект с характерным визуальным языком, аккуратной типографикой и вниманием к каждому состоянию интерфейса.</p><div class="case-tags"><span class="tag">Art direction</span><span class="tag">UI / UX</span><span class="tag">Development</span></div><a class="button ghost" href="#contact">Обсудить свой проект <span class="arrow">↗</span></a></div>
+        <div class="case-preview"><div class="case-label"><span>Selected work / 001</span><span>В работе</span></div><div class="case-title">stay<br><span>curious.</span></div><a class="case-link" href="https://sashka350.github.io/pavel-pronin-site1/" target="_blank" rel="noreferrer">Открыть проект ↗</a></div>
+        <div class="case-copy"><div class="eyebrow">Project 001 · В работе</div><h2>Сайт, который уже можно показать.</h2><p>Многостраничный проект с характерным визуальным языком, аккуратной типографикой и вниманием к каждому состоянию интерфейса. Фотографии, информацию о спектаклях и техническое задание предоставил клиент; мы взяли на себя структуру, дизайн, разработку и запуск. Сайт отправлен клиенту на утверждение.</p><div class="case-tags"><span class="tag">Art direction</span><span class="tag">UI / UX</span><span class="tag">Development</span></div><a class="button ghost" href="#contact">Обсудить свой проект <span class="arrow">↗</span></a></div>
       </div></div>
     </section>
 
@@ -490,7 +488,7 @@
     <section id="direct"><div class="wrap"><div class="direct"><div class="direct-copy"><div class="eyebrow">Напрямую</div><h2>Или просто напишите нам.</h2><p>Форма — это удобно, но можно и без неё. Telegram или почта: выбирайте, как удобнее.</p></div><div class="direct-actions"><a class="button" href="https://t.me/sassha_at" target="_blank" rel="noreferrer">Написать в Telegram <span class="arrow">↗</span></a><button class="direct-email" type="button" data-copy-email data-copied-ru="Скопировано ✓" data-copied-en="Copied ✓">contact@lumocraft.ru</button></div></div></div></section>
   </main>
 
-    <footer id="privacy"><div class="wrap footer-grid"><div><a class="footer-brand" href="#top">lumocraft</a><p>Web / brand / motion<br>Сайты, которым доверяют.</p></div><div><span class="mono">Навигация</span><a href="#work">Работа</a><a href="#services">Услуги</a><a href="#contact">Контакты</a></div><div><span class="mono">Связь</span><span>contact@lumocraft.ru</span><a href="https://t.me/sassha_at" target="_blank" rel="noreferrer">Telegram ↗</a></div><div><span class="mono">Документы</span><a href="privacy.html">Политика конфиденциальности</a><button class="cookie-manage footer-cookie-manage" type="button">Настройки cookies</button></div><div class="footer-bottom"><span>© 2026 lumocraft</span></div></div></footer>
+    <footer id="privacy"><div class="wrap footer-grid"><div><a class="footer-brand" href="#top">lumocraft</a><p>Web / brand / motion<br>Сайты, которым доверяют.</p></div><div><span class="mono">Навигация</span><a href="#work">Работы</a><a href="#services">Услуги</a><a href="#contact">Контакты</a></div><div><span class="mono">Связь</span><span>contact@lumocraft.ru</span><a href="https://t.me/sassha_at" target="_blank" rel="noreferrer">Telegram ↗</a></div><div><span class="mono">Документы</span><a href="privacy.html">Политика конфиденциальности</a><button class="cookie-manage footer-cookie-manage" type="button">Настройки cookies</button></div><div class="footer-bottom"><span>© 2026 lumocraft</span></div></div></footer>
   <nav class="mobile-nav" aria-label="Мобильная навигация"><a href="#work">Работа</a><a href="#services">Услуги</a><a href="#contact">Контакты</a></nav>
   <script>
     document.querySelectorAll('.lead-form').forEach((form) => {
@@ -514,6 +512,11 @@
         Telegram: { type: 'text', inputmode: 'text', autocomplete: 'off', placeholder: '@username', hint: 'Введите ник в Telegram, например @username', error: 'Введите username в формате @username' }
       };
       contactInput.addEventListener('input', () => {
+        if (contactInput.name === 'Telegram') {
+          const raw = contactInput.value.trim();
+          if (raw && !raw.startsWith('@')) contactInput.value = `@${raw}`;
+          return;
+        }
         if (contactInput.name !== 'Телефон') return;
         let digits = contactInput.value.replace(/\D/g, '').slice(0, 11);
         if (digits.length === 10) digits = `7${digits}`;
@@ -548,7 +551,11 @@
         event.preventDefault();
         const data = new FormData(form);
         const method = contactInput.name;
-        const value = String(contactInput.value || '').trim();
+        let value = String(contactInput.value || '').trim();
+        if (method === 'Telegram' && value && !value.startsWith('@')) {
+          value = `@${value}`;
+          contactInput.value = value;
+        }
         const message = form.querySelector('.form-message');
         const valid = method === 'Телефон'
           ? /^\+7(?:[\s()-]?\d){10}$/.test(value)
@@ -664,9 +671,9 @@
     const translations = {
       en: {
         'header .nav-link:nth-of-type(1)': 'Work', 'header .nav-link:nth-of-type(2)': 'Services', 'header .nav-link:nth-of-type(3)': 'Contact',
-        '.hero .eyebrow': 'Web / brand / motion', '.hero h1': 'A website people <em>choose.</em>', '.hero-lead': 'We design and build websites for people and companies that want to look confident in the digital world.', '.hero .button': 'Discuss a project <span class="arrow">↗</span>', '.hero .button.ghost': 'See our work', '.hero-note': '<span class="status"></span> Taking new projects for October 2026',
+        '.hero .eyebrow': 'Web / brand / motion', '.hero h1': 'A website people <em>choose.</em>', '.hero-lead': 'We design and build websites for people and companies that want to look confident in the digital world.', '.hero .button': 'Discuss a project <span class="arrow">↗</span>', '.hero .button.ghost': 'See our work',
         '.proof-card.featured h3': 'That is enough time to judge a page’s visual appeal.', '.proof-card.featured p': 'The first screen has to work before someone has time to read the copy.', '.proof-card:not(.featured) h3': 'Trust first. Then a conversation.', '.proof-card:not(.featured) p': 'We combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.',
-        '#work .eyebrow': 'Portfolio', '#work h2': 'Projects that <em>stay.</em>', '#work .case-copy h2': 'A site already worth showing.', '#work .case-copy p': 'A concept project with a distinctive visual language, careful typography and attention to every interface state.', '#work .button': 'Discuss your project <span class="arrow">↗</span>',
+        '#work .eyebrow': 'Portfolio', '#work h2': 'Projects that <em>stay.</em>', '#work .case-copy h2': 'A site already worth showing.', '#work .case-copy .eyebrow': 'Project 001 · In progress', '#work .case-preview .case-label span:last-child': 'In progress', '#work .case-copy p': 'A multi-page project with a distinctive visual language, careful typography and attention to every interface state. The client provided the photography, the performance details and the brief; we handled the structure, design, development and launch. The site has been sent to the client for approval.', '#work .button': 'Discuss your project <span class="arrow">↗</span>',
         '#about .eyebrow': 'How we think', '#about h2': 'Meaning first.<br><em>Form second.</em>', '#about .about-copy p:first-of-type': 'We create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', '#about .about-copy p:nth-of-type(2)': 'We understand the task, remove the unnecessary and turn an idea into a site you want to show clients.', '#about .button': 'Discuss a project <span class="arrow">↗</span>',
         '#services .eyebrow': 'Ways to work together', '#services h2': 'Build exactly as much as you need <em>right now.</em>', '#services .section-copy': 'Prices are a starting point, not a rigid menu. We agree the exact price and scope before we start.',
         '#direct .eyebrow': 'Direct', '#direct h2': 'Or just write to us.', '#direct .direct-copy p': 'The form works, but you can skip it. Telegram or email: whichever is more convenient.', '#direct .button': 'Write on Telegram <span class="arrow">↗</span>',
@@ -680,14 +687,14 @@
       'Мы превращаем первое впечатление в понятный путь к заявке: без визуального шума, шаблонных блоков и случайных решений.': 'We turn the first impression into a clear path to an enquiry: without noise, templates or random decisions.', 'Мы соединяем выразительный арт-дирекшн с понятной структурой, чтобы сайт нравился не только дизайнеру, но и вашему клиенту.': 'We combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.', 'Мы создаём сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.': 'We create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', 'Разбираемся в задаче, убираем лишнее и превращаем идею в сайт, который хочется показать клиенту.': 'We understand the task, remove the unnecessary and turn an idea into a site you want to show clients.', 'Мы поможем подобрать вариант, подключить домен и проверить, что сайт доступен.': 'We will help choose an option, connect the domain and check that the site is live.', 'Мы берём на себя структуру, дизайн, код и запуск.': 'We handle the structure, design, code and launch.', 'Собираем визуальное направление, прототип и первую рабочую версию, которую можно открыть с телефона.': 'We shape the visual direction, prototype and first working version you can open on a phone.', 'Мы остаёмся на связи: поможем с небольшими правками, обновлениями и техническими вопросами.': 'We stay available for small updates and technical questions.', 'Мы предложим подходящий формат и не будем продавать лишнее.': 'We will suggest the right format without selling you more than you need.', 'не будем продавать лишнее': 'we will not sell more than you need', 'Мы превращаем': 'We turn', 'Мы соединяем': 'We combine', 'Создаём сайты': 'We create websites', 'Разбираемся в задаче': 'We understand the task', 'Мы поможем': 'We will help', 'Мы берём на себя': 'We handle', 'Собираем визуальное направление': 'We shape the visual direction', 'Мы остаёмся на связи': 'We stay available', 'Мы предложим': 'We will suggest', 'Откроем почтовый клиент': 'Your mail app will open'
     };
     const textTranslations = {
-      'Работа': 'Work', 'Услуги': 'Services', 'Контакты': 'Contact', 'Выбор языка': 'Language',
+      'Работа': 'Work', 'Работы': 'Work', 'Услуги': 'Services', 'Контакты': 'Contact', 'Выбор языка': 'Language',
       'Web / brand / motion': 'Web / brand / motion', 'Сайт, который': 'A website people', 'выбирают.': 'choose.',
       'Проектирую и собираю сайты для людей и компаний, которым важно выглядеть уверенно в цифровом мире.': 'We design and build websites for people and companies that want to look confident in the digital world.',
-      'Обсудить проект': 'Discuss a project', 'Смотреть работу': 'See the work', 'Беру новые проекты на октябрь 2026': 'Taking new projects for October 2026',
+      'Обсудить проект': 'Discuss a project', 'Смотреть работу': 'See the work',
       'проект': 'selected', 'уже в портфолио': 'case study', 'Зачем это бизнесу': 'Why it matters', 'Красивый сайт — это не декор. Это': 'A beautiful website is not decoration. It is a', 'сигнал.': 'signal.',
       'В исследовании Stanford Persuasive Technology Lab визуальный облик сайта встречался в 46,1% комментариев участников о его достоверности. Другие исследования показывают, что первое эстетическое впечатление формируется примерно за 50 мс. Это не обещание продаж, а причина относиться к дизайну как к части бизнес-задачи.': 'A Stanford Persuasive Technology Lab study found that visual appearance appeared in 46.1% of participants’ comments about website credibility. Other research shows that a first aesthetic impression can form in about 50 ms. This is not a promise of sales, but a reason to treat design as part of the business task.',
       'Примерно столько достаточно, чтобы оценить визуальную привлекательность страницы.': 'That is enough time to judge a page’s visual appeal.', 'Первый экран должен работать ещё до того, как человек успел прочитать текст.': 'The first screen has to work before someone has time to read the copy.', 'Сначала доверие. Потом разговор.': 'Trust first. Then a conversation.', 'Я соединяю выразительный арт-дирекшн с понятной структурой, чтобы сайт нравился не только дизайнеру, но и вашему клиенту.': 'We combine expressive art direction with a clear structure, so the site works for your client, not just for a designer.',
-      'Красота должна работать.': 'Beauty should work.', 'Источники ↗': 'Sources ↗', 'Портфолио': 'Portfolio', 'Проекты, которые': 'Projects that', 'остаются.': 'stay.', 'Здесь будут появляться сайты, сделанные для реальных задач. Сейчас в подборке — первый проект; структура готова к новым кейсам.': 'This is where sites made for real tasks will appear. There is one project here now; the structure is ready for more.', 'Открыть проект ↗': 'Open project ↗', 'Concept': 'Concept', 'Сайт, который уже можно показать.': 'A site already worth showing.', 'Концептуальный проект с характерным визуальным языком, аккуратной типографикой и вниманием к каждому состоянию интерфейса.': 'A concept project with a distinctive visual language, careful typography and attention to every interface state.', 'Обсудить свой проект': 'Discuss your project',
+      'Красота должна работать.': 'Beauty should work.', 'Источники ↗': 'Sources ↗', 'Портфолио': 'Portfolio', 'Проекты, которые': 'Projects that', 'остаются.': 'stay.', 'Здесь будут появляться сайты, сделанные для реальных задач. Сейчас в подборке — первый проект; структура готова к новым кейсам.': 'This is where sites made for real tasks will appear. There is one project here now; the structure is ready for more.', 'Открыть проект ↗': 'Open project ↗', 'Сайт, который уже можно показать.': 'A site already worth showing.', 'Обсудить свой проект': 'Discuss your project',
       'Как мы думаем': 'How we think', 'Сначала смысл.': 'Meaning first.', 'Потом форма.': 'Form second.', 'Создаю сайты, которые помогают специалистам и небольшим компаниям выглядеть убедительно, объяснять ценность и получать больше правильных обращений.': 'We create websites that help specialists and small companies look convincing, explain their value and receive more relevant enquiries.', 'Разбираюсь в задаче, убираю лишнее и превращаю идею в сайт, который хочется показать клиенту.': 'We understand the task, remove the unnecessary and turn an idea into a site you want to show clients.',
       'Форматы работы': 'Ways to work together', 'Соберём ровно столько, сколько нужно': 'Build exactly as much as you need', 'сейчас.': 'right now.', 'Одностраничный сайт': 'One-page website', 'Уникальная структура и дизайн': 'Unique structure and design', 'Адаптация под телефон': 'Mobile adaptation', 'Запуск за 2–3 дня': 'Launch in 2–3 days', 'Поддержка после запуска': 'Post-launch support', 'Сценарий и тексты блоков': 'Content structure and copy', 'Микроанимации и интерактив': 'Micro-animations and interaction', 'Запуск за 7 дней': 'Launch in 7 days', '3 дня на правки': '3 days for revisions', 'Полноценный многостраничник': 'Full multi-page website', 'Индивидуальная дизайн-система': 'Custom design system', 'Каталог, формы или блог': 'Catalog, forms or blog', '2–3 недели на сборку': '2–3 weeks to build', 'Неделя на правки': 'One week for revisions',
       'Как это происходит': 'How it works', 'Без тёмного леса из согласований.': 'No maze of approvals.', 'Ты понимаешь, что происходит с проектом на каждом шаге. Я беру на себя структуру, дизайн, код и запуск.': 'You know what is happening at every step. We handle the structure, design, code and launch.', 'Смысл': 'Meaning', 'Форма': 'Form', 'Запуск': 'Launch', 'Созваниваемся или переписываемся, разбираем бизнес, аудиторию и главное действие сайта.': 'We talk through the business, audience and the main action the site should lead to.', 'Собираю визуальное направление, прототип и первую рабочую версию, которую можно открыть с телефона.': 'We shape the visual direction, prototype and first working version you can open on a phone.', 'Вносим правки, подключаем домен и формы, проверяем всё перед публикацией. Я остаюсь на связи.': 'We make revisions, connect the domain and forms, check everything and stay available.',
@@ -863,6 +870,54 @@
     });
     const toTop = document.querySelector('.to-top');
     if (toTop) toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    const root = document.documentElement;
+    const reducedMotionNow = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const navOffset = () => {
+      const nav = document.querySelector('.mobile-nav');
+      const visible = nav && getComputedStyle(nav).display !== 'none';
+      return visible ? nav.getBoundingClientRect().height + 12 : 12;
+    };
+    const topOfTarget = (target) => Math.max(0, Math.round(target.getBoundingClientRect().top + window.scrollY - navOffset()));
+    let anchorTimer = 0;
+    let anchorTarget = null;
+    const settleAnchor = () => {
+      clearTimeout(anchorTimer);
+      root.classList.remove('anchor-safe');
+      if (!anchorTarget) return;
+      const top = topOfTarget(anchorTarget);
+      if (Math.abs(top - window.scrollY) > 1) window.scrollTo({ top, behavior: 'auto' });
+    };
+    const scrollToTarget = (target, smooth) => {
+      anchorTarget = target;
+      root.classList.add('anchor-safe');
+      window.scrollTo({ top: topOfTarget(target), behavior: smooth && !reducedMotionNow.matches ? 'smooth' : 'auto' });
+      clearTimeout(anchorTimer);
+      anchorTimer = window.setTimeout(settleAnchor, 220);
+    };
+    window.addEventListener('scroll', () => {
+      if (!root.classList.contains('anchor-safe')) return;
+      clearTimeout(anchorTimer);
+      anchorTimer = window.setTimeout(settleAnchor, 220);
+    }, { passive: true });
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const id = link.getAttribute('href');
+        if (!id || id === '#') return;
+        const target = document.getElementById(id.slice(1));
+        if (!target) return;
+        event.preventDefault();
+        if (history.pushState) history.pushState('', '', id);
+        scrollToTarget(target, true);
+      });
+    });
+    window.addEventListener('hashchange', () => {
+      const target = document.getElementById(location.hash.slice(1));
+      if (target) scrollToTarget(target, false);
+    });
+    if (location.hash) {
+      const initial = document.getElementById(location.hash.slice(1));
+      if (initial) window.requestAnimationFrame(() => scrollToTarget(initial, false));
+    }
     const spySections = ['work', 'services', 'contact'].map((id) => document.getElementById(id));
     const spyLinks = [...document.querySelectorAll('.nav-link, .mobile-nav a')];
     const updateSpy = () => {
