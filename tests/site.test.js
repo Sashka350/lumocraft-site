@@ -133,7 +133,11 @@ test('Copy is rewritten: no first person, clear package names, working marquee',
   assert.match(html, />Сайт-витрина</);
   assert.match(html, />Многостраничный сайт</);
   assert.match(html, /Ознакомиться с работами/);
-  assert.match(html, /translate3d\(-50%, 0, 0\)/);
+  assert.match(html, /marquee-shift/);
+  assert.match(html, /data-marquee/);
+  assert.match(html, /marquee-group/);
+  assert.match(html, /buildMarquee/);
+  assert.equal((html.match(/<span class="marquee-group">/g) || []).length, 2);
   assert.doesNotMatch(html, /applyTeamVoice|const teamVoice =/);
   assert.match(html, /See our work/);
 });
