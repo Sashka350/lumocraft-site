@@ -204,6 +204,8 @@ test('Inline browser script has valid JavaScript syntax', () => {
 test('Copy is rewritten: no first person, clear package names, working marquee', () => {
   const visible = html.match(/<body>[\s\S]*?<script>/)?.[0] || '';
   assert.doesNotMatch(html, /Я сам предложу|Я превращаю|Выбрать Start|Выбрать Signal|Обсудить Full|Сайт-витрина до 5 экранов|setup-note|\.extras\b/);
+  assert.doesNotMatch(visible, /собираем сайты/i);
+  assert.match(visible, /Проектируем и создаём сайты для людей и компаний/);
   assert.match(html, />Одностраничный сайт</);
   assert.match(html, />Сайт-витрина</);
   assert.match(html, />Многостраничный сайт</);
