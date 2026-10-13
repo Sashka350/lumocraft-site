@@ -52,8 +52,16 @@ test('Direct contact block and mobile nav are present, portfolio is gone', () =>
   assert.doesNotMatch(html, /class="case-preview"|case-hero\.jpg|\.case \{/);
   assert.doesNotMatch(html, /portrait-[1235]|portrait-bw/);
   assert.match(html, /id="direct"/);
-  assert.match(html, /Написать в Telegram/);
-  assert.match(html, /direct-email/);
+  assert.match(html, /<h2>Контакты<\/h2>/);
+  assert.match(html, /class="direct-copy">Свяжитесь с нами, если хотите обсудить проект или задать вопрос по сайтам\.</);
+  assert.match(html, /class="direct-cards"/);
+  assert.match(html, /class="direct-card-icon" aria-hidden="true"><svg/);
+  assert.equal((html.match(/class="direct-card"/g) || []).length, 2);
+  assert.match(html, /data-copy-email/);
+  assert.match(html, /class="direct-card-value">contact@lumocraft\.ru</);
+  assert.match(html, /class="direct-card-value">@sassha_at</);
+  assert.doesNotMatch(html, /\.direct-actions|\.direct-email\b/);
+  assert.match(html, /footer \{[^}]*background: var\(--panel\)/);
   assert.match(html, /class="mobile-nav"/);
   assert.match(html, /grid-template-columns: repeat\(3, 1fr\); gap: 0; border-top: 1px solid var\(--line\); background: rgba\(16,17,16/);
   assert.doesNotMatch(html, /\.contact-actions|\.button\.ghost.*11140d !important/);
