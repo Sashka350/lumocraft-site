@@ -46,15 +46,46 @@ test('Motion is opt-out for reduced-motion users', () => {
   assert.match(html, /IntersectionObserver/);
 });
 
-test('Case imagery, direct contact block and mobile nav are present', () => {
-  assert.match(html, /url\("case-hero\.jpg"\)/);
-  assert.match(html, /href="https:\/\/sashka350\.github\.io\/pavel-pronin-site1\/" target="_blank"/);
+test('Direct contact block and mobile nav are present, portfolio is gone', () => {
+  assert.doesNotMatch(html, /id="work"/);
+  assert.doesNotMatch(html, /href="#work"/);
+  assert.doesNotMatch(html, /class="case-preview"|case-hero\.jpg|\.case \{/);
   assert.doesNotMatch(html, /portrait-[1235]|portrait-bw/);
   assert.match(html, /id="direct"/);
   assert.match(html, /Написать в Telegram/);
   assert.match(html, /direct-email/);
   assert.match(html, /class="mobile-nav"/);
+  assert.match(html, /grid-template-columns: repeat\(2, 1fr\); gap: 0; border-top: 1px solid var\(--line\); background: rgba\(16,17,16/);
   assert.doesNotMatch(html, /\.contact-actions|\.button\.ghost.*11140d !important/);
+});
+
+test('Header CTA, pulsing brand dot and square checkboxes are wired', () => {
+  const body = html.match(/<body>[\s\S]*?<script>/)?.[0] || '';
+  assert.match(html, /<a class="nav-cta" href="#contact">Оставить заявку<\/a>/);
+  assert.doesNotMatch(body, />Работа<\/a>/);
+  assert.match(html, /@keyframes brand-pulse/);
+  assert.match(html, /\.brand-dot \{[^}]*animation: brand-pulse/);
+  assert.match(html, /input\[type="checkbox"\] \{ -webkit-appearance: none; appearance: none;/);
+  assert.match(html, /input\[type="checkbox"\]:checked::after/);
+  assert.equal((body.match(/Посмотреть пример/g) || []).length, 3);
+  assert.equal((body.match(/href="404\.html"/g) || []).length, 3);
+  assert.doesNotMatch(body, /sashka350\.github\.io\/example-/);
+});
+
+test('Error page matches the site style and is not indexed', () => {
+  const notFound = fs.readFileSync(path.join(root, '404.html'), 'utf8');
+  assert.match(notFound, /<meta name="robots" content="noindex, follow">/);
+  assert.match(notFound, /<b>404<\/b>/);
+  assert.match(notFound, /class="brand-dot"/);
+  assert.match(notFound, /@keyframes brand-pulse/);
+  assert.match(notFound, /href="\/"/);
+  assert.match(notFound, /https:\/\/t\.me\/sassha_at/);
+  assert.match(notFound, /href="privacy\.html"/);
+  assert.match(notFound, /--lime: #c8e86b/);
+  assert.match(notFound, /--coral: #ff765d/);
+  assert.match(notFound, /prefers-reduced-motion/);
+  assert.doesNotMatch(notFound, /mailto:/);
+  assert.doesNotMatch(notFound, /mc\.yandex\.ru/);
 });
 
 test('Analytics integration is opt-in and tracks meaningful actions', () => {
@@ -87,13 +118,13 @@ test('Brand assets and conversion helpers are wired into the page', () => {
   assert.match(html, /Lumocraft%20logo\.png/);
 });
 
-test('Navigation, marquee, portfolio and FAQ match the current structure', () => {
+test('Navigation, marquee and FAQ match the current structure', () => {
   const visible = html.match(/<body>[\s\S]*?<script>/)?.[0] || '';
-  assert.match(html, />Работа<\/a>/);
   assert.match(html, />Услуги<\/a>/);
   assert.match(html, />Контакты<\/a>/);
   assert.equal((html.match(/<div class="marquee"/g) || []).length, 2);
-  assert.match(html, /сайты, которым доверяют/);
+  assert.equal((visible.match(/от идеи до запуска/g) || []).length, 2);
+  assert.equal((visible.match(/без сюрпризов/g) || []).length, 2);
   assert.doesNotMatch(html, /DESIGN WITH A PURPOSE/);
   assert.doesNotMatch(html, /marqueeItems|\.device|\.orbit|\.stamp/);
   assert.doesNotMatch(visible, /Собери свой комплект|calculator-total|Сайт растёт вместе с задачей|class="extra-list"/);
@@ -128,18 +159,20 @@ test('Inline browser script has valid JavaScript syntax', () => {
 });
 
 test('Copy is rewritten: no first person, clear package names, working marquee', () => {
+  const visible = html.match(/<body>[\s\S]*?<script>/)?.[0] || '';
   assert.doesNotMatch(html, /Я сам предложу|Я превращаю|Выбрать Start|Выбрать Signal|Обсудить Full|Сайт-витрина до 5 экранов|setup-note|\.extras\b/);
   assert.match(html, />Одностраничный сайт</);
   assert.match(html, />Сайт-витрина</);
   assert.match(html, />Многостраничный сайт</);
-  assert.match(html, /Ознакомиться с работами/);
+  assert.doesNotMatch(visible, /Ознакомиться с работами/);
+  assert.doesNotMatch(visible, /Красивый сайт — это не декор|Сначала доверие\. Потом разговор\.|Сначала смысл\.|Без тёмного леса из согласований\.|Без сюрпризов<br>|case-preview/);
   assert.match(html, /marquee-shift/);
   assert.match(html, /data-marquee/);
   assert.match(html, /marquee-group/);
   assert.match(html, /buildMarquee/);
   assert.equal((html.match(/<span class="marquee-group">/g) || []).length, 2);
   assert.doesNotMatch(html, /applyTeamVoice|const teamVoice =/);
-  assert.match(html, /See our work/);
+  assert.match(html, /See an example/);
 });
 
 test('Pricing matches the approved 40/90/170 ladder and promises no deadlines', () => {
@@ -150,14 +183,22 @@ test('Pricing matches the approved 40/90/170 ladder and promises no deadlines', 
   assert.doesNotMatch(html, /<div class="price">10 000|<div class="price">25 000|<div class="price">от 50 000|"price": "10000"|"price": "25000"|"price": "50000"/);
   assert.doesNotMatch(html, />Лендинг</);
   assert.doesNotMatch(html, /Запуск за 2–3 дня|Запуск за 7 дней|2–3 недели на сборку|Неделя на правки|3 дня на правки|Поддержка после запуска/);
-  assert.equal((html.match(/<li>2 раунда правок<\/li>/g) || []).length, 2);
+  assert.equal((html.match(/<div class="price">/g) || []).length, 3);
+  assert.equal((html.match(/class="card-actions"/g) || []).length, 3);
 });
 
 test('Infrastructure files use the production domain', () => {
   const robots = fs.readFileSync(path.join(root, 'robots.txt'), 'utf8');
   const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
   assert.match(robots, /Sitemap: https:\/\/lumocraft\.ru\/sitemap\.xml/);
-  assert.match(sitemap, /<loc>https:\/\/lumocraft\.ru\//);
+  assert.match(sitemap, /<loc>https:\/\/lumocraft\.ru\/</);
+  assert.doesNotMatch(sitemap, /404\.html/);
+});
+
+test('FAQ structured data matches the visible question count', () => {
+  assert.equal((html.match(/"@type": "Question"/g) || []).length, 6);
+  assert.equal((html.match(/<summary>/g) || []).length, 6);
+  assert.doesNotMatch(html, /"name": "Домен и хостинг входят в цену\?"/);
 });
 
 test('Lead endpoint keeps bot credentials outside the public site directory', () => {

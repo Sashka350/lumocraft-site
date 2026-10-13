@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="Страница не найдена. Вернитесь на главную lumocraft или напишите нам в Telegram.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"></noscript>
+  <link rel="icon" href="lumocraft-mark.png" type="image/png">
+  <link rel="apple-touch-icon" href="lumocraft-mark.png">
+  <title>Страница не найдена — lumocraft</title>
+  <style>
+    :root {
+      --ink: #f4f2ed;
+      --muted: #96958f;
+      --muted-strong: #c6c4bc;
+      --night: #101110;
+      --panel: #171917;
+      --panel-light: #1d201d;
+      --line: rgba(244, 242, 237, .14);
+      --lime: #c8e86b;
+      --coral: #ff765d;
+      --radius: 28px;
+      --ease: cubic-bezier(.23, 1, .32, 1);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--night); scrollbar-color: #33372f #101110; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--night);
+      font: 16px/1.55 Manrope, ui-sans-serif, system-ui, sans-serif;
+    }
+    body::before {
+      position: fixed;
+      z-index: -1;
+      top: -20vw;
+      right: -16vw;
+      width: 55vw;
+      height: 55vw;
+      border-radius: 50%;
+      background: var(--coral);
+      opacity: .08;
+      filter: blur(110px);
+      content: "";
+      pointer-events: none;
+    }
+    a { color: inherit; -webkit-tap-highlight-color: transparent; }
+    ::selection { background: var(--lime); color: #11140d; }
+    .grain { position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: .045; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .wrap { width: min(1180px, calc(100% - 64px)); margin: 0 auto; }
+    .brand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-family: Manrope, sans-serif; font-size: 18px; font-weight: 800; letter-spacing: -.06em; text-decoration: none; }
+    .brand-dot { width: 10px; height: 10px; flex: 0 0 auto; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 5px rgba(255,118,93,.12); animation: brand-pulse 2.8s ease-in-out infinite; }
+    @keyframes brand-pulse { 0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 5px rgba(255,118,93,.12); } 50% { opacity: .12; transform: scale(.72); box-shadow: 0 0 0 1px rgba(255,118,93,.05); } }
+    header { padding: 25px 0; border-bottom: 1px solid var(--line); }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--lime); font: 500 11px/1.2 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+    .eyebrow::before { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); content: ""; }
+    main { flex: 1; display: grid; align-items: center; padding: 90px 0 110px; }
+    .code { display: flex; align-items: baseline; gap: 18px; margin-bottom: 26px; }
+    .code b { color: var(--lime); font-size: clamp(110px, 22vw, 260px); font-weight: 800; line-height: .8; letter-spacing: -.1em; }
+    .code span { color: var(--muted); font: 500 13px "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 0 0 26px; font-size: clamp(38px, 5.4vw, 72px); line-height: .98; letter-spacing: -.08em; }
+    h1 em { color: var(--coral); font-style: normal; }
+    .lead { max-width: 520px; margin-bottom: 38px; color: var(--muted-strong); font-size: 17px; line-height: 1.6; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px; border: 1px solid var(--lime); border-radius: 999px; background: var(--lime); color: #11140d; font-size: 14px; font-weight: 800; text-decoration: none; transition: transform 180ms var(--ease), background 180ms var(--ease), color 180ms var(--ease); }
+    .button:hover { transform: translateY(-3px); background: #e2ff8b; }
+    .button.ghost { border-color: var(--line); background: transparent; color: var(--ink); }
+    .button.ghost:hover { border-color: var(--muted-strong); background: var(--panel-light); }
+    .arrow { display: inline-block; margin-left: 10px; font-size: 18px; line-height: 0; }
+    .contacts { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 44px; padding-top: 26px; border-top: 1px solid var(--line); }
+    .contacts a { color: var(--muted); font: 500 11px "DM Mono", monospace; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; transition: color 180ms ease; }
+    .contacts a:hover { color: var(--lime); }
+    footer { padding: 26px 0; border-top: 1px solid var(--line); color: var(--muted); font: 500 11px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+    @media (max-width: 820px) {
+      .wrap { width: min(100% - 36px, 620px); }
+      main { padding: 65px 0 80px; }
+    }
+    @media (max-width: 500px) {
+      .wrap { width: min(100% - 28px, 620px); }
+      header { padding: 18px 0; }
+      h1 { font-size: 40px; }
+      .lead { font-size: 16px; }
+      .actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header>
+    <div class="wrap"><a class="brand" href="/" aria-label="lumocraft — студия веб-дизайна"><span class="brand-dot" aria-hidden="true"></span><span>lumocraft</span></a></div>
+  </header>
+  <main>
+    <div class="wrap">
+      <div class="code"><b>404</b><span>страница не найдена</span></div>
+      <div class="eyebrow">Ничего страшного</div>
+      <h1>Такой страницы <em>нет.</em></h1>
+      <p class="lead">Возможно, ссылка устарела или в ней опечатка. Вернитесь на главную — там всё на месте.</p>
+      <div class="actions"><a class="button" href="/">На главную <span class="arrow">↗</span></a><a class="button ghost" href="https://t.me/sassha_at" target="_blank" rel="noreferrer">Написать в Telegram <span class="arrow">↗</span></a></div>
+      <div class="contacts"><a href="https://t.me/sassha_at" target="_blank" rel="noreferrer">Telegram ↗</a><span>contact@lumocraft.ru</span><a href="privacy.html">Политика конфиденциальности</a></div>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">© 2026 lumocraft</div>
+  </footer>
+</body>
+</html>
