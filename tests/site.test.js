@@ -78,7 +78,8 @@ test('Error page matches the site style and is not indexed', () => {
   assert.match(notFound, /<b>404<\/b>/);
   assert.match(notFound, /class="brand-dot"/);
   assert.match(notFound, /@keyframes brand-pulse/);
-  assert.match(notFound, /href="\/"/);
+  assert.match(notFound, /href="https:\/\/lumocraft\.ru\/"/);
+  assert.doesNotMatch(notFound, /href="\/"/);
   assert.match(notFound, /https:\/\/t\.me\/sassha_at/);
   assert.match(notFound, /href="privacy\.html"/);
   assert.match(notFound, /--lime: #c8e86b/);
