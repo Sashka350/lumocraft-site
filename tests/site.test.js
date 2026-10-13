@@ -166,7 +166,7 @@ test('Copy is rewritten: no first person, clear package names, working marquee',
   assert.match(html, />Сайт-витрина</);
   assert.match(html, />Многостраничный сайт</);
   assert.doesNotMatch(visible, /Ознакомиться с работами/);
-  assert.doesNotMatch(visible, /Красивый сайт — это не декор|Сначала доверие\. Потом разговор\.|Сначала смысл\.|Без тёмного леса из согласований\.|Без сюрпризов<br>|case-preview/);
+  assert.doesNotMatch(visible, /Красивый сайт — это не декор|Сначала доверие\. Потом разговор\.|Сначала смысл\.|Без тёмного леса из согласований\.|Без сюрпризов<br>|case-preview|За несколько секунд человек решает|Мы соединяем выразительный арт-дирекшн|Мы превращаем первое впечатление/);
   assert.match(html, /marquee-shift/);
   assert.match(html, /data-marquee/);
   assert.match(html, /marquee-group/);
