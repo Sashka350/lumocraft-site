@@ -52,12 +52,8 @@ test('Direct contact block and mobile nav are present, portfolio is gone', () =>
   assert.doesNotMatch(html, /class="case-preview"|case-hero\.jpg|\.case \{/);
   assert.doesNotMatch(html, /portrait-[1235]|portrait-bw/);
   assert.match(html, /id="direct"/);
-  assert.match(html, /class="direct-cards"/);
-  assert.match(html, /class="direct-card primary" href="https:\/\/t\.me\/sassha_at"/);
-  assert.match(html, /data-copy-email/);
-  assert.match(html, /class="direct-card-value">@sassha_at</);
-  assert.match(html, /class="direct-card-value">contact@lumocraft\.ru</);
-  assert.doesNotMatch(html, /\.direct-actions|\.direct-email\b/);
+  assert.match(html, /Написать в Telegram/);
+  assert.match(html, /direct-email/);
   assert.match(html, /class="mobile-nav"/);
   assert.match(html, /grid-template-columns: repeat\(3, 1fr\); gap: 0; border-top: 1px solid var\(--line\); background: rgba\(16,17,16/);
   assert.doesNotMatch(html, /\.contact-actions|\.button\.ghost.*11140d !important/);
@@ -79,13 +75,19 @@ test('Header shows three identical links in the agreed order', () => {
   assert.doesNotMatch(body, /sashka350\.github\.io\/example-/);
 });
 
-test('About block animates two balls along the orbit', () => {
-  assert.match(html, /@keyframes orbit-spin \{ from \{ transform: rotate\(0deg\); \} to \{ transform: rotate\(360deg\); \} \}/);
-  assert.match(html, /class="orbit-spin coral"/);
-  assert.match(html, /class="orbit-spin lime rev"/);
-  assert.match(html, /\.orbit-spin\.rev \{ animation-direction: reverse;/);
-  assert.match(html, /class="about-ring"/);
-  assert.doesNotMatch(html, /\.about-portrait::after/);
+test('About block keeps the original artwork and moves the two balls along the orbit', () => {
+  assert.match(html, /\.about-portrait \{[^}]*background: linear-gradient\(145deg, #252b25, #111311 68%\)/);
+  assert.doesNotMatch(html, /radial-gradient\(circle at 65% 25%|radial-gradient\(circle at 35% 70%/);
+  assert.match(html, /\.about-portrait::after \{ position: absolute; inset: 16%; border: 1px solid rgba\(244,242,237,\.35\); border-radius: 50%; transform: rotate\(-24deg\); content: ""; \}/);
+  assert.match(html, /\.about-orbit \{ position: absolute; inset: 16%; transform: rotate\(-24deg\); \}/);
+  assert.match(html, /offset-path: ellipse\(50% 50% at 50% 50%\); offset-rotate: 0deg;/);
+  assert.match(html, /@keyframes orbit-run \{ from \{ offset-distance: 0%; \} to \{ offset-distance: 100%; \} \}/);
+  assert.match(html, /class="orbit-runner coral"/);
+  assert.match(html, /class="orbit-runner lime"/);
+  assert.match(html, /\.orbit-runner\.lime \{ animation-direction: reverse;/);
+  assert.match(html, /\.orbit-dot \{[^}]*width: 16cqw; height: 16cqw;/);
+  assert.match(html, /\.orbit-runner\.lime \.orbit-dot \{ width: 24cqw; height: 24cqw;/);
+  assert.doesNotMatch(html, /box-shadow: 0 0 54px|box-shadow: 0 0 42px|about-ring|orbit-spin/);
 });
 
 test('Form choices use package names and custom chips instead of native selects', () => {
