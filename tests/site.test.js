@@ -52,17 +52,24 @@ test('Direct contact block and mobile nav are present, portfolio is gone', () =>
   assert.doesNotMatch(html, /class="case-preview"|case-hero\.jpg|\.case \{/);
   assert.doesNotMatch(html, /portrait-[1235]|portrait-bw/);
   assert.match(html, /id="direct"/);
-  assert.match(html, /Написать в Telegram/);
-  assert.match(html, /direct-email/);
+  assert.match(html, /class="direct-cards"/);
+  assert.match(html, /class="direct-card primary" href="https:\/\/t\.me\/sassha_at"/);
+  assert.match(html, /data-copy-email/);
+  assert.match(html, /class="direct-card-value">@sassha_at</);
+  assert.match(html, /class="direct-card-value">contact@lumocraft\.ru</);
+  assert.doesNotMatch(html, /\.direct-actions|\.direct-email\b/);
   assert.match(html, /class="mobile-nav"/);
-  assert.match(html, /grid-template-columns: repeat\(2, 1fr\); gap: 0; border-top: 1px solid var\(--line\); background: rgba\(16,17,16/);
+  assert.match(html, /grid-template-columns: repeat\(3, 1fr\); gap: 0; border-top: 1px solid var\(--line\); background: rgba\(16,17,16/);
   assert.doesNotMatch(html, /\.contact-actions|\.button\.ghost.*11140d !important/);
 });
 
-test('Header CTA, pulsing brand dot and square checkboxes are wired', () => {
+test('Header shows three identical links in the agreed order', () => {
   const body = html.match(/<body>[\s\S]*?<script>/)?.[0] || '';
-  assert.match(html, /<a class="nav-cta" href="#contact">Оставить заявку<\/a>/);
   assert.doesNotMatch(body, />Работа<\/a>/);
+  assert.doesNotMatch(html, /class="nav-cta"/);
+  assert.match(html, /<a class="nav-link" href="#services">Услуги<\/a>\s*<a class="nav-link" href="#contact">Оставить заявку<\/a>\s*<a class="nav-link" href="#direct">Контакты<\/a>/);
+  assert.equal((body.match(/class="nav-link"/g) || []).length, 3);
+  assert.match(html, /class="mobile-nav"[^>]*><a href="#services">Услуги<\/a><a href="#contact">Оставить заявку<\/a><a href="#direct">Контакты<\/a>/);
   assert.match(html, /@keyframes brand-pulse/);
   assert.match(html, /\.brand-dot \{[^}]*animation: brand-pulse/);
   assert.match(html, /input\[type="checkbox"\] \{ -webkit-appearance: none; appearance: none;/);
@@ -70,6 +77,31 @@ test('Header CTA, pulsing brand dot and square checkboxes are wired', () => {
   assert.equal((body.match(/Посмотреть пример/g) || []).length, 3);
   assert.equal((body.match(/href="404\.html"/g) || []).length, 3);
   assert.doesNotMatch(body, /sashka350\.github\.io\/example-/);
+});
+
+test('About block animates two balls along the orbit', () => {
+  assert.match(html, /@keyframes orbit-spin \{ from \{ transform: rotate\(0deg\); \} to \{ transform: rotate\(360deg\); \} \}/);
+  assert.match(html, /class="orbit-spin coral"/);
+  assert.match(html, /class="orbit-spin lime rev"/);
+  assert.match(html, /\.orbit-spin\.rev \{ animation-direction: reverse;/);
+  assert.match(html, /class="about-ring"/);
+  assert.doesNotMatch(html, /\.about-portrait::after/);
+});
+
+test('Form choices use package names and custom chips instead of native selects', () => {
+  const body = html.match(/<body>[\s\S]*?<script>/)?.[0] || '';
+  assert.doesNotMatch(html, /<select/);
+  assert.doesNotMatch(html, /Одностраничник|Выберите вариант|Выберите задачу/);
+  assert.match(html, /<legend>Какой формат\?<\/legend>/);
+  assert.equal((body.match(/name="Объём" value="Одностраничный сайт"/g) || []).length, 2);
+  assert.equal((body.match(/name="Объём" value="Сайт-витрина"/g) || []).length, 2);
+  assert.equal((body.match(/name="Объём" value="Многостраничный сайт"/g) || []).length, 2);
+  assert.match(html, /\.choice input:checked \+ span \{ border-color: #11140d; background: #11140d; color: var\(--lime\); \}/);
+  assert.match(html, /\.choice input \{ position: absolute; width: 1px; height: 1px;/);
+  assert.match(html, /type="radio" name="Срок"/);
+  assert.match(html, /type="radio" name="Цвета"/);
+  assert.match(html, /<legend>Срок<\/legend>/);
+  assert.match(html, /<legend>Цвета<\/legend>/);
 });
 
 test('Error page matches the site style and is not indexed', () => {
@@ -127,7 +159,7 @@ test('Navigation, marquee and FAQ match the current structure', () => {
   assert.equal((visible.match(/от идеи до запуска/g) || []).length, 2);
   assert.equal((visible.match(/без сюрпризов/g) || []).length, 2);
   assert.doesNotMatch(html, /DESIGN WITH A PURPOSE/);
-  assert.doesNotMatch(html, /marqueeItems|\.device|\.orbit|\.stamp/);
+  assert.doesNotMatch(html, /marqueeItems|\.device|\.stamp/);
   assert.doesNotMatch(visible, /Собери свой комплект|calculator-total|Сайт растёт вместе с задачей|class="extra-list"/);
   assert.equal((html.match(/<summary>/g) || []).length, 6);
   assert.match(html, /font-family: "Space Grotesk"/);
