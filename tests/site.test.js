@@ -220,8 +220,9 @@ test('Copy is rewritten: no first person, clear package names, working marquee',
   assert.match(html, /See an example/);
 });
 
-test('Pricing matches the approved 40/90/170 ladder and promises no deadlines', () => {
+test('Pricing matches the approved 40/90/170 ladder and describes package scope and estimates', () => {
   const body = html.match(/<body>[\s\S]*?<script>/)?.[0] || '';
+  const services = html.match(/<section id="services">[\s\S]*?<\/section>/)?.[0] || '';
   assert.match(html, /"priceRange": "от 40 000 ₽"/);
   assert.match(html, /"priceSpecification": \{"@type": "PriceSpecification", "priceCurrency": "RUB", "minPrice": 40000\}/);
   assert.match(html, /"priceSpecification": \{"@type": "PriceSpecification", "priceCurrency": "RUB", "minPrice": 90000\}/);
@@ -230,6 +231,16 @@ test('Pricing matches the approved 40/90/170 ladder and promises no deadlines', 
   assert.doesNotMatch(html, /<div class="price">10 000|<div class="price">25 000|<div class="price">от 50 000|"price": "10000"|"price": "25000"|"price": "50000"/);
   assert.doesNotMatch(html, />Лендинг</);
   assert.doesNotMatch(html, /Запуск за 2–3 дня|Запуск за 7 дней|2–3 недели на сборку|Неделя на правки|3 дня на правки|Поддержка после запуска/);
+  assert.match(services, /<h2>Как формируется <em>цена<\/em><\/h2>/);
+  assert.match(services, /Одна страница с 4–5 блоками/);
+  assert.match(services, /До 5 информационных страниц, без каталога/);
+  assert.match(services, /От 6 страниц или сайт с каталогом/);
+  assert.match(services, /Ориентир: 1–2 недели/);
+  assert.match(services, /Ориентир: 3–4 недели/);
+  assert.match(services, /Ориентир: 5–7 недель/);
+  assert.match(services, /простая форма заявки/);
+  assert.match(services, /один раунд правок/i);
+  assert.doesNotMatch(services, /Бла-бла-бла/);
   assert.equal((html.match(/<div class="price">/g) || []).length, 3);
   assert.equal((body.match(/<div class="price">от /g) || []).length, 3);
   assert.equal((html.match(/class="card-actions"/g) || []).length, 3);
