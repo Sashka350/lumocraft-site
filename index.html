@@ -183,6 +183,10 @@
     .nav-link:hover { border-color: var(--line); background: var(--panel); color: var(--lime); transform: translateY(-2px); }
     .nav-link:active { transform: scale(.97); }
     .nav-link.is-active { border-color: rgba(200,232,107,.38); color: var(--lime); }
+    .nav-pages { display: flex; align-items: center; gap: 2px; margin-left: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; }
+    .nav-page-link { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; padding: 0 13px; border-radius: 999px; color: var(--muted-strong); font-size: 12px; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; text-decoration: none; transition: color 180ms var(--ease), background 180ms var(--ease); }
+    .nav-page-link:hover { background: var(--lime); color: #11140d; }
+    .nav-page-link[aria-current="page"] { background: var(--panel-light); color: var(--lime); }
     .mobile-nav a.is-active { color: var(--lime); }
     .lang { display: flex; gap: 8px; color: var(--muted); font: 500 11px "DM Mono", monospace; }
     .lang button { padding: 0; border: 0; background: none; color: inherit; cursor: pointer; }
@@ -360,8 +364,8 @@
     .direct-card-value { font-size: 19px; font-weight: 800; letter-spacing: -.03em; overflow-wrap: anywhere; transition: color 200ms var(--ease); }
     .direct-card:hover .direct-card-value { color: var(--lime); }
     .direct-card-hint { margin-top: auto; padding-top: 18px; color: var(--muted); font-size: 12px; }
-    .mobile-nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; display: none; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); background: rgba(16,17,16,.96); backdrop-filter: blur(12px); }
-    .mobile-nav a { padding: 14px 0 16px; color: var(--muted-strong); font-size: 12px; font-weight: 700; text-align: center; text-decoration: none; }
+    .mobile-nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; display: none; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 1px solid var(--line); background: rgba(16,17,16,.96); backdrop-filter: blur(12px); }
+    .mobile-nav a { padding: 14px 0 16px; color: var(--muted-strong); font-size: 11px; font-weight: 700; text-align: center; text-decoration: none; }
     .mobile-nav a:hover, .mobile-nav a:active { color: var(--lime); }
     @media (max-width: 820px) {
       body { padding-bottom: 54px; }
@@ -371,6 +375,7 @@
       .lang-prompt { left: 16px; right: auto; bottom: 68px; max-width: 260px; }
       .wrap { width: min(100% - 36px, 620px); }
       .nav-link { display: none; }
+      .nav-pages { display: none; }
       .hero { min-height: 0; padding: 75px 0 85px; }
       .hero-grid, .research { grid-template-columns: 1fr; gap: 45px; }
       .about, .faq { grid-template-columns: 1fr; gap: 35px; }
@@ -429,6 +434,10 @@
           <a class="nav-link" href="#services">Услуги</a>
           <a class="nav-link" href="#contact">Оставить заявку</a>
           <a class="nav-link" href="#direct">Контакты</a>
+          <div class="nav-pages">
+            <a class="nav-page-link" href="services.html">Темы и услуги</a>
+            <a class="nav-page-link" href="news.html">Новости</a>
+          </div>
           <div class="lang" aria-label="Выбор языка"><button class="active" type="button">RU</button><span>/</span><button type="button">EN</button></div>
         </div>
       </nav>
@@ -492,7 +501,7 @@
   </main>
 
     <footer id="privacy"><div class="wrap footer-grid"><div><a class="footer-brand" href="#top">lumocraft</a><p>Студия веб-дизайна<br>Сайты, которым доверяют.</p></div><div><span class="mono">Навигация</span><a href="#services">Услуги</a><a href="#contact">Оставить заявку</a><a href="#direct">Контакты</a></div><div><span class="mono">Связь</span><span>contact@lumocraft.ru</span><a href="https://t.me/sassha_at" target="_blank" rel="noreferrer">Telegram ↗</a></div><div><span class="mono">Документы</span><a href="privacy.html">Политика конфиденциальности</a><button class="cookie-manage footer-cookie-manage" type="button">Настройки cookies</button></div><div class="footer-bottom"><span>© 2026 lumocraft</span></div></div></footer>
-  <nav class="mobile-nav" aria-label="Мобильная навигация"><a href="#services">Услуги</a><a href="#contact">Оставить заявку</a><a href="#direct">Контакты</a></nav>
+  <nav class="mobile-nav" aria-label="Мобильная навигация"><a href="#services">Услуги</a><a href="#contact">Заявка</a><a href="#direct">Контакты</a><a href="services.html">Темы</a><a href="news.html">Новости</a></nav>
   <script>
     document.querySelectorAll('.lead-form').forEach((form) => {
       const trap = document.createElement('input');
@@ -781,6 +790,7 @@
       'Хочу, чтобы предложили': 'Let us suggest',
       'Я согласен на обработку данных для ответа на заявку.': 'I agree to the processing of my data to receive a reply.',
       'Оставить заявку': 'Leave a request', 'Посмотреть пример': 'See an example',
+      'Темы и услуги': 'Themes and services', 'Темы': 'Themes', 'Новости': 'News', 'Заявка': 'Enquiry',
       'от идеи до запуска': 'from idea to launch', 'без сюрпризов': 'no surprises',
       'Бла-бла-бла': 'Placeholder', 'Бла-бла-бла.': 'Placeholder copy.',
       'Бла-бла-бла. Бла-бла-бла.': 'Placeholder copy. Placeholder copy.',
