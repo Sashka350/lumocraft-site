@@ -92,12 +92,7 @@
     .nav-right { display: flex; align-items: center; gap: 9px; }
     .nav-link { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 16px; border: 1px solid transparent; border-radius: 999px; color: var(--muted-strong); font-size: 14px; font-weight: 700; letter-spacing: -.01em; text-decoration: none; transition: color 180ms var(--ease), border-color 180ms var(--ease), background 180ms var(--ease), transform 180ms var(--ease); }
     .nav-link:hover { border-color: var(--line); background: var(--panel); color: var(--lime); transform: translateY(-2px); }
-    .nav-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 18px; border: 1px solid var(--lime); border-radius: 999px; background: var(--lime); color: #11140d; font-size: 13px; font-weight: 800; letter-spacing: -.01em; white-space: nowrap; text-decoration: none; transition: transform 180ms var(--ease), background 180ms var(--ease), color 180ms var(--ease), border-color 180ms var(--ease); }
-    .nav-btn:hover { background: #e2ff8b; transform: translateY(-2px); }
-    .nav-btn:active { transform: scale(.97); }
-    .nav-btn.ghost { border-color: var(--line); background: transparent; color: var(--ink); }
-    .nav-btn.ghost:hover { border-color: var(--lime); background: var(--lime); color: #11140d; }
-    .nav-btn[aria-current="page"] { border-color: #11140d; background: #11140d; color: var(--lime); }
+    .nav-link[aria-current="page"] { color: var(--lime); }
     .lang { display: flex; gap: 8px; color: var(--muted); font: 500 11px "DM Mono", monospace; }
     .lang button { padding: 0; border: 0; background: none; color: inherit; cursor: pointer; }
     .lang button.active { color: var(--lime); }
@@ -144,7 +139,6 @@
       .to-top { right: 16px; bottom: 68px; }
       .wrap { width: min(100% - 36px, 620px); }
       .nav-link { display: none; }
-      .nav-btn { display: none; }
       .page-hero { padding: 64px 0 24px; }
       .placeholder { padding: 30px 0 80px; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
@@ -175,8 +169,8 @@
           <a class="nav-link" href="index.html#services" data-ru="Услуги" data-en="Services">Услуги</a>
           <a class="nav-link" href="index.html#contact" data-ru="Оставить заявку" data-en="Leave a request">Оставить заявку</a>
           <a class="nav-link" href="index.html#direct" data-ru="Контакты" data-en="Contact">Контакты</a>
-          <a class="nav-btn" href="services.html" aria-current="page" data-ru="Цены" data-en="Prices">Цены</a>
-          <a class="nav-btn ghost" href="news.html" data-ru="Новости" data-en="News">Новости</a>
+          <a class="nav-link" href="services.html" aria-current="page" data-ru="Цены" data-en="Prices">Цены</a>
+          <a class="nav-link" href="news.html" data-ru="Новости" data-en="News">Новости</a>
           <div class="lang" aria-label="Выбор языка"><button class="active" type="button">RU</button><span>/</span><button type="button">EN</button></div>
         </div>
       </nav>

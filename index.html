@@ -183,12 +183,7 @@
     .nav-link:hover { border-color: var(--line); background: var(--panel); color: var(--lime); transform: translateY(-2px); }
     .nav-link:active { transform: scale(.97); }
     .nav-link.is-active { border-color: rgba(200,232,107,.38); color: var(--lime); }
-    .nav-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 18px; border: 1px solid var(--lime); border-radius: 999px; background: var(--lime); color: #11140d; font-size: 13px; font-weight: 800; letter-spacing: -.01em; white-space: nowrap; text-decoration: none; transition: transform 180ms var(--ease), background 180ms var(--ease), color 180ms var(--ease), border-color 180ms var(--ease); }
-    .nav-btn:hover { background: #e2ff8b; transform: translateY(-2px); }
-    .nav-btn:active { transform: scale(.97); }
-    .nav-btn.ghost { border-color: var(--line); background: transparent; color: var(--ink); }
-    .nav-btn.ghost:hover { border-color: var(--lime); background: var(--lime); color: #11140d; }
-    .nav-btn[aria-current="page"] { border-color: #11140d; background: #11140d; color: var(--lime); }
+    .nav-link[aria-current="page"] { color: var(--lime); }
     .mobile-nav a.is-active { color: var(--lime); }
     .lang { display: flex; gap: 8px; color: var(--muted); font: 500 11px "DM Mono", monospace; }
     .lang button { padding: 0; border: 0; background: none; color: inherit; cursor: pointer; }
@@ -377,7 +372,6 @@
       .lang-prompt { left: 16px; right: auto; bottom: 68px; max-width: 260px; }
       .wrap { width: min(100% - 36px, 620px); }
       .nav-link { display: none; }
-      .nav-btn { display: none; }
       .hero { min-height: 0; padding: 75px 0 85px; }
       .hero-grid, .research { grid-template-columns: 1fr; gap: 45px; }
       .about, .faq { grid-template-columns: 1fr; gap: 35px; }
@@ -436,8 +430,8 @@
           <a class="nav-link" href="#services">Услуги</a>
           <a class="nav-link" href="#contact">Оставить заявку</a>
           <a class="nav-link" href="#direct">Контакты</a>
-          <a class="nav-btn" href="services.html">Цены</a>
-          <a class="nav-btn ghost" href="news.html">Новости</a>
+          <a class="nav-link" href="services.html">Цены</a>
+          <a class="nav-link" href="news.html">Новости</a>
           <div class="lang" aria-label="Выбор языка"><button class="active" type="button">RU</button><span>/</span><button type="button">EN</button></div>
         </div>
       </nav>
