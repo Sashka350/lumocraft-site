@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Темы и услуги lumocraft: ниши, с которыми мы работаем, и услуги, которые делаем. Сайты для предпринимателей, специалистов и малого бизнеса.">
+  <meta name="description" content="Цены lumocraft: пакеты, стоимость и сроки работ. Сайты для предпринимателей, специалистов и малого бизнеса.">
   <meta name="robots" content="noindex, follow">
   <meta name="author" content="Александр · lumocraft">
   <meta name="theme-color" content="#101110">
@@ -17,8 +17,8 @@
   <meta property="og:locale" content="ru_RU">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Темы и услуги — lumocraft">
-  <meta property="og:description" content="Ниши, с которыми мы работаем, и услуги, которые делаем.">
+  <meta property="og:title" content="Цены — lumocraft">
+  <meta property="og:description" content="Пакеты, стоимость и сроки работ.">
   <meta property="og:url" content="https://lumocraft.ru/services.html">
   <meta property="og:image" content="https://lumocraft.ru/og-image.png">
   <meta property="og:image:width" content="851">
@@ -26,10 +26,10 @@
   <meta property="og:image:alt" content="lumocraft — сайты, которым доверяют">
   <meta property="og:site_name" content="lumocraft">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Темы и услуги — lumocraft">
-  <meta name="twitter:description" content="Ниши, с которыми мы работаем, и услуги, которые делаем.">
+  <meta name="twitter:title" content="Цены — lumocraft">
+  <meta name="twitter:description" content="Пакеты, стоимость и сроки работ.">
   <meta name="twitter:image" content="https://lumocraft.ru/og-image.png">
-  <title>Темы и услуги — lumocraft</title>
+  <title>Цены — lumocraft</title>
   <style>
     :root {
       --ink: #f4f2ed;
@@ -92,10 +92,12 @@
     .nav-right { display: flex; align-items: center; gap: 9px; }
     .nav-link { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 16px; border: 1px solid transparent; border-radius: 999px; color: var(--muted-strong); font-size: 14px; font-weight: 700; letter-spacing: -.01em; text-decoration: none; transition: color 180ms var(--ease), border-color 180ms var(--ease), background 180ms var(--ease), transform 180ms var(--ease); }
     .nav-link:hover { border-color: var(--line); background: var(--panel); color: var(--lime); transform: translateY(-2px); }
-    .nav-pages { display: flex; align-items: center; gap: 2px; margin-left: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; }
-    .nav-page-link { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; padding: 0 13px; border-radius: 999px; color: var(--muted-strong); font-size: 12px; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; text-decoration: none; transition: color 180ms var(--ease), background 180ms var(--ease); }
-    .nav-page-link:hover { background: var(--lime); color: #11140d; }
-    .nav-page-link[aria-current="page"] { background: var(--panel-light); color: var(--lime); }
+    .nav-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 18px; border: 1px solid var(--lime); border-radius: 999px; background: var(--lime); color: #11140d; font-size: 13px; font-weight: 800; letter-spacing: -.01em; white-space: nowrap; text-decoration: none; transition: transform 180ms var(--ease), background 180ms var(--ease), color 180ms var(--ease), border-color 180ms var(--ease); }
+    .nav-btn:hover { background: #e2ff8b; transform: translateY(-2px); }
+    .nav-btn:active { transform: scale(.97); }
+    .nav-btn.ghost { border-color: var(--line); background: transparent; color: var(--ink); }
+    .nav-btn.ghost:hover { border-color: var(--lime); background: var(--lime); color: #11140d; }
+    .nav-btn[aria-current="page"] { border-color: #11140d; background: #11140d; color: var(--lime); }
     .lang { display: flex; gap: 8px; color: var(--muted); font: 500 11px "DM Mono", monospace; }
     .lang button { padding: 0; border: 0; background: none; color: inherit; cursor: pointer; }
     .lang button.active { color: var(--lime); }
@@ -142,7 +144,7 @@
       .to-top { right: 16px; bottom: 68px; }
       .wrap { width: min(100% - 36px, 620px); }
       .nav-link { display: none; }
-      .nav-pages { display: none; }
+      .nav-btn { display: none; }
       .page-hero { padding: 64px 0 24px; }
       .placeholder { padding: 30px 0 80px; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
@@ -173,10 +175,8 @@
           <a class="nav-link" href="index.html#services" data-ru="Услуги" data-en="Services">Услуги</a>
           <a class="nav-link" href="index.html#contact" data-ru="Оставить заявку" data-en="Leave a request">Оставить заявку</a>
           <a class="nav-link" href="index.html#direct" data-ru="Контакты" data-en="Contact">Контакты</a>
-          <div class="nav-pages">
-            <a class="nav-page-link" href="services.html" aria-current="page" data-ru="Темы и услуги" data-en="Themes and services">Темы и услуги</a>
-            <a class="nav-page-link" href="news.html" data-ru="Новости" data-en="News">Новости</a>
-          </div>
+          <a class="nav-btn" href="services.html" aria-current="page" data-ru="Цены" data-en="Prices">Цены</a>
+          <a class="nav-btn ghost" href="news.html" data-ru="Новости" data-en="News">Новости</a>
           <div class="lang" aria-label="Выбор языка"><button class="active" type="button">RU</button><span>/</span><button type="button">EN</button></div>
         </div>
       </nav>
@@ -186,9 +186,9 @@
   <main id="top">
     <section class="page-hero">
       <div class="wrap">
-        <div class="eyebrow" data-ru="Темы и услуги" data-en="Themes and services">Темы и услуги</div>
-        <h1 data-ru-html="Темы <em>и услуги</em>" data-en-html="Themes <em>and services</em>">Темы <em>и услуги</em></h1>
-        <p class="lead" data-ru="Здесь соберём ниши, с которыми работаем, и услуги, которые делаем. Скоро здесь появятся конкретные примеры и разборы задач." data-en="We will collect the niches we work with and the services we deliver. Concrete examples and task breakdowns will appear here soon.">Здесь соберём ниши, с которыми работаем, и услуги, которые делаем. Скоро здесь появятся конкретные примеры и разборы задач.</p>
+        <div class="eyebrow" data-ru="Цены" data-en="Prices">Цены</div>
+        <h1 data-ru-html="Цены <em>и пакеты</em>" data-en-html="Prices <em>and packages</em>">Цены <em>и пакеты</em></h1>
+        <p class="lead" data-ru="Здесь соберём пакеты, стоимость и сроки работ. Скоро здесь появятся подробные расчёты и разборы задач." data-en="We will collect the packages, prices and timelines here. Detailed estimates and task breakdowns will appear soon.">Здесь соберём пакеты, стоимость и сроки работ. Скоро здесь появятся подробные расчёты и разборы задач.</p>
         <div class="actions">
           <a class="button" href="index.html#services" data-ru-html="Смотреть услуги <span class='arrow'>↗</span>" data-en-html="See the services <span class='arrow'>↗</span>">Смотреть услуги <span class="arrow">↗</span></a>
           <a class="button ghost" href="index.html#contact" data-ru-html="Оставить заявку <span class='arrow'>↗</span>" data-en-html="Leave a request <span class='arrow'>↗</span>">Оставить заявку <span class="arrow">↗</span></a>
@@ -222,7 +222,7 @@
     <div class="footer-bottom"><span>© 2026 lumocraft</span></div>
   </div></footer>
 
-  <nav class="mobile-nav" aria-label="Мобильная навигация"><a href="index.html#services" data-ru="Услуги" data-en="Services">Услуги</a><a href="index.html#contact" data-ru="Заявка" data-en="Enquiry">Заявка</a><a href="index.html#direct" data-ru="Контакты" data-en="Contact">Контакты</a><a href="services.html" data-ru="Темы" data-en="Themes">Темы</a><a href="news.html" data-ru="Новости" data-en="News">Новости</a></nav>
+  <nav class="mobile-nav" aria-label="Мобильная навигация"><a href="index.html#services" data-ru="Услуги" data-en="Services">Услуги</a><a href="index.html#contact" data-ru="Заявка" data-en="Enquiry">Заявка</a><a href="index.html#direct" data-ru="Контакты" data-en="Contact">Контакты</a><a href="services.html" data-ru="Цены" data-en="Prices">Цены</a><a href="news.html" data-ru="Новости" data-en="News">Новости</a></nav>
 
   <aside class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-copy">
     <strong id="cookie-title" data-ru="Небольшое уведомление о cookies" data-en="A quick cookie notice">Небольшое уведомление о cookies</strong>
@@ -232,8 +232,8 @@
 
   <script>
     const pageMeta = {
-      ru: { title: 'Темы и услуги — lumocraft', description: 'Темы и услуги lumocraft: ниши, с которыми мы работаем, и услуги, которые делаем. Сайты для предпринимателей, специалистов и малого бизнеса.' },
-      en: { title: 'Themes and services — lumocraft', description: 'Themes and services by lumocraft: the niches we work with and the services we deliver. Websites for entrepreneurs, specialists and small businesses.' }
+      ru: { title: 'Цены — lumocraft', description: 'Цены lumocraft: пакеты, стоимость и сроки работ. Сайты для предпринимателей, специалистов и малого бизнеса.' },
+      en: { title: 'Prices — lumocraft', description: 'Prices by lumocraft: packages, costs and timelines. Websites for entrepreneurs, specialists and small businesses.' }
     };
     const applyLanguage = (language) => {
       const current = language === 'en' ? 'en' : 'ru';

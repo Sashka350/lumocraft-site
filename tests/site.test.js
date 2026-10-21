@@ -73,7 +73,7 @@ test('Header shows three identical links in the agreed order', () => {
   assert.doesNotMatch(html, /class="nav-cta"/);
   assert.match(html, /<a class="nav-link" href="#services">Услуги<\/a>\s*<a class="nav-link" href="#contact">Оставить заявку<\/a>\s*<a class="nav-link" href="#direct">Контакты<\/a>/);
   assert.equal((body.match(/class="nav-link"/g) || []).length, 3);
-  assert.match(html, /class="mobile-nav"[^>]*><a href="#services">Услуги<\/a><a href="#contact">Заявка<\/a><a href="#direct">Контакты<\/a><a href="services\.html">Темы<\/a><a href="news\.html">Новости<\/a>/);
+  assert.match(html, /class="mobile-nav"[^>]*><a href="#services">Услуги<\/a><a href="#contact">Заявка<\/a><a href="#direct">Контакты<\/a><a href="services\.html">Цены<\/a><a href="news\.html">Новости<\/a>/);
   assert.match(html, /@keyframes brand-pulse/);
   assert.match(html, /\.brand-dot \{[^}]*animation: brand-pulse/);
   assert.match(html, /input\[type="checkbox"\] \{ -webkit-appearance: none; appearance: none;/);
@@ -86,17 +86,19 @@ test('Header shows three identical links in the agreed order', () => {
 test('Header and mobile nav link to the services and news pages', () => {
   const services = fs.readFileSync(path.join(root, 'services.html'), 'utf8');
   const news = fs.readFileSync(path.join(root, 'news.html'), 'utf8');
-  assert.match(html, /<div class="nav-pages">[\s\S]*?<a class="nav-page-link" href="services\.html">Темы и услуги<\/a>\s*<a class="nav-page-link" href="news\.html">Новости<\/a>/);
-  assert.match(html, /\.nav-page-link\[aria-current="page"\]/);
-  assert.match(html, /'Темы и услуги': 'Themes and services', 'Темы': 'Themes', 'Новости': 'News', 'Заявка': 'Enquiry'/);
+  assert.match(html, /<a class="nav-btn" href="services\.html">Цены<\/a>\s*<a class="nav-btn ghost" href="news\.html">Новости<\/a>/);
+  assert.match(html, /\.nav-btn \[aria-current="page"\]|\.nav-btn\[aria-current="page"\]/);
+  assert.match(html, /\.nav-btn \{[^}]*border-radius: 999px; background: var\(--lime\); color: #11140d/);
+  assert.match(html, /'Цены': 'Prices', 'Новости': 'News', 'Заявка': 'Enquiry'/);
   for (const page of [services, news]) {
-    assert.match(page, /<div class="nav-pages">/);
-    assert.match(page, /<a class="nav-page-link" href="services\.html"/);
-    assert.match(page, /<a class="nav-page-link" href="news\.html"/);
+    assert.match(page, /<a class="nav-btn" href="services\.html"[^>]*>Цены<\/a>/);
+    assert.match(page, /<a class="nav-btn ghost" href="news\.html"[^>]*>Новости<\/a>/);
     assert.match(page, /grid-template-columns: repeat\(5, 1fr\)/);
+    assert.match(page, /<a href="services\.html" data-ru="Цены" data-en="Prices">Цены<\/a>/);
   }
-  assert.match(services, /<a class="nav-page-link" href="services\.html" aria-current="page"/);
-  assert.match(news, /<a class="nav-page-link" href="news\.html" aria-current="page"/);
+  assert.match(services, /<a class="nav-btn" href="services\.html" aria-current="page"/);
+  assert.match(news, /<a class="nav-btn ghost" href="news\.html" aria-current="page"/);
+  assert.doesNotMatch(html, /nav-pages|nav-page-link|Темы и услуги/);
 });
 
 test('About block keeps the original artwork and moves the two balls along the orbit', () => {
